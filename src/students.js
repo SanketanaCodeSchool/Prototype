@@ -12,6 +12,7 @@ import {
   SimpleForm,
   TextField,
   TextInput,
+  EmailField,
   ShowButton,
   EditButton,
   DeleteButton,
@@ -28,7 +29,7 @@ export const StudentList = (props) => (
     <Datagrid>
       <TextField source="name" />
       <TextField source="age" />
-      <TextField source="email" />
+      <EmailField source="email" />
       <TextField source="parentname" />
       <TextField source="location" />
       <TextField source="dob" />
@@ -48,7 +49,7 @@ export const StudentShow = (props) => (
       <TextField source="id" />
       <TextField source="name" />
       <TextField source="age" />
-      <TextField source="email" />
+      <EmailField source="email" />
       <TextField source="parentname" />
       <TextField source="location" />
       <TextField source="dob" />
