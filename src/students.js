@@ -28,6 +28,11 @@ export const StudentList = (props) => (
     <Datagrid>
       <TextField source="name" />
       <TextField source="age" />
+      <TextField source="email" />
+      <TextField source="parentname" />
+      <TextField source="location" />
+      <TextField source="dob" />
+      <TextField source="grade" />
       <TextField source="createdate" />
       <TextField source="lastupdate" />
       <ShowButton label="" />
@@ -43,6 +48,11 @@ export const StudentShow = (props) => (
       <TextField source="id" />
       <TextField source="name" />
       <TextField source="age" />
+      <TextField source="email" />
+      <TextField source="parentname" />
+      <TextField source="location" />
+      <TextField source="dob" />
+      <TextField source="grade" />
     </SimpleShowLayout>
   </Show>
 );
@@ -53,6 +63,11 @@ export const StudentCreate = (props) => (
       <TextInput source="id" />
       <TextInput source="name" />
       <TextInput source="age" />
+      <TextInput source="email" />
+      <TextInput source="parentname" />
+      <TextInput source="location" />
+      <TextInput source="dob" />
+      <TextInput source="grade" />
     </SimpleForm>
   </Create>
 );
@@ -65,6 +80,12 @@ export const StudentEdit = (props) => (
       <TextInput disabled source="lastupdate" />
       <TextInput source="name" />
       <TextInput source="age" />
+      <TextInput source="email" />
+      <TextInput source="parentname" />
+      <TextInput source="location" />
+      <TextInput source="dob" />
+      <TextInput source="grade" />
+
     </SimpleForm>
   </Edit>
 );
