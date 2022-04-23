@@ -37,6 +37,7 @@ const SignInScreen = () => <StyledFirebaseAuth
 const CustomLoginForm = props => (
   <div>
     <div style={{fontFamily: "monospace", marginLeft: '15px'}}>
+      <p>{process.env.REACT_APP_AUTH_DOMAIN}</p>
       <p>Username: test@example.com</p>
       <p>Password: password</p>
     </div>

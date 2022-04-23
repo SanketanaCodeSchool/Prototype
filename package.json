@@ -4,14 +4,14 @@
   "private": true,
   "dependencies": {
     "firebase": "^9.6.4",
-    "react-router-dom": "^5.x",
     "ra-input-rich-text": "^3.3.1",
     "react": "^17.x",
     "react-admin": "^3.19.10",
+    "react-admin-firebase": "3",
     "react-dom": "^17.x",
     "react-final-form": "^6.3.0",
-    "react-admin-firebase": "3",
     "react-firebaseui": "^6.0.0",
+    "react-router-dom": "^5.x",
     "react-scripts": "^5.0.0",
     "source-map-loader": "^3"
   },
@@ -19,11 +19,14 @@
   "devDependencies": {
     "concurrently": "4.1.1",
     "cpx": "1.5.0",
+    "env-cmd": "^10.1.0",
     "gh-pages": "3.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:dev":"env-cmd -f .env.development npm run build",
+    "build:prod":"env-cmd -f .env.production npm run build && firebase deploy -P prod",
     "build-ci": "react-scripts build",
     "cp-dist": "rm -rf ./node_modules/react-admin-firebase/dist && cp -r ../dist ./node_modules/react-admin-firebase/dist",
     "test": "react-scripts test --env=jsdom",

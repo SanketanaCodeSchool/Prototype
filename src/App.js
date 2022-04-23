@@ -33,8 +33,8 @@ let firebaseConfig ={
     measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
   }
 const firebaseApp = firebase.initializeApp(firebaseConfig);
-console.log("HELLOOO" + process.env.REACT_APP_FIREBASE_API_KEY);
-console.log({firebaseConfig, firebaseApp});
+///console.log("HELLOOO" + process.env.REACT_APP_FIREBASE_API_KEY);
+//console.log({firebaseConfig, firebaseApp});
 
 const authProvider = FirebaseAuthProvider(firebaseConfig);
 const dataProvider = FirebaseDataProvider(firebaseConfig, {
