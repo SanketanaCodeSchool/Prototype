@@ -27,13 +27,19 @@ const StudentFilter = (props) => (
 export const StudentList = (props) => (
   <List {...props} filters={<StudentFilter />}>
     <Datagrid>
-      <TextField source="name" />
+     <TextField source="Id" />
+      <TextField source="firstName" />
+      <TextField source="lastName" />
+      <TextField source="dateOfBirth" />
       <TextField source="age" />
-      <EmailField source="email" />
-      <TextField source="parentname" />
-      <TextField source="location" />
-      <TextField source="dob" />
       <TextField source="grade" />
+      <TextField source="motherName" />
+      <TextField source="fatherName" />
+      <TextField source="phoneNumber1" />
+      <TextField source="phoneNumber2" /> 
+      <TextField source="studentEmail" />
+      <TextField source="parentEmail" />
+      <TextField source="status" />
       <TextField source="createdate" />
       <TextField source="lastupdate" />
       <ShowButton label="" />
@@ -46,14 +52,20 @@ export const StudentList = (props) => (
 export const StudentShow = (props) => (
   <Show {...props}>
     <SimpleShowLayout>
-      <TextField source="id" />
-      <TextField source="name" />
+      <TextField source="Id" />
+      <TextField source="firstName" />
+      <TextField source="lastName" />
+      <TextField source="dateOfBirth" />
       <TextField source="age" />
-      <EmailField source="email" />
-      <TextField source="parentname" />
-      <TextField source="location" />
-      <TextField source="dob" />
       <TextField source="grade" />
+      <TextField source="motherName" />
+      <TextField source="fatherName" />
+      <TextField source="phoneNumber1" />
+      <TextField source="phoneNumber2" /> 
+      <TextField source="studentEmail" />
+      <TextField source="parentEmail" />
+      <TextField source="status" />
+      
     </SimpleShowLayout>
   </Show>
 );
@@ -61,14 +73,19 @@ export const StudentShow = (props) => (
 export const StudentCreate = (props) => (
   <Create {...props} >
     <SimpleForm>
-      <TextInput source="id" />
-      <TextInput source="name" />
+      <TextInput source="Id" />
+      <TextInput source="firstName" />
+      <TextInput source="lastName" />
+      <TextInput source="dateOfBirth" />
       <TextInput source="age" />
-      <TextInput source="email" />
-      <TextInput source="parentname" />
-      <TextInput source="location" />
-      <TextInput source="dob" />
       <TextInput source="grade" />
+      <TextInput source="motherName" />
+      <TextInput source="fatherName" />
+      <TextInput source="phoneNumber1" />
+      <TextInput source="phoneNumber2" /> 
+      <TextInput source="studentEmail" />
+      <TextInput source="parentEmail" />
+      <TextInput source="status" />
     </SimpleForm>
   </Create>
 );
@@ -76,16 +93,19 @@ export const StudentCreate = (props) => (
 export const StudentEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
-      <TextInput disabled source="id" />
-      <TextInput disabled source="createdate" />
-      <TextInput disabled source="lastupdate" />
-      <TextInput source="name" />
+      <TextInput source="Id" />
+      <TextInput source="firstName" />
+      <TextInput source="lastName" />
+      <TextInput source="dateOfBirth" />
       <TextInput source="age" />
-      <TextInput source="email" />
-      <TextInput source="parentname" />
-      <TextInput source="location" />
-      <TextInput source="dob" />
       <TextInput source="grade" />
+      <TextInput source="motherName" />
+      <TextInput source="fatherName" />
+      <TextInput source="phoneNumber1" />
+      <TextInput source="phoneNumber2" /> 
+      <TextInput source="studentEmail" />
+      <TextInput source="parentEmail" />
+      <TextInput source="status" />
 
     </SimpleForm>
   </Edit>
