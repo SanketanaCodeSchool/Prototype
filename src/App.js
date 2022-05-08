@@ -23,7 +23,7 @@ import * as Comments from "./comments";
 import CustomLoginPage from './CustomLoginPage';
 import EventMonitor from './EventMonitor';
 
-let fire2baseConfig ={
+let firebaseConfig ={
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
@@ -32,7 +32,7 @@ let fire2baseConfig ={
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 }
-let firebaseConfig ={
+let fire2baseConfig ={
   apiKey: "AIzaSyBk2FoffkW83uU42C9S7DINtov4hvay5to",
   authDomain: "prototype-d7d0d.firebaseapp.com",
   projectId: "prototype-d7d0d",
