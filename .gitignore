@@ -1,5 +1,6 @@
 node_modules
 build
 yarn*
-package-*
 FIREBASE_CONFIG.json
+.env.development
+.env.production
