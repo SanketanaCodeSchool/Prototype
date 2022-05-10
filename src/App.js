@@ -35,10 +35,6 @@ let firebaseConfig ={
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-
-console.log({firebaseConfig, firebaseApp});
-
-
 const authProvider = FirebaseAuthProvider(firebaseConfig);
 const dataProvider = FirebaseDataProvider(firebaseConfig, {
   logging: true,
