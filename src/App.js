@@ -85,7 +85,7 @@ const App = () =>{
             edit={TeacherEdit}
           />
           <Resource
-            name="courses"
+            name="course"
             icon={UserIcon}
             list={CourseList} 
             show={CourseShow}
@@ -94,6 +94,14 @@ const App = () =>{
           />
           <Resource
             name="NEW FEATURE"
+            icon={UserIcon}
+            list={CourseList} 
+            show={CourseShow}
+            create={CourseCreate}
+            edit={CourseEdit}
+          />
+          <Resource
+            name="Parents"
             icon={UserIcon}
             list={CourseList} 
             show={CourseShow}
