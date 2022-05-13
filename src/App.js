@@ -92,14 +92,6 @@ const App = () =>{
             create={CourseCreate}
             edit={CourseEdit}
           />
-          <Resource
-            name="NEW FEATURE"
-            icon={UserIcon}
-            list={CourseList} 
-            show={CourseShow}
-            create={CourseCreate}
-            edit={CourseEdit}
-          />
         </Admin>
         <EventMonitor />
       </>
