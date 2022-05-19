@@ -13,14 +13,13 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm ci && npm run build
         env:
-          REACT_APP_apiKey="AIzaSyCbufgvLtXsOCi9NMD6IoUr7A-pgctgqew"
-          REACT_APP_authDomain="prototype-dev-fadd5.firebaseapp.com"
-          REACT_APP_projectId="prototype-dev-fadd5"
-          REACT_APP_storageBucket="prototype-dev-fadd5.appspot.com"
-          REACT_APP_messagingSenderId="646089238155"
-          REACT_APP_appId="1:646089238155:web:0f1be6a0a98606afcfd68e"
-          REACT_APP_measurementId="G-R18J9HP2K3"
-
+          REACT_APP_apiKey: "AIzaSyCbufgvLtXsOCi9NMD6IoUr7A-pgctgqew"
+          REACT_APP_authDomain: "prototype-dev-fadd5.firebaseapp.com"
+          REACT_APP_projectId: "prototype-dev-fadd5"
+          REACT_APP_storageBucket: "prototype-dev-fadd5.appspot.com"
+          REACT_APP_messagingSenderId: "646089238155"
+          REACT_APP_appId: "1:646089238155:web:0f1be6a0a98606afcfd68e"
+          REACT_APP_measurementId: "G-R18J9HP2K3"
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
