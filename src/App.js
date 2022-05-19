@@ -22,7 +22,16 @@ import * as Comments from "./comments";
 
 import CustomLoginPage from './CustomLoginPage';
 import EventMonitor from './EventMonitor';
+const firebaseConfig = {
+  apiKey : process.env.REACT_APP_apiKey, 
+  authDomain : process.env.REACT_APP_authDomain, 
+  projectId : process.env.REACT_APP_projectId, 
+  storageBucket : process.env.REACT_APP_storageBucket, 
+  messagingSenderId : process.env.REACT_APP_messagingSenderId, 
+  appId : process.env.REACT_APP_appId, 
+  measurementId : process.env.REACT_APP_measurementId, 
 
+<<<<<<< HEAD
 const firebaseConfig = {
   apiKey: "AIzaSyBk2FoffkW83uU42C9S7DINtov4hvay5to",
   authDomain: "prototype-d7d0d.firebaseapp.com",
@@ -32,7 +41,11 @@ const firebaseConfig = {
   appId: "1:495474941466:web:d4a854563877eb9307fba3",
   measurementId: "G-NQDLBNP5Z9"
 };
+=======
+>>>>>>> 1ef2dcf (Local dev and prod deployment working)
 
+
+};
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 const authProvider = FirebaseAuthProvider(firebaseConfig);

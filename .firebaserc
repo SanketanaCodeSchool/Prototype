@@ -1,8 +1,8 @@
 {
   "projects": {
-    "default": "prototype-d7d0d",
-    "dev": "prototype-d7d0d",
-    "prod": "prototype-prod-2eea1"
+    "dev": "prototype-dev-fadd5",
+    "prod": "prototype-prod-9807f",
+    "default": "prototype-dev-fadd5"
   },
   "targets": {}
 }
