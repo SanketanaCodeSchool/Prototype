@@ -17,8 +17,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROTOTYPE_DEV_FADD5 }}'
           channelId: live
-<<<<<<< HEAD
-          projectId: prototype-d7d0d
-=======
           projectId: prototype-dev-fadd5
->>>>>>> 1ef2dcf (Local dev and prod deployment working)
