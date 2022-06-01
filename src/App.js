@@ -10,7 +10,7 @@ import {
 } from 'react-admin-firebase';
 
 import firebase from "firebase/compat/app";
-
+import * as functions from "firebase-functions";
 import UserIcon from '@material-ui/icons/People';
 import CommentIcon from '@material-ui/icons/Comment';
 
@@ -31,7 +31,19 @@ const firebaseConfig = {
   appId : process.env.REACT_APP_appId, 
   measurementId : process.env.REACT_APP_measurementId, 
 };
+
+
 const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+if (window.location.hostname === "localhost") {
+  firebaseApp.functions().useFunctionsEmulator("http://localhost:5001");
+  firebaseApp.auth().useEmulator("http://localhost:8080");
+  firebaseApp.firestore().settings({
+    host: "localhost:8080",
+    ssl: false,
+  });
+}
+
 
 const authProvider = FirebaseAuthProvider(firebaseConfig);
 const dataProvider = FirebaseDataProvider(firebaseConfig, {
