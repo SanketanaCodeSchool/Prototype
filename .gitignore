@@ -5,4 +5,3 @@ FIREBASE_CONFIG.json
 .env.development
 .env.production
 .env
-firesbase-debug.log
