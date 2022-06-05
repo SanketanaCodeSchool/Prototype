@@ -22,11 +22,8 @@
   "devDependencies": {
     "@babel/core": "^7.18.2",
     "@babel/eslint-parser": "^7.18.2",
-<<<<<<< HEAD
-=======
     "assert": "^2.0.0",
     "buffer": "^6.0.3",
->>>>>>> e64841d (Polyfill error with working cloud funtions)
     "concurrently": "4.1.1",
     "cpx": "1.5.0",
     "crypto-browserify": "^3.12.0",
