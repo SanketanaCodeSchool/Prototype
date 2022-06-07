@@ -1,0 +1,68 @@
+{
+    "__collections__": {
+        "collection1": {
+            "document1": {
+                "field2": "value2",
+                "field3": "value3",
+                "field1": "value1",
+                "__collections__": {}
+            },
+            "document2": {
+                "field3": "value3",
+                "field1": "value1",
+                "field2": "value2",
+                "__collections__": {}
+            }
+        },
+        "collection2": {
+            "document2": {
+                "field2": "value2",
+                "field3": "value3",
+                "field1": "value1",
+                "__collections__": {}
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+"test type": {
+    "1": "hello",
+    "2": 2,
+    "3": false,
+    "4": {
+        "4.1": "hello",
+        "4.2": 2
+    },
+    "5": [
+        "hello",
+        2,
+        true,
+        "hello"
+    ],
+    "6": null,
+    "7": {
+        "__datatype__": "timestamp",
+        "value": {
+            "_seconds": 1654749000,
+            "_nanoseconds": 0
+        }
+    },
+    "8": {
+        "__datatype__": "geopoint",
+        "value": {
+            "_latitude": 12,
+            "_longitude": 77
+        }
+    }
+    
+    
+    
+    
+    

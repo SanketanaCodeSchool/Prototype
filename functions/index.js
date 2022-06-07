@@ -5,9 +5,9 @@ const FieldValue = admin.firestore.FieldValue;
 admin.initializeApp();
 const db = admin.firestore();
 
-exports.onStudentCreate = functions.firestore.document('/students/{id}').onCreate(onDocCreated);
-exports.onBatchCreate = functions.firestore.document('/batches/{id}').onCreate(onDocCreated);
-exports.onTeacherCreate = functions.firestore.document('/teachers/{id}').onCreate(onDocCreated);
+//exports.onStudentCreate = functions.firestore.document('/students/{id}').onCreate(onDocCreated);
+//exports.onBatchCreate = functions.firestore.document('/batches/{id}').onCreate(onDocCreated);
+//exports.onTeacherCreate = functions.firestore.document('/teachers/{id}').onCreate(onDocCreated);
 
 async function onDocCreated(snap, context) {
   const values = snap.data();
@@ -21,9 +21,9 @@ async function onDocCreated(snap, context) {
   });
 }
 
-exports.onStudentUpdated = functions.firestore.document('/students/{id}').onUpdate(onDocUpdated);
-exports.onBatchUpdated = functions.firestore.document('/batches/{id}').onUpdate(onDocUpdated);
-exports.onTeacherUpdated = functions.firestore.document('/teachers/{id}').onUpdate(onDocUpdated);
+//exports.onStudentUpdated = functions.firestore.document('/students/{id}').onUpdate(onDocUpdated);
+//exports.onBatchUpdated = functions.firestore.document('/batches/{id}').onUpdate(onDocUpdated);
+//exports.onTeacherUpdated = functions.firestore.document('/teachers/{id}').onUpdate(onDocUpdated);
 
 async function onDocUpdated(snap, context) {
   const values = snap.after.data();
@@ -38,9 +38,9 @@ async function onDocUpdated(snap, context) {
   });
 }
 
-exports.onStudentDeleted = functions.firestore.document('/students/{id}').onDelete(onDocDeleted);
-exports.onBatchDeleted = functions.firestore.document('/batches/{id}').onDelete(onDocDeleted);
-exports.onTeacherDeleted = functions.firestore.document('/teachers/{id}').onDelete(onDocDeleted);
+//exports.onStudentDeleted = functions.firestore.document('/students/{id}').onDelete(onDocDeleted);
+//exports.onBatchDeleted = functions.firestore.document('/batches/{id}').onDelete(onDocDeleted);
+//exports.onTeacherDeleted = functions.firestore.document('/teachers/{id}').onDelete(onDocDeleted);
 
 async function onDocDeleted(snap, context) {
   const values = snap.data();
