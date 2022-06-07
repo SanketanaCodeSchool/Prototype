@@ -1,13 +1,5 @@
 {
   "projects": {
-<<<<<<< HEAD
-    "dev": "prototype-dev-fadd5",
-    "prod": "prototype-prod-9807f",
-    "default": "prototype-dev-fadd5"
-  },
-  "targets": {}
-=======
     "default": "prototype-dev-fadd5"
   }
->>>>>>> cloud_functions
 }
