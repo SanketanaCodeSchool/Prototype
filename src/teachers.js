@@ -12,6 +12,11 @@ import {
   SimpleForm,
   TextField,
   TextInput,
+  EmailField,
+  BooleanField,
+  BooleanInput,
+  DateField,
+  DateInput,
   ShowButton,
   EditButton,
   DeleteButton,
@@ -26,10 +31,14 @@ const TeacherFilter = (props) => (
 export const TeacherList = (props) => (
   <List {...props} filters={<TeacherFilter />}>
     <Datagrid>
-      <TextField source="name" />
-      <TextField source="subject" />
-      <TextField source="createdate" />
-      <TextField source="lastupdate" />
+      <TextField source="teacher_id" />
+      <TextField source="teacher_name" />
+      <TextField source="registered_number" />
+      <EmailField source="registered_email" />
+      <TextField source="status" />
+      <BooleanField source="active" />
+      <DateField source="createdate" />
+      <DateField source="lastupdate" />
       <ShowButton label="" />
       <EditButton label="" />
       <DeleteButton label="" redirect={false}/>
@@ -40,9 +49,22 @@ export const TeacherList = (props) => (
 export const TeacherShow = (props) => (
   <Show {...props}>
     <SimpleShowLayout>
-      <TextField source="id" />
-      <TextField source="name" />
-      <TextField source="subject" />
+      <TextField source="teacher_id" />
+      <TextField source="teacher_name" />
+      <TextField source="registered_number" />
+      <TextField source="alternate_number" />
+      <EmailField source="registered_email" />
+      <EmailField source="alternate_email" />
+      <TextField source="status" />
+      <TextField source="city " />
+      <TextField source="country" />
+      <TextField source="address" />
+      <BooleanField source="active" />
+      <TextField source="currency" />
+      <DateField source="joined_date" />
+      <DateField source="left_date" />
+      <TextField source="country_code" />
+      <TextField source="timezone" />
     </SimpleShowLayout>
   </Show>
 );
@@ -50,9 +72,22 @@ export const TeacherShow = (props) => (
 export const TeacherCreate = (props) => (
   <Create {...props} >
     <SimpleForm>
-      <TextInput source="id" />
-      <TextInput source="name" />
-      <TextInput source="subject" />
+      <TextInput source="teacher_id" />
+      <TextInput source="teacher_name" />
+      <TextInput source="registered_number" />
+      <TextInput source="alternate_number" />
+      <TextInput source="registered_email" />
+      <TextInput source="alternate_email" />
+      <TextInput source="status" />
+      <TextInput source="city " />
+      <TextInput source="country" />
+      <TextInput source="address" />
+      <BooleanInput source="active" />
+      <TextInput source="currency" />
+      <DateInput source="joined_date" />
+      <DateInput source="left_date" />
+      <TextInput source="country_code" />
+      <TextInput source="timezone" />
     </SimpleForm>
   </Create>
 );
@@ -60,11 +95,25 @@ export const TeacherCreate = (props) => (
 export const TeacherEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
-      <TextInput disabled source="id" />
-      <TextInput disabled source="createdate" />
-      <TextInput disabled source="lastupdate" />
-      <TextInput source="name" />
-      <TextInput source="subject" />
+      <TextInput disabled source="teacher_id" />
+      <DateInput disabled source="createdate" />
+      <DateInput disabled source="lastupdate" />
+      <TextInput source="teacher_name" />
+      <TextInput source="registered_number" />
+      <TextInput source="alternate_number" />
+      <TextInput source="registered_email" />
+      <TextInput source="alternate_email" />
+      <TextInput source="status" />
+      <TextInput source="city " />
+      <TextInput source="country" />
+      <TextInput source="address" />
+      <BooleanInput source="active" />
+      <TextInput source="currency" />
+      <DateInput source="joined_date" />
+      <DateInput source="left_date" />
+      <TextInput source="country_code" />
+      <TextInput source="timezone" />
     </SimpleForm>
   </Edit>
 );
+

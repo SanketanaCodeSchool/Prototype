@@ -89,7 +89,7 @@ export const BatchShow = (props) => (
       <RichTextField source="body" />
 
       <ReferenceField label="Student Id" source="student_id" reference="students">
-        <TextField source="studentname" />
+        <TextField source="name" />
       </ReferenceField>
 
       <ReferenceField label="Student Ref" source="student_ref.___refid" reference="students">

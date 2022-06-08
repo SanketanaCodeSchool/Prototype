@@ -3,7 +3,7 @@ import * as React from "react";
 // tslint:disable-next-line:no-var-requires
 import {
   Datagrid,
-
+  List,
   Show,
   Create,
   Edit,
@@ -21,29 +21,6 @@ import {
   EditButton,
   DeleteButton,
 } from "react-admin";
-
-import { List, useListContext } from 'react-admin';
-import { Stack, Typography } from '@mui/material';
-
-const SimpleBookList = () => {
-    const { data } = useListContext();
-    return (
-        <Stack spacing={2} sx={{ padding: 2 }}>
-            {data.map(book => (
-                <Typography key={book.id}>
-                    <i>{book.title}</i>, by {book.author} ({book.year})
-                </Typography>
-            ))}
-        </Stack>
-    );
-}
-
-// use the custom list layout as <List> child
-const BookList = () => (
-    <List emptyWhileLoading>
-        <SimpleBookList />
-    </List>
-);
 
 const StudentFilter = (props) => (
   <Filter {...props}>
