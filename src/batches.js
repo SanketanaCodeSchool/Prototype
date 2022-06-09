@@ -90,6 +90,8 @@ export const BatchList = (props) => (
     <SimpleShowLayout>  
       <TextField source="batch_id" label = "BatchID" />
       
+      <TextField source="Students" label = "BatchID" />
+      
       <DateField source="start_date" />
   
       <RichTextField source="comments" />
@@ -121,7 +123,7 @@ export const BatchList = (props) => (
       <SelectInput optionText="name" />
       </ReferenceInput>
       
-      <ReferenceArrayInput source="Students" reference="students">
+      <ReferenceArrayInput source="students" reference="students">
       <SelectArrayInput optionText="first_name" translateChoice={false}/>
       </ReferenceArrayInput>
       
