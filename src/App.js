@@ -3,11 +3,17 @@ import { BatchList, BatchShow, BatchCreate, BatchEdit } from './batches';
 import { StudentList, StudentShow, StudentCreate, StudentEdit } from './students';
 import { CourseList, CourseShow, CourseCreate, CourseEdit } from './courses';
 import { TeacherList, TeacherShow, TeacherCreate, TeacherEdit } from './teachers';
+import { PostList, PostShow, PostCreate, PostEdit } from './posts';
+import { UserList, UserShow, UserCreate, UserEdit } from './users';
 import { Admin, Resource } from 'react-admin';
 import {
   FirebaseDataProvider,
   FirebaseAuthProvider,
 } from 'react-admin-firebase';
+
+
+import * as Posts from "./posts";
+import * as Users from "./users";
 
 import firebase from "firebase/compat/app";
 
@@ -83,12 +89,27 @@ const App = () =>{
             edit={TeacherEdit}
           />
           <Resource
-            name="course"
+            name="courses"
             icon={UserIcon}
             list={CourseList} 
             show={CourseShow}
             create={CourseCreate}
             edit={CourseEdit}
+          />
+          <Resource
+            name="posts"
+            list={PostList}
+            show={PostShow}
+            create={PostCreate}
+            edit={PostEdit}
+          />
+          <Resource
+            name="users"
+            icon={UserIcon}
+            list={UserList}
+            show={UserShow}
+            create={UserCreate}
+            edit={UserEdit}
           />
         </Admin>
         <EventMonitor />
