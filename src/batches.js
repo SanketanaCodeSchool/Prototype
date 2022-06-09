@@ -17,13 +17,20 @@ import {
   DeleteButton,
   RichTextField,
   ReferenceField,
+  SelectField,
   SelectInput,
   ReferenceInput,
   FileInput,
   FileField,
   ArrayInput,
+  ArrayField,
   SimpleFormIterator,
   DateInput,
+  ReferenceArrayField,
+  ReferenceArrayInput,
+  SelectArrayInput,
+  SingleFieldList,
+  ChipField
 } from "react-admin";
 import RichTextInput from "ra-input-rich-text";
 import { FirebaseReferenceField, FirebaseReferenceInput } from './FirebaseReferenceFields';
@@ -38,8 +45,8 @@ import { FirebaseReferenceField, FirebaseReferenceInput } from './FirebaseRefere
 //   <Filter {...props}>
 //     <ReferenceInput
 //       label="Organization"
-//       source="student.id"
-//       reference="students"
+//       source="user.id"
+//       reference="users"
 //       allowEmpty
 //     >
 //       <SelectInput optionText="name" />
@@ -49,182 +56,122 @@ import { FirebaseReferenceField, FirebaseReferenceInput } from './FirebaseRefere
 
 export const BatchList = (props) => (
   <List
-    {...props}
-    // filters={<ReferenceFilter />}
-    // filter={{ updatedby: "test@example.com" }}
+  {...props}
+  // filters={<ReferenceFilter />}
+  // filter={{ updatedby: "test@example.com" }}
   >
-    <Datagrid>
-      <TextField source="id" />
-      <TextField source="title" />
-      <TextField source="publishing_state" />
-      <TextField source="updatedby" />
-      <TextField source="createdby" />
-      <RichTextField source="body" />
-      <ReferenceField label="Student Ref" source="student_ref.___refid" reference="students">
-        <TextField source="name" />
-      </ReferenceField>
-      <ShowButton label="" />
-      <EditButton label="" />
-      <DeleteButton label="" redirect={false} />
-    </Datagrid>
+  <Datagrid>
+  <TextField source="batch_id" />
+  <TextField source="course_name" />
+  <TextField source="teacher_name" />
+  <TextField source="students" />
+  <TextField source="start_date" />
+  <DateField source="end_date" />
+  <TextField source="updatedby" />
+  <TextField source="createdby" />
+  <RichTextField source="comments" />
+  <ReferenceField label="Student Ref" source="first_name.___refid" reference="students">
+  <TextField source="first_name" />
+  </ReferenceField>
+  
+  <ShowButton label="" />
+  <EditButton label="" />
+  <DeleteButton label="" redirect={false} />
+  </Datagrid>
   </List>
-);
-
-// const ConditionalEmailField = ({}) =>
-//   record && record.hasEmail ? (
-//     <EmailField source="email" record={record} {...rest} />
-//   ) : null;
-export const BatchShow = (props) => (
-  <Show {...props}>
-    <SimpleShowLayout>
-      <TextField source="id" />
-      <TextField source="createdate" />
-      <TextField source="lastupdate" />
-      <TextField source="title" />
-      <RichTextField source="body" />
-
-      <ReferenceField label="Student Id" source="student_id" reference="students">
-        <TextField source="name" />
-      </ReferenceField>
-
-      <ReferenceField label="Student Ref" source="student_ref.___refid" reference="students">
-        <TextField source="name" />
-      </ReferenceField>
-      {/* Or use the easier <FirebaseReferenceField> */}
-      <FirebaseReferenceField
-        label="Student (Reference Doc)"
-        source="student_ref"
-        reference="students"
-      >
-        <TextField source="name" />
-      </FirebaseReferenceField>
-
-      <FileField
-        source="files_multiple.src"
-        title="files_multiple.title"
-        multiple
-      />
+  );
+  
+  // const ConditionalEmailField = ({}) =>
+  //   record && record.hasEmail ? (
+  //     <EmailField source="email" record={record} {...rest} />
+  //   ) : null;
+  export const BatchShow = (props) => (
+    <Show {...props}>
+    <SimpleShowLayout>  
+      <TextField source="batch_id" label = "BatchID" />
+      
+      <TextField source="Students" label = "BatchID" />
+      
+      <DateField source="start_date" />
+  
+      <RichTextField source="comments" />
+      
+    
     </SimpleShowLayout>
-  </Show>
-);
-
-export const BatchCreate = (props) => (
-  <Create {...props}>
-    <SimpleForm>
-      <TextInput source="id" />
-      <TextInput source="title" />
-      <RichTextInput source="body" />
-      <DateInput source="date" parse={val => new Date(val)} />
+    </Show>
+    );
+    
+    export const BatchCreate = (props) => (
+      <Create {...props}>
+      <SimpleForm>
+      <TextInput source="batch_id" label = "BatchID" />
       <ReferenceInput
-        label="Student"
-        source="student_id"
-        reference="students"
-        // filter={{ isAdmin: true }}
+      label="Teacher"
+      source="teacher_name"
+      reference="teachers"
+      // filter={{ isAdmin: true }}
       >
-        <SelectInput optionText="name" />
-      </ReferenceInput>
-      <ReferenceInput
-        label="Teacher"
-        source="teacher_id"
-        reference="teachers"
-        // filter={{ isAdmin: true }}
-      >
-        <SelectInput optionText="name" />
-      </ReferenceInput>
-      <ReferenceInput
-        label="Course"
-        source="course_id"
-        reference="courses"
-        // filter={{ isAdmin: true }}
-      >
-        <SelectInput optionText="name" />
+      <SelectInput optionText="teacher_name" />
       </ReferenceInput>
       
       <ReferenceInput
-        label="Student Ref"
-        source="student_ref.___refid"
-        reference="students"
+      label="Course"
+      source="name"
+      reference="courses"
+      // filter={{ isAdmin: true }}
       >
-        <SelectInput optionText="name" />
+      <SelectInput optionText="name" />
       </ReferenceInput>
-      {/* Or use the easier <FirebaseReferenceInput> */}
-      <FirebaseReferenceInput
-        label="Student Ref (Firebase)"
-        source="student_ref"
-        reference="students"
-      >
-        <SelectInput optionText="name" />
-      </FirebaseReferenceInput>
-      <FileInput source="files_multiple" multiple label="Files with (multiple)">
-        <FileField source="src" title="title" />
-      </FileInput>
-      <ArrayInput source="files">
-        <SimpleFormIterator>
-          <FileInput source="file" label="Array Form Files">
-            <FileField source="src" title="title" />
-          </FileInput>
-        </SimpleFormIterator>
-      </ArrayInput>
-      <ArrayInput source="sections.mySection.items" label="Section items">
-        <SimpleFormIterator>
-          <TextInput source="name" label="Name" />
-          <ImageInput source="image" label="Image" accept="image/*">
-            <ImageField source="src" title="title" />
-          </ImageInput>
-        </SimpleFormIterator>
-      </ArrayInput>
-    </SimpleForm>
-  </Create>
-);
-
-export const BatchEdit = (props) => (
-  <Edit {...props}>
-    <SimpleForm>
-      <TextInput disabled source="id" />
-      <DateField source="createdate" />
-      <DateField source="lastupdate" />
-      <TextInput source="title" />
-      <RichTextInput source="body" />
+      
+      <ReferenceArrayInput source="students" reference="students">
+      <SelectArrayInput optionText="first_name" translateChoice={false}/>
+      </ReferenceArrayInput>
+      
+      <DateInput source="start_date" />
+      
+      <DateInput source="end_date"  parse={val => new Date(val)} />
+      <RichTextInput source="comments" />
+      
+      
+      
+      
+      </SimpleForm>
+      </Create>
+      );
+      
+      export const BatchEdit = (props) => (
+        <Edit {...props}>
+        <SimpleForm>
+      <TextInput disabled source="batch_id" label = "BatchID" />
       <ReferenceInput
-        label="Student Id"
-        source="student_id"
-        reference="students"
-        // filter={{ isAdmin: true }}
+      label="Teacher"
+      source="teacher_name"
+      reference="teachers"
+      // filter={{ isAdmin: true }}
       >
-        <SelectInput optionText="name" />
+      <SelectInput optionText="teacher_name" />
       </ReferenceInput>
+      
       <ReferenceInput
-        label="Student Ref"
-        source="student_ref.___refid"
-        reference="students"
+      label="Course"
+      source="name"
+      reference="courses"
+      // filter={{ isAdmin: true }}
       >
-        <SelectInput optionText="name" />
+      <SelectInput optionText="name" />
       </ReferenceInput>
-      <FirebaseReferenceInput
-        label="Student Ref (Firebase)"
-        source="student_ref"
-        reference="students"
-      >
-        <SelectInput optionText="name" />
-      </FirebaseReferenceInput>
-      <FileInput source="files_multiple" multiple label="Files with (multiple)">
-        <FileField source="src" title="title" />
-      </FileInput>
-      <ArrayInput source="files">
-        <SimpleFormIterator>
-          <FileInput source="file" label="Array Form Files">
-            <FileField source="src" title="title" />
-          </FileInput>
-        </SimpleFormIterator>
-      </ArrayInput>
-      <ArrayInput source="sections.mySection.items" label="Section items">
-        <SimpleFormIterator>
-          <TextInput source="name" label="Name" />
-          <ImageInput source="image" label="Image" accept="image/*">
-            <ImageField source="src" title="title" />
-          </ImageInput>
-        </SimpleFormIterator>
-      </ArrayInput>
-    </SimpleForm>
-  </Edit>
-);
+      
+      <ReferenceArrayInput source="Students" reference="students">
+      <SelectArrayInput optionText="first_name" translateChoice={false}/>
+      </ReferenceArrayInput>
+      
+      <DateInput source="start_date" />
+      
+      <DateInput source="end_date"  parse={val => new Date(val)} />
+      <RichTextInput source="comments" />
+      
+      
+      </SimpleForm>
+        </Edit>
+        );
+        

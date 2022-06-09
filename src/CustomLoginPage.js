@@ -12,11 +12,12 @@ const uiConfig = {
   // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
   signInSuccessUrl: '#/',
   // We will display Google and Facebook as auth providers.
-  signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.FacebookAuthProvider.PROVIDER_ID
-  ],
+  //signInOptions: [
+  //  firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+  //  firebase.auth.FacebookAuthProvider.PROVIDER_ID
+  //],
   // Optional callbacks in order to get Access Token from Google,Facebook,... etc
+  /*
   callbacks: {
     signInSuccessWithAuthResult: (result) => {
       const credential = result.credential;
@@ -26,7 +27,9 @@ const uiConfig = {
       const accessToken = credential.accessToken;
       console.log({result, user, accessToken});
     }
-  }
+  }  
+  */
+  
 };
 
 const SignInScreen = () => <StyledFirebaseAuth 
@@ -38,6 +41,7 @@ const CustomLoginForm = props => (
   <div>
     <div style={{fontFamily: "monospace", marginLeft: '15px'}}>
       <p>{process.env.REACT_APP_AUTH_DOMAIN}</p>
+      <h1 style={{fontFamily: "monospace", marginLeft: '15px' ,align : "Center"}}>Sanketana App</h1>
       <p>Username: test@example.com</p>
       <p>Password: password</p>
     </div>

@@ -26,7 +26,11 @@ const CourseFilter = (props) => (
 export const CourseList = (props) => (
   <List {...props} filters={<CourseFilter />}>
     <Datagrid>
+      <TextField source="courseId" label = "CourseID" />
       <TextField source="name" />
+      <TextField source="description" />
+      <TextField source="category" />
+      <TextField source="level" />
       <TextField source="duration" />
       <TextField source="createdate" />
       <TextField source="lastupdate" />
@@ -37,11 +41,15 @@ export const CourseList = (props) => (
   </List>
 );
 
+
 export const CourseShow = (props) => (
   <Show {...props}>
     <SimpleShowLayout>
-      <TextField source="id" />
+      <TextField source="courseId" label = "CourseID" />
       <TextField source="name" />
+      <TextField source="description" />
+      <TextField source="category" />
+      <TextField source="level" />
       <TextField source="duration" />
     </SimpleShowLayout>
   </Show>
@@ -50,8 +58,11 @@ export const CourseShow = (props) => (
 export const CourseCreate = (props) => (
   <Create {...props} >
     <SimpleForm>
-      <TextInput source="id" />
+      <TextInput source="courseId" label = "CourseID" />
       <TextInput source="name" />
+      <TextInput source="description" />
+      <TextInput source="category" />
+      <TextInput source="level" />
       <TextInput source="duration" />
     </SimpleForm>
   </Create>
@@ -60,10 +71,13 @@ export const CourseCreate = (props) => (
 export const CourseEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
-      <TextInput disabled source="id" />
+     <TextInput  disabled source="courseId"label = "CourseID" />
       <TextInput disabled source="createdate" />
       <TextInput disabled source="lastupdate" />
       <TextInput source="name" />
+      <TextInput source="description" />
+      <TextInput source="category" />
+      <TextInput source="level" />
       <TextInput source="duration" />
     </SimpleForm>
   </Edit>
