@@ -3,8 +3,9 @@ import { BatchList, BatchShow, BatchCreate, BatchEdit } from './batches';
 import { StudentList, StudentShow, StudentCreate, StudentEdit } from './students';
 import { CourseList, CourseShow, CourseCreate, CourseEdit } from './courses';
 import { TeacherList, TeacherShow, TeacherCreate, TeacherEdit } from './teachers';
-import { PostList, PostShow, PostCreate, PostEdit } from './posts';
-import { UserList, UserShow, UserCreate, UserEdit } from './users';
+
+//import { PostList, PostShow, PostCreate, PostEdit } from './posts';
+//import { UserList, UserShow, UserCreate, UserEdit } from './users';
 import { Admin, Resource } from 'react-admin';
 import {
   FirebaseDataProvider,
@@ -12,8 +13,8 @@ import {
 } from 'react-admin-firebase';
 
 
-import * as Posts from "./posts";
-import * as Users from "./users";
+//import * as Posts from "./posts";
+//import * as Users from "./users";
 
 import firebase from "firebase/compat/app";
 
@@ -25,7 +26,7 @@ import * as Students from "./students";
 import * as Courses from "./courses";
 import * as Teachers from "./teachers";
 import * as Comments from "./comments";
-
+import { defaultTheme } from 'react-admin';
 import CustomLoginPage from './CustomLoginPage';
 import EventMonitor from './EventMonitor';
 const firebaseConfig = {
@@ -57,10 +58,22 @@ const dataProvider = FirebaseDataProvider(firebaseConfig, {
   },
 });
 
+
+
+const theme = {
+    ...defaultTheme,
+    sidebar: {
+        width: 200, // The default value is 240
+        closedWidth: 70, // The default value is 55
+    },
+};
+
+
 const App = () =>{
     return (
       <>
-        <Admin
+        <Admin 
+          theme={theme}
           loginPage={CustomLoginPage}
           dataProvider={dataProvider}
           authProvider={authProvider}
@@ -95,21 +108,6 @@ const App = () =>{
             show={CourseShow}
             create={CourseCreate}
             edit={CourseEdit}
-          />
-          <Resource
-            name="posts"
-            list={PostList}
-            show={PostShow}
-            create={PostCreate}
-            edit={PostEdit}
-          />
-          <Resource
-            name="users"
-            icon={UserIcon}
-            list={UserList}
-            show={UserShow}
-            create={UserCreate}
-            edit={UserEdit}
           />
         </Admin>
         <EventMonitor />

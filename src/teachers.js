@@ -31,10 +31,10 @@ const TeacherFilter = (props) => (
 export const TeacherList = (props) => (
   <List {...props} filters={<TeacherFilter />}>
     <Datagrid>
-      <TextField source="teacher_id" />
-      <TextField source="teacher_name" />
-      <TextField source="registered_number" />
-      <EmailField source="registered_email" />
+      <TextField source="teacher_id" label = "TeacherID" />
+      <TextField source="name" />
+      <TextField source="registered_phone" label = "Phone" />
+      <EmailField source="registered_email" label = "Email" />
       <TextField source="status" />
       <BooleanField source="active" />
       <DateField source="createdate" />
@@ -49,10 +49,10 @@ export const TeacherList = (props) => (
 export const TeacherShow = (props) => (
   <Show {...props}>
     <SimpleShowLayout>
-      <TextField source="teacher_id" />
-      <TextField source="teacher_name" />
-      <TextField source="registered_number" />
-      <TextField source="alternate_number" />
+      <TextField source="teacher_id" label = "TeacherID" />
+      <TextField source="name" />
+      <TextField source="registered_phone" />
+      <TextField source="alternate_phone" />
       <EmailField source="registered_email" />
       <EmailField source="alternate_email" />
       <TextField source="status" />
@@ -72,10 +72,10 @@ export const TeacherShow = (props) => (
 export const TeacherCreate = (props) => (
   <Create {...props} >
     <SimpleForm>
-      <TextInput source="teacher_id" />
-      <TextInput source="teacher_name" />
-      <TextInput source="registered_number" />
-      <TextInput source="alternate_number" />
+      <TextInput source="teacher_id" label = "TeacherID" />
+      <TextInput source="name" />
+      <TextInput source="registered_phone" />
+      <TextInput source="alternate_phone" />
       <TextInput source="registered_email" />
       <TextInput source="alternate_email" />
       <TextInput source="status" />
@@ -95,12 +95,12 @@ export const TeacherCreate = (props) => (
 export const TeacherEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
-      <TextInput disabled source="teacher_id" />
+      <TextInput disabled source="teacher_id" label = "TeacherID" />
       <DateInput disabled source="createdate" />
       <DateInput disabled source="lastupdate" />
       <TextInput source="teacher_name" />
-      <TextInput source="registered_number" />
-      <TextInput source="alternate_number" />
+      <TextInput source="registered_phone" />
+      <TextInput source="alternate_phone" />
       <TextInput source="registered_email" />
       <TextInput source="alternate_email" />
       <TextInput source="status" />

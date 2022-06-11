@@ -30,7 +30,8 @@ import {
   ReferenceArrayInput,
   SelectArrayInput,
   SingleFieldList,
-  ChipField
+  ChipField,
+  AutocompleteInput
 } from "react-admin";
 import RichTextInput from "ra-input-rich-text";
 import { FirebaseReferenceField, FirebaseReferenceInput } from './FirebaseReferenceFields';
@@ -61,7 +62,7 @@ export const BatchList = (props) => (
   // filter={{ updatedby: "test@example.com" }}
   >
   <Datagrid>
-  <TextField source="batch_id" />
+  <TextField source="batch_id" label = "BatchID" />
   <TextField source="course_name" />
   <TextField source="teacher_name" />
   <TextField source="students" />
@@ -89,7 +90,7 @@ export const BatchList = (props) => (
     <Show {...props}>
     <SimpleShowLayout>  
       <TextField source="batch_id" label = "BatchID" />
-      
+  
       <TextField source="Students" label = "BatchID" />
       
       <DateField source="start_date" />
@@ -120,13 +121,23 @@ export const BatchList = (props) => (
       reference="courses"
       // filter={{ isAdmin: true }}
       >
-      <SelectInput optionText="name" />
+      <SelectInput optionText= "name" />
       </ReferenceInput>
       
       <ReferenceArrayInput source="students" reference="students">
       <SelectArrayInput optionText="first_name" translateChoice={false}/>
       </ReferenceArrayInput>
       
+
+      <ReferenceInput
+      source="students"
+      reference="students">
+        
+      <AutocompleteInput optionText="first_name" />
+  </ReferenceInput>
+
+
+
       <DateInput source="start_date" />
       
       <DateInput source="end_date"  parse={val => new Date(val)} />

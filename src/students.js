@@ -32,12 +32,12 @@ const StudentFilter = (props) => (
     <List {...props} filters={<StudentFilter />}>
     <Datagrid>
     
-    <TextField source="student_id" />
-    <TextField source="first_name" />
-    <TextField source="last_name" />
-    <DateField source="dob" />
-    <TextField source="registered_phone" />
-    <EmailField source="registered_email" />
+    <TextField source="student_id" label = "StudentID" /> 
+    <TextField source="first_name" label = "FirstName" />
+    <TextField source="last_name" label = "LastName" />
+    <DateField source="dob" label = "DOB"/>
+    <TextField source="registered_phone" label = "Phone" />
+    <EmailField source="registered_email" label = "Email" />
     <TextField source="status" />
     <TextField source="current_batch_id" />
     <BooleanField source="active" />
@@ -56,7 +56,7 @@ const StudentFilter = (props) => (
       <Show {...props}>
       <SimpleShowLayout>
       
-      <TextField source="student_id" />
+      <TextField source="student_id" label = "StudentID" /> 
       <TextField source="first_name" />
       <TextField source="last_name" />
       <DateField source="dob" />
@@ -97,7 +97,7 @@ const StudentFilter = (props) => (
         <Create {...props} >
         <SimpleForm>
         
-        <TextInput source="student_id" />
+        <TextInput source="student_id" label = "StudentID" /> 
         <TextInput source="first_name" />
         <TextInput source="last_name" />
         <DateInput source="dob" />
@@ -126,7 +126,7 @@ const StudentFilter = (props) => (
         <TextInput source="acquisition_channel" />
         <TextInput source="grade" />
         <TextInput source="parent_profession" />
-        <TextField source="timezone" />
+        <TextInput source="timezone" />
         </SimpleForm>
         </Create>
         );
@@ -134,7 +134,7 @@ const StudentFilter = (props) => (
         export const StudentEdit = (props) => (
           <Edit {...props}>
           <SimpleForm>
-          <TextInput source="student_id" />
+          <TextInput source="student_id" label = "StudentID" /> 
           <TextInput source="first_name" />
           <TextInput source="last_name" />
           <DateInput source="dob" />
@@ -163,7 +163,7 @@ const StudentFilter = (props) => (
           <TextInput source="acquisition_channel" />
           <TextInput source="grade" />
           <TextInput source="parent_profession" />
-          <TextField source="timezone" />
+          <TextInput source="timezone" />
           
           </SimpleForm>
           </Edit>
