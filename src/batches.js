@@ -1,6 +1,3 @@
-/**
- * @jest-environment node
- */
 import * as React from "react";
 import { useEffect, useState } from "react";
 
@@ -105,7 +102,7 @@ export const BatchShow = (props) => (
   </SimpleShowLayout>
   </Show>
 );
-export const BatchCreate = (props) => {
+export const BatchCreate2 = (props) => {
   const dataProvider = useDataProvider();
   const [students, setStudents] = useState();
   const [loading, setLoading] = useState(true);
@@ -146,20 +143,17 @@ export const BatchCreate = (props) => {
 };
 
 
-export const BatchCreate2 = (props) => (
+export const BatchCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
       {//<SelectInput source="student_id" choices={project_choices} />
       }
       <TextInput source="batch_id" label = "BatchID" />
-      <ReferenceInput
-        label="Teacher"
-        source="teacher_name"
-        reference="teachers"
-        // filter={{ isAdmin: true }}
-        >
-       <SelectInput optionText="teacher_name" />
+
+      <ReferenceInput label="Teacher" source="name" reference="teachers" filter={{ active: true }}>
+        <AutocompleteInput optionText="name"  optionValue  ="teacher"/>
       </ReferenceInput>
+      
       <ReferenceInput
         label="Course"
         source="name"
@@ -213,4 +207,50 @@ reference="courses"
 </SimpleForm>
 </Edit>
 );
+
+
+export const ActivityCreate = (props) => {
+  const dataProvider = useDataProvider();
+  const [projects, setProjects] = useState();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
+  useEffect(() => {
+    dataProvider
+      .getList("students", {
+        pagination: { page: 1, perPage: 100 },
+        filter: {},
+      })
+      .then(({ data }) => {
+        setProjects(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <Loading />;
+  if (error) return <Error />;
+  if (!projects) return null;
+
+  const project_choices = projects.map((project) => ({
+    student_id: project.student_id,
+    first_name: project.first_name,
+    last_name: project.last_name,
+  }));
+
+  console.log("project_choice : " , project_choices);
+  //const optionRenderer = choice => `${project_choices.student_id} ${project_choices.last_name}`;
+  //console.log("option renderer : " , optionRenderer);
+  return (
+    <Create {...props}>
+      <SimpleForm>
+        <ReferenceInput label="Students" source="student_id" reference="students">
+          <AutocompleteInput source="student_id" choices={project_choices} />
+        </ReferenceInput>
+      </SimpleForm>
+    </Create>
+  );
+};
 
