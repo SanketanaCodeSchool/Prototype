@@ -144,7 +144,45 @@ export const BatchCreate = (props) => {
     </Create>
   );
 };
+const ActivityCreate = (props) => {
+  const dataProvider = useDataProvider();
+  const [projects, setProjects] = useState();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
+  useEffect(() => {
+    dataProvider
+      .getList("projects", {
+        pagination: { page: 1, perPage: 100 },
+        sort: { field: "id", order: "ASC" },
+        filter: {},
+      })
+      .then(({ data }) => {
+        setProjects(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
 
+  if (loading) return <Loading />;
+  if (error) return <Error />;
+  if (!projects) return null;
+
+  const project_choices = projects.map((project) => ({
+    id: project.id,
+    name: project.name,
+  }));
+
+  return (
+    <Create {...props}>
+      <SimpleForm>
+        <SelectInput source="project" choices={project_choices} />
+      </SimpleForm>
+    </Create>
+  );
+};
 
 export const BatchCreate2 = (props) => (
   <Create {...props}>

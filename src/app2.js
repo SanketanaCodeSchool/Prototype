@@ -82,7 +82,7 @@ const App = () =>{
             name="batches"
             list={BatchList}
             show={BatchShow}
-            create={BatchCreate}
+            create={ActivityCreate}
             edit={BatchEdit}
           />
           <Resource
@@ -116,4 +116,3 @@ const App = () =>{
   }
 
 export default App;
-
