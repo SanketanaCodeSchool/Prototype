@@ -24,6 +24,7 @@ import CommentIcon from '@material-ui/icons/Comment';
 import * as Batches from "./batches";
 import * as Students from "./students";
 import * as Courses from "./courses";
+import { myLayout }  from './Layout';
 import * as Teachers from "./teachers";
 import * as Comments from "./comments";
 import { defaultTheme } from 'react-admin';
@@ -78,6 +79,7 @@ const App = () =>{
           dataProvider={dataProvider}
           authProvider={authProvider}
         >
+          <Resource name="myLayout" {...myLayout} />
           <Resource
             name="batches"
             list={BatchList}

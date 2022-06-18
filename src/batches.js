@@ -31,14 +31,18 @@ import {
   DateInput,
   ReferenceArrayField,
   ReferenceArrayInput,
+  AutocompleteArrayInput,
   SelectArrayInput,
   SingleFieldList,
   ChipField,
-  AutocompleteInput
+  AutocompleteInput,
 } from "react-admin";
-import { useDataProvider } from 'react-admin';
+import { useDataProvider } from "react-admin";
 import RichTextInput from "ra-input-rich-text";
-import { FirebaseReferenceField, FirebaseReferenceInput } from './FirebaseReferenceFields';
+import {
+  FirebaseReferenceField,
+  FirebaseReferenceInput,
+} from "./FirebaseReferenceFields";
 
 // const BatchFilter = (props) => (
 //   <Filter {...props}>
@@ -59,47 +63,46 @@ import { FirebaseReferenceField, FirebaseReferenceInput } from './FirebaseRefere
 //   </Filter>
 // );
 
-
-
-
-
-
 export const BatchList = (props) => (
   <List
     {...props}
     // filters={<ReferenceFilter />}
     // filter={{ updatedby: "test@example.com" }}
-    >
+  >
     <Datagrid>
-    <TextField source="batch_id" label = "BatchID" />
-    <TextField source="course_name" />
-    <TextField source="teacher_name" />
-    <TextField source="students" />
-    <TextField source="start_date" />
-    <DateField source="end_date" />
-    <TextField source="updatedby" />
-    <TextField source="createdby" />
-    <RichTextField source="comments" />
-    <ReferenceField label="Student Ref" source="first_name.___refid" reference="students">
-    <TextField source="first_name" />
-    </ReferenceField>
-    <ShowButton label="" />
-    <EditButton label="" />
-    <DeleteButton label="" redirect={false} />
+      <TextField source="batch_id" label="BatchID" />
+      <TextField source="course_name" />
+      <TextField source="teacher_name" />
+      <TextField source="students" />
+      <TextField source="start_date" />
+      <DateField source="end_date" />
+      <TextField source="updatedby" />
+      <TextField source="createdby" />
+      <RichTextField source="comments" />
+      <ReferenceField
+        label="Student Ref"
+        source="first_name.___refid"
+        reference="students"
+      >
+        <TextField source="first_name" />
+      </ReferenceField>
+      <ShowButton label="" />
+      <EditButton label="" />
+      <DeleteButton label="" redirect={false} />
     </Datagrid>
   </List>
-  );
+);
 
-  // const ConditionalEmailField = ({}) =>
-  //   record && record.hasEmail ? (
-  //     <EmailField source="email" record={record} {...rest} />
-  //   ) : null;
+// const ConditionalEmailField = ({}) =>
+//   record && record.hasEmail ? (
+//     <EmailField source="email" record={record} {...rest} />
+//   ) : null;
 export const BatchShow = (props) => (
   <Show {...props}>
-  <SimpleShowLayout>  
-  <TextField source="batch_id" label = "BatchID" />
-  <TextField source="Students" label = "BatchID" />
-  </SimpleShowLayout>
+    <SimpleShowLayout>
+      <TextField source="batch_id" label="BatchID" />
+      <TextField source="Students" label="BatchID" />
+    </SimpleShowLayout>
   </Show>
 );
 export const BatchCreate2 = (props) => {
@@ -142,72 +145,69 @@ export const BatchCreate2 = (props) => {
   );
 };
 
-
 export const BatchCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
-      {//<SelectInput source="student_id" choices={project_choices} />
-      }
-      <TextInput source="batch_id" label = "BatchID" />
+      {<SelectInput source="student_id" choices={project_choices} />}
+      <TextInput source="batch_id" label="BatchID" />
 
-      <ReferenceInput label="Teacher" source="name" reference="teachers" filter={{ active: true }}>
-        <AutocompleteInput optionText="name"  optionValue  ="teacher"/>
+      <ReferenceInput
+        label="Teacher"
+        source="name"
+        reference="teachers"
+        filter={{ active: true }}
+      >
+        <AutocompleteInput optionText="name" optionValue="teacher" />
       </ReferenceInput>
-      
+
       <ReferenceInput
         label="Course"
         source="name"
         reference="courses"
         // filter={{ isAdmin: true }}
-        >
-        <SelectInput optionText= "name" />
+      >
+        <SelectInput optionText="name" />
       </ReferenceInput>
       <ReferenceArrayInput source="students" reference="students">
-        <SelectArrayInput optionText="first_name" translateChoice={false}/>
+        <SelectArrayInput optionText="first_name" translateChoice={false} />
       </ReferenceArrayInput>
-      <ReferenceInput
-        source="students"
-        reference="students">
-
+      <ReferenceInput source="students" reference="students">
         <AutocompleteInput optionText="first_name" />
       </ReferenceInput>
       <DateInput source="start_date" />
-      <DateInput source="end_date"  parse={val => new Date(val)} />
+      <DateInput source="end_date" parse={(val) => new Date(val)} />
       <RichTextInput source="comments" />
     </SimpleForm>
   </Create>
 );
 
 export const BatchEdit = (props) => (
-<Edit {...props}>
-<SimpleForm>
-<TextInput disabled source="batch_id" label = "BatchID" />
-<ReferenceInput
-label="Teacher"
-source="teacher_name"
-reference="teachers"
-// filter={{ isAdmin: true }}
->
-<SelectInput optionText="teacher_name" />
-</ReferenceInput>
-<ReferenceInput
-label="Course"
-source="name"
-reference="courses"
-// filter={{ isAdmin: true }}
->
-<SelectInput optionText="name" />
-</ReferenceInput>
-<ReferenceArrayInput source="Students" reference="students">
-<SelectArrayInput optionText="first_name" translateChoice={false}/>
-</ReferenceArrayInput>
-<DateInput source="start_date" />
-<DateInput source="end_date"  parse={val => new Date(val)} />
-<RichTextInput source="comments" />
-</SimpleForm>
-</Edit>
-);
+  <Edit {...props}>
+    <SimpleForm>
+      <TextInput disabled source="batch_id" label="BatchID" />
+      <ReferenceInput
+        label="Teacher"
+        source="teacher_name"
+        reference="teachers"
+        // filter={{ isAdmin: true }}
+      >
+        <SelectInput optionText="teacher_name" />
+      </ReferenceInput>
+      <ReferenceInput
+        label="Course"
+        source="name"
+        reference="courses"
+        // filter={{ isAdmin: true }}
+      >
+        <SelectInput optionText="name" />
+      </ReferenceInput>
 
+      <DateInput source="start_date" />
+      <DateInput source="end_date" parse={(val) => new Date(val)} />
+      <RichTextInput source="comments" />
+    </SimpleForm>
+  </Edit>
+);
 
 export const ActivityCreate = (props) => {
   const dataProvider = useDataProvider();
@@ -234,23 +234,35 @@ export const ActivityCreate = (props) => {
   if (error) return <Error />;
   if (!projects) return null;
 
-  const project_choices = projects.map((project) => ({
+  const choices = projects.map((project) => ({
     student_id: project.student_id,
     first_name: project.first_name,
     last_name: project.last_name,
+    write_data: {
+      "student_id" : project.student_id,
+      "first_name" : project.first_name,
+      "last_name" : project.last_name,
+    },
   }));
 
-  console.log("project_choice : " , project_choices);
-  //const optionRenderer = choice => `${project_choices.student_id} ${project_choices.last_name}`;
-  //console.log("option renderer : " , optionRenderer);
+  const choices__ = [
+    { student_id: "123", first_name: "Leo", last_name: "Tolstoi" },
+    { student_id: "456", first_name: "Jane", last_name: "Austen" },
+  ];
+  const optionRenderer = (choice) =>
+    `${choice.student_id} ${choice.first_name} ${choice.last_name}`;
+
   return (
     <Create {...props}>
       <SimpleForm>
-        <ReferenceInput label="Students" source="student_id" reference="students">
-          <AutocompleteInput source="student_id" choices={project_choices} />
-        </ReferenceInput>
+        <AutocompleteArrayInput
+          label="Students"
+          source="student_id"
+          choices={choices}
+          optionText={optionRenderer}
+          optionValue="write_data"
+        />
       </SimpleForm>
     </Create>
   );
 };
-
