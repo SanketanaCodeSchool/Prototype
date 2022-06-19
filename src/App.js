@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BatchList, BatchShow, ActivityCreate, BatchEdit } from './batches';
+import { BatchList, BatchShow, BatchCreate, BatchEdit } from './batches';
 import { StudentList, StudentShow, StudentCreate, StudentEdit } from './students';
 import { CourseList, CourseShow, CourseCreate, CourseEdit } from './courses';
 import { TeacherList, TeacherShow, TeacherCreate, TeacherEdit } from './teachers';
@@ -84,7 +84,7 @@ const App = () =>{
             name="batches"
             list={BatchList}
             show={BatchShow}
-            create={ActivityCreate}
+            create={BatchCreate}
             edit={BatchEdit}
           />
           <Resource

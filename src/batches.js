@@ -44,24 +44,26 @@ import {
   FirebaseReferenceInput,
 } from "./FirebaseReferenceFields";
 
-// const BatchFilter = (props) => (
-//   <Filter {...props}>
-//     <TextInput label="Search" source="title" alwaysOn />
-//   </Filter>
-// );
+/*
+export  const BatchFilter = (props) => (
+   <Filter {...props}>
+     <TextInput label="Search" source="batch_id" alwaysOn />
+   </Filter>
+ );
 
-// const ReferenceFilter = (props) => (
-//   <Filter {...props}>
-//     <ReferenceInput
-//       label="Organization"
-//       source="user.id"
-//       reference="users"
-//       allowEmpty
-//     >
-//       <SelectInput optionText="name" />
-//     </ReferenceInput>
-//   </Filter>
-// );
+ const ReferenceFilter = (props) => (
+   <Filter {...props}>
+     <ReferenceInput
+       label="Organization"
+       source="user.id"
+       reference="users"
+       allowEmpty
+     >
+       <SelectInput optionText="name" />
+     </ReferenceInput>
+   </Filter>
+ );
+*/
 
 export const BatchList = (props) => (
   <List
@@ -71,21 +73,11 @@ export const BatchList = (props) => (
   >
     <Datagrid>
       <TextField source="batch_id" label="BatchID" />
-      <TextField source="course_name" />
-      <TextField source="teacher_name" />
-      <TextField source="students" />
-      <TextField source="start_date" />
-      <DateField source="end_date" />
-      <TextField source="updatedby" />
-      <TextField source="createdby" />
-      <RichTextField source="comments" />
-      <ReferenceField
-        label="Student Ref"
-        source="first_name.___refid"
-        reference="students"
-      >
-        <TextField source="first_name" />
-      </ReferenceField>
+      <TextField source="name" label="Course" />
+      <TextField source="level" label="Level" />
+      <TextField source="category" label="Category" />
+      <TextField source="teacher" label="Teacher" />
+
       <ShowButton label="" />
       <EditButton label="" />
       <DeleteButton label="" redirect={false} />
@@ -105,7 +97,8 @@ export const BatchShow = (props) => (
     </SimpleShowLayout>
   </Show>
 );
-export const BatchCreate2 = (props) => {
+
+export const BatchCreate = (props) => {
   const dataProvider = useDataProvider();
   const [students, setStudents] = useState();
   const [loading, setLoading] = useState(true);
@@ -114,7 +107,6 @@ export const BatchCreate2 = (props) => {
     dataProvider
       .getList("students", {
         pagination: { page: 1, perPage: 100 },
-        sort: { field: "student_id", order: "first_name" },
         filter: {},
       })
       .then(({ data }) => {
@@ -131,87 +123,96 @@ export const BatchCreate2 = (props) => {
   if (error) return <Error />;
   if (!students) return null;
 
-  const student_choices = students.map((student) => ({
-    id: student.student_id,
-    name: student.first_name,
+  const studentChoices = students.map((student) => ({
+    student_id: student.student_id,
+    first_name: student.first_name,
+    last_name: student.last_name,
+    write_data: {
+      student_id: student.student_id,
+      first_name: student.first_name,
+      last_name: student.last_name,
+    },
   }));
+
+  const studentOptionRenderer = (choice) =>
+    `${choice.student_id} ${choice.first_name} ${choice.last_name}`;
 
   return (
     <Create {...props}>
       <SimpleForm>
-        <SelectInput source="student" choices={student_choices} />
+        <TextInput source="batch_id" label="BatchID" />
+        <ReferenceInput label="Course" source="name" reference="courses">
+          <AutocompleteInput optionText="name" optionValue="name" />
+        </ReferenceInput>
+        <AutocompleteInput
+          label="Level"
+          source="level"
+          choices={[
+            { id: "1", name: "1" },
+            { id: "2", name: "2" },
+            { id: "3", name: "3" },
+            { id: "4", name: "4" },
+            { id: "5", name: "5" },
+          ]}
+        />
+        <AutocompleteInput
+          label="Category"
+          source="category"
+          choices={[
+            { id: "junior", name: "Junior" },
+            { id: "intermediate", name: "Intermediate" },
+            { id: "senior", name: "Senior" },
+          ]}
+        />
+        <ReferenceInput label="Teacher" source="name" reference="teachers">
+          <AutocompleteInput optionText="name" optionValue="name" />
+        </ReferenceInput>
+        <DateInput source="start_date" defaultValue={null} />
+        <DateInput source="end_date" defaultValue={null} />
+        <AutocompleteArrayInput
+          label="Students"
+          source="student_id"
+          choices={studentChoices}
+          optionText={studentOptionRenderer}
+          optionValue="write_data"
+        />
+        <ArrayInput source="schedule">
+          <SimpleFormIterator>
+            <AutocompleteInput
+              label="Day"
+              source="day"
+              choices={[
+                { id: "12", name: "Monday" },
+                { id: "1", name: "Tuesday" },
+                { id: "2", name: "Wednesday" },
+                { id: "Thu", name: "Thursday" },
+                { id: "Fri", name: "Friday" },
+                { id: "Sat", name: "Saturday" },
+                { id: "Sun", name: "Sunday" },
+              ]}
+            />
+            <AutocompleteInput
+              label="Time"
+              source="time"
+              choices={[
+                { id: "12", name: "00:00" },
+                { id: "1", name: "01:00" },
+                { id: "2", name: "02:00" },
+                { id: "3", name: "03:00" },
+                { id: "4", name: "04:00" },
+                { id: "5", name: "05:00" },
+              ]}
+            />
+          </SimpleFormIterator>
+        </ArrayInput>
       </SimpleForm>
     </Create>
   );
 };
 
-export const BatchCreate = (props) => (
-  <Create {...props}>
-    <SimpleForm>
-      {<SelectInput source="student_id" choices={project_choices} />}
-      <TextInput source="batch_id" label="BatchID" />
-
-      <ReferenceInput
-        label="Teacher"
-        source="name"
-        reference="teachers"
-        filter={{ active: true }}
-      >
-        <AutocompleteInput optionText="name" optionValue="teacher" />
-      </ReferenceInput>
-
-      <ReferenceInput
-        label="Course"
-        source="name"
-        reference="courses"
-        // filter={{ isAdmin: true }}
-      >
-        <SelectInput optionText="name" />
-      </ReferenceInput>
-      <ReferenceArrayInput source="students" reference="students">
-        <SelectArrayInput optionText="first_name" translateChoice={false} />
-      </ReferenceArrayInput>
-      <ReferenceInput source="students" reference="students">
-        <AutocompleteInput optionText="first_name" />
-      </ReferenceInput>
-      <DateInput source="start_date" />
-      <DateInput source="end_date" parse={(val) => new Date(val)} />
-      <RichTextInput source="comments" />
-    </SimpleForm>
-  </Create>
-);
-
-export const BatchEdit = (props) => (
-  <Edit {...props}>
-    <SimpleForm>
-      <TextInput disabled source="batch_id" label="BatchID" />
-      <ReferenceInput
-        label="Teacher"
-        source="teacher_name"
-        reference="teachers"
-        // filter={{ isAdmin: true }}
-      >
-        <SelectInput optionText="teacher_name" />
-      </ReferenceInput>
-      <ReferenceInput
-        label="Course"
-        source="name"
-        reference="courses"
-        // filter={{ isAdmin: true }}
-      >
-        <SelectInput optionText="name" />
-      </ReferenceInput>
-
-      <DateInput source="start_date" />
-      <DateInput source="end_date" parse={(val) => new Date(val)} />
-      <RichTextInput source="comments" />
-    </SimpleForm>
-  </Edit>
-);
-
-export const ActivityCreate = (props) => {
+export const BatchEdit = (props) => {
   const dataProvider = useDataProvider();
-  const [projects, setProjects] = useState();
+  const [students, setStudents] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
   useEffect(() => {
@@ -221,7 +222,7 @@ export const ActivityCreate = (props) => {
         filter: {},
       })
       .then(({ data }) => {
-        setProjects(data);
+        setStudents(data);
         setLoading(false);
       })
       .catch((error) => {
@@ -232,37 +233,91 @@ export const ActivityCreate = (props) => {
 
   if (loading) return <Loading />;
   if (error) return <Error />;
-  if (!projects) return null;
+  if (!students) return null;
 
-  const choices = projects.map((project) => ({
-    student_id: project.student_id,
-    first_name: project.first_name,
-    last_name: project.last_name,
+  const studentChoices = students.map((student) => ({
+    student_id: student.student_id,
+    first_name: student.first_name,
+    last_name: student.last_name,
     write_data: {
-      "student_id" : project.student_id,
-      "first_name" : project.first_name,
-      "last_name" : project.last_name,
+      student_id: student.student_id,
+      first_name: student.first_name,
+      last_name: student.last_name,
     },
   }));
 
-  const choices__ = [
-    { student_id: "123", first_name: "Leo", last_name: "Tolstoi" },
-    { student_id: "456", first_name: "Jane", last_name: "Austen" },
-  ];
-  const optionRenderer = (choice) =>
+  const studentOptionRenderer = (choice) =>
     `${choice.student_id} ${choice.first_name} ${choice.last_name}`;
 
   return (
-    <Create {...props}>
+    <Edit {...props}>
       <SimpleForm>
+        <TextInput source="batch_id" label="BatchID" />
+        <ReferenceInput label="Course" source="course_id" reference="courses">
+          <AutocompleteInput optionText="course_id" />
+        </ReferenceInput>
+        <AutocompleteInput
+          label="Level"
+          source="level"
+          choices={[
+            { id: "1", name: "1" },
+            { id: "2", name: "2" },
+            { id: "3", name: "3" },
+            { id: "4", name: "4" },
+            { id: "5", name: "5" },
+          ]}
+        />
+        <AutocompleteInput
+          label="Category"
+          source="category"
+          choices={[
+            { id: "junior", name: "Junior" },
+            { id: "intermediate", name: "Intermediate" },
+            { id: "senior", name: "Senior" },
+          ]}
+        />
+        <ReferenceInput label="Teacher" source="name" reference="teachers">
+          <AutocompleteInput optionText="name" optionValue="teacher_id" />
+        </ReferenceInput>
+        <DateInput source="start_date" defaultValue={null} />
+        <DateInput source="end_date" defaultValue={null} />
         <AutocompleteArrayInput
           label="Students"
           source="student_id"
-          choices={choices}
-          optionText={optionRenderer}
+          choices={studentChoices}
+          optionText={studentOptionRenderer}
           optionValue="write_data"
         />
+        <ArrayInput source="schedule">
+          <SimpleFormIterator>
+            <AutocompleteInput
+              label="Day"
+              source="day"
+              choices={[
+                { id: "12", name: "Monday" },
+                { id: "1", name: "Tuesday" },
+                { id: "2", name: "Wednesday" },
+                { id: "Thu", name: "Thursday" },
+                { id: "Fri", name: "Friday" },
+                { id: "Sat", name: "Saturday" },
+                { id: "Sun", name: "Sunday" },
+              ]}
+            />
+            <AutocompleteInput
+              label="Time"
+              source="time"
+              choices={[
+                { id: "12", name: "00:00" },
+                { id: "1", name: "01:00" },
+                { id: "2", name: "02:00" },
+                { id: "3", name: "03:00" },
+                { id: "4", name: "04:00" },
+                { id: "5", name: "05:00" },
+              ]}
+            />
+          </SimpleFormIterator>
+        </ArrayInput>
       </SimpleForm>
-    </Create>
+    </Edit>
   );
 };

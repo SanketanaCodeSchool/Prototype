@@ -26,7 +26,7 @@ const CourseFilter = (props) => (
 export const CourseList = (props) => (
   <List {...props} filters={<CourseFilter />}>
     <Datagrid>
-      <TextField source="courseId" label = "CourseID" />
+      <TextField source="course_id" label = "CourseID" />
       <TextField source="name" />
       <TextField source="description" />
       <TextField source="category" />
@@ -45,7 +45,7 @@ export const CourseList = (props) => (
 export const CourseShow = (props) => (
   <Show {...props}>
     <SimpleShowLayout>
-      <TextField source="courseId" label = "CourseID" />
+      <TextField source="course_id" label = "CourseID" />
       <TextField source="name" />
       <TextField source="description" />
       <TextField source="category" />
@@ -58,7 +58,7 @@ export const CourseShow = (props) => (
 export const CourseCreate = (props) => (
   <Create {...props} >
     <SimpleForm>
-      <TextInput source="courseId" label = "CourseID" />
+      <TextInput source="course_id" label = "CourseID" />
       <TextInput source="name" />
       <TextInput source="description" />
       <TextInput source="category" />
@@ -71,7 +71,7 @@ export const CourseCreate = (props) => (
 export const CourseEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
-     <TextInput  disabled source="courseId"label = "CourseID" />
+     <TextInput  disabled source="course_id" label = "CourseID" />
       <TextInput disabled source="createdate" />
       <TextInput disabled source="lastupdate" />
       <TextInput source="name" />
