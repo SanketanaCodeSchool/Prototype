@@ -8,6 +8,7 @@ import {
   Create,
   Edit,
   DateField,
+  FunctionField,
   ImageField,
   ImageInput,
   SimpleShowLayout,
@@ -34,8 +35,9 @@ import {
   AutocompleteArrayInput,
   SelectArrayInput,
   SingleFieldList,
-  ChipField,
+  ChipField,  
   AutocompleteInput,
+  ReferenceManyField,
 } from "react-admin";
 import { useDataProvider } from "react-admin";
 import RichTextInput from "ra-input-rich-text";
@@ -73,11 +75,24 @@ export const BatchList = (props) => (
   >
     <Datagrid>
       <TextField source="batch_id" label="BatchID" />
-      <TextField source="name" label="Course" />
+      <TextField source="course_id" label="Course" />
       <TextField source="level" label="Level" />
       <TextField source="category" label="Category" />
-      <TextField source="teacher" label="Teacher" />
+      <TextField source="teacher_name" label="Teacher" />
+      <DateField source="start_date" />
+      <DateField source="end_date" />
 
+      <ArrayField source="students">
+        <SingleFieldList>
+          <FunctionField
+            render={(record) => (
+              <ChipField record={{ student_id: record.student_id }} source="student_id" />
+              
+              
+            )}
+          />
+        </SingleFieldList>
+      </ArrayField>
       <ShowButton label="" />
       <EditButton label="" />
       <DeleteButton label="" redirect={false} />
@@ -141,8 +156,8 @@ export const BatchCreate = (props) => {
     <Create {...props}>
       <SimpleForm>
         <TextInput source="batch_id" label="BatchID" />
-        <ReferenceInput label="Course" source="name" reference="courses">
-          <AutocompleteInput optionText="name" optionValue="name" />
+        <ReferenceInput label="Course" source="course_id" reference="courses">
+          <AutocompleteInput optionText="course_id" optionValue="course_id" />
         </ReferenceInput>
         <AutocompleteInput
           label="Level"
@@ -164,14 +179,21 @@ export const BatchCreate = (props) => {
             { id: "senior", name: "Senior" },
           ]}
         />
-        <ReferenceInput label="Teacher" source="name" reference="teachers">
-          <AutocompleteInput optionText="name" optionValue="name" />
+        <ReferenceInput
+          label="Teacher"
+          source="teacher_name"
+          reference="teachers"
+        >
+          <AutocompleteInput
+            optionText="teacher_name"
+            optionValue="teacher_name"
+          />
         </ReferenceInput>
         <DateInput source="start_date" defaultValue={null} />
         <DateInput source="end_date" defaultValue={null} />
         <AutocompleteArrayInput
           label="Students"
-          source="student_id"
+          source="students"
           choices={studentChoices}
           optionText={studentOptionRenderer}
           optionValue="write_data"

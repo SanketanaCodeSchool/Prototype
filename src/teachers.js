@@ -32,7 +32,7 @@ export const TeacherList = (props) => (
   <List {...props} filters={<TeacherFilter />}>
     <Datagrid>
       <TextField source="teacher_id" label = "TeacherID" />
-      <TextField source="name" />
+      <TextField source="teacher_name" />
       <TextField source="registered_phone" label = "Phone" />
       <EmailField source="registered_email" label = "Email" />
       <TextField source="status" />
@@ -50,7 +50,7 @@ export const TeacherShow = (props) => (
   <Show {...props}>
     <SimpleShowLayout>
       <TextField source="teacher_id" label = "TeacherID" />
-      <TextField source="name" />
+      <TextField source="teacher_name" />
       <TextField source="registered_phone" />
       <TextField source="alternate_phone" />
       <EmailField source="registered_email" />
@@ -73,7 +73,7 @@ export const TeacherCreate = (props) => (
   <Create {...props} >
     <SimpleForm>
       <TextInput source="teacher_id" label = "TeacherID" />
-      <TextInput source="name" />
+      <TextInput source="teacher_name" />
       <TextInput source="registered_phone" />
       <TextInput source="alternate_phone" />
       <TextInput source="registered_email" />
