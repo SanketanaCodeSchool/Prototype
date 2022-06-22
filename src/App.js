@@ -25,7 +25,7 @@ import {
   TeacherShow,
   TeacherCreate,
   TeacherEdit,
-  TeacherFilter
+  TeacherFilter,
 } from "./teachers";
 
 //import { PostList, PostShow, PostCreate, PostEdit } from './posts';
@@ -53,6 +53,9 @@ import * as Comments from "./comments";
 import { defaultTheme } from "react-admin";
 import CustomLoginPage from "./CustomLoginPage";
 import EventMonitor from "./EventMonitor";
+
+import Dashboard from "./Dashboard";
+
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_apiKey,
   authDomain: process.env.REACT_APP_authDomain,
@@ -94,6 +97,7 @@ const App = () => {
   return (
     <>
       <Admin
+        dashboard={Dashboard}
         theme={theme}
         loginPage={CustomLoginPage}
         dataProvider={dataProvider}
