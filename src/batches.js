@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
 
+
 import {
   Datagrid,
   List,
@@ -9,6 +10,7 @@ import {
   Edit,
   DateField,
   FunctionField,
+  DateTimeInput,
   ImageField,
   ImageInput,
   SimpleShowLayout,
@@ -35,9 +37,10 @@ import {
   AutocompleteArrayInput,
   SelectArrayInput,
   SingleFieldList,
-  ChipField,  
+  ChipField,
   AutocompleteInput,
   ReferenceManyField,
+  ResettableTextField,
 } from "react-admin";
 import { useDataProvider } from "react-admin";
 import RichTextInput from "ra-input-rich-text";
@@ -75,20 +78,19 @@ export const BatchList = (props) => (
   >
     <Datagrid>
       <TextField source="batch_id" label="BatchID" />
-      <TextField source="course_id" label="Course" />
+      <TextField source="course_name" label="Course" />
       <TextField source="level" label="Level" />
       <TextField source="category" label="Category" />
       <TextField source="teacher_name" label="Teacher" />
       <DateField source="start_date" />
-      <DateField source="end_date" />
-
       <ArrayField source="students">
         <SingleFieldList>
           <FunctionField
             render={(record) => (
-              <ChipField record={{ student_id: record.student_id }} source="student_id" />
-              
-              
+              <ChipField
+                record={{ student_id : record.first_name + " " + record.last_name }}
+                source="student_id"
+              />
             )}
           />
         </SingleFieldList>
@@ -107,17 +109,36 @@ export const BatchList = (props) => (
 export const BatchShow = (props) => (
   <Show {...props}>
     <SimpleShowLayout>
-      <TextField source="batch_id" label="BatchID" />
-      <TextField source="Students" label="BatchID" />
+    <TextField source="batch_id" label="BatchID" />
+      <TextField source="course_name" label="Course" />
+      <TextField source="level" label="Level" />
+      <TextField source="category" label="Category" />
+      <TextField source="teacher_name" label="Teacher" />
+      <DateField source="start_date" />
+      <ArrayField source="students">
+        <SingleFieldList>
+          <FunctionField
+            render={(record) => (
+              <ChipField
+                record={{ student_id : record.first_name + " " + record.last_name }}
+                source="student_id"
+              />
+            )}
+          />
+        </SingleFieldList>
+      </ArrayField>
     </SimpleShowLayout>
   </Show>
 );
+
 
 export const BatchCreate = (props) => {
   const dataProvider = useDataProvider();
   const [students, setStudents] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
+  const [value, setValue] = useState(null);
+
   useEffect(() => {
     dataProvider
       .getList("students", {
@@ -155,9 +176,12 @@ export const BatchCreate = (props) => {
   return (
     <Create {...props}>
       <SimpleForm>
-        <TextInput source="batch_id" label="BatchID" />
+        <TextInput source="batch_id" label="Batch ID" />
         <ReferenceInput label="Course" source="course_id" reference="courses">
-          <AutocompleteInput optionText="course_id" optionValue="course_id" />
+          <AutocompleteInput
+            optionText="course_name"
+            optionValue="course_name"
+          />
         </ReferenceInput>
         <AutocompleteInput
           label="Level"
@@ -189,8 +213,24 @@ export const BatchCreate = (props) => {
             optionValue="teacher_name"
           />
         </ReferenceInput>
-        <DateInput source="start_date" defaultValue={null} />
-        <DateInput source="end_date" defaultValue={null} />
+
+        <AutocompleteInput
+          label="Status"
+          source="status"
+          choices={[
+            { id: "initiated", name: "Initiated" },
+            { id: "scheduled", name: "Scheduled" },
+            { id: "started", name: "Started" },
+            { id: "onPause", name: "onPause" },
+            { id: "ended", name: "Ended" },
+          ]}
+        />
+
+
+
+        <DateInput label = "Start Date" source="start_date" defaultValue={null} />
+        <DateInput label = "Planned End Date" source="planned_end_date" defaultValue={null} />
+        <DateInput label = "Actual End Date" source="actual_end_date" defaultValue={null} />
         <AutocompleteArrayInput
           label="Students"
           source="students"
@@ -213,30 +253,20 @@ export const BatchCreate = (props) => {
                 { id: "Sun", name: "Sunday" },
               ]}
             />
-            <AutocompleteInput
-              label="Time"
-              source="time"
-              choices={[
-                { id: "12", name: "00:00" },
-                { id: "1", name: "01:00" },
-                { id: "2", name: "02:00" },
-                { id: "3", name: "03:00" },
-                { id: "4", name: "04:00" },
-                { id: "5", name: "05:00" },
-              ]}
-            />
+            <TextInput source="time" type={"time"} label="Time" />
           </SimpleFormIterator>
         </ArrayInput>
       </SimpleForm>
     </Create>
   );
 };
-
 export const BatchEdit = (props) => {
   const dataProvider = useDataProvider();
   const [students, setStudents] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
+  const [value, setValue] = useState(null);
+
   useEffect(() => {
     dataProvider
       .getList("students", {
@@ -274,9 +304,12 @@ export const BatchEdit = (props) => {
   return (
     <Edit {...props}>
       <SimpleForm>
-        <TextInput source="batch_id" label="BatchID" />
+        <TextInput source="batch_id" label="Batch ID" />
         <ReferenceInput label="Course" source="course_id" reference="courses">
-          <AutocompleteInput optionText="course_id" />
+          <AutocompleteInput
+            optionText="course_name"
+            optionValue="course_name"
+          />
         </ReferenceInput>
         <AutocompleteInput
           label="Level"
@@ -298,14 +331,37 @@ export const BatchEdit = (props) => {
             { id: "senior", name: "Senior" },
           ]}
         />
-        <ReferenceInput label="Teacher" source="name" reference="teachers">
-          <AutocompleteInput optionText="name" optionValue="teacher_id" />
+        <ReferenceInput
+          label="Teacher"
+          source="teacher_name"
+          reference="teachers"
+        >
+          <AutocompleteInput
+            optionText="teacher_name"
+            optionValue="teacher_name"
+          />
         </ReferenceInput>
-        <DateInput source="start_date" defaultValue={null} />
-        <DateInput source="end_date" defaultValue={null} />
+
+        <AutocompleteInput
+          label="Status"
+          source="status"
+          choices={[
+            { id: "initiated", name: "Initiated" },
+            { id: "scheduled", name: "Scheduled" },
+            { id: "started", name: "Started" },
+            { id: "onPause", name: "onPause" },
+            { id: "ended", name: "Ended" },
+          ]}
+        />
+
+
+
+        <DateInput label = "Start Date" source="start_date" defaultValue={null} />
+        <DateInput label = "Planned End Date" source="planned_end_date" defaultValue={null} />
+        <DateInput label = "Actual End Date" source="actual_end_date" defaultValue={null} />
         <AutocompleteArrayInput
           label="Students"
-          source="student_id"
+          source="students"
           choices={studentChoices}
           optionText={studentOptionRenderer}
           optionValue="write_data"
@@ -325,18 +381,7 @@ export const BatchEdit = (props) => {
                 { id: "Sun", name: "Sunday" },
               ]}
             />
-            <AutocompleteInput
-              label="Time"
-              source="time"
-              choices={[
-                { id: "12", name: "00:00" },
-                { id: "1", name: "01:00" },
-                { id: "2", name: "02:00" },
-                { id: "3", name: "03:00" },
-                { id: "4", name: "04:00" },
-                { id: "5", name: "05:00" },
-              ]}
-            />
+            <TextInput source="time" type={"time"} label="Time" />
           </SimpleFormIterator>
         </ArrayInput>
       </SimpleForm>
