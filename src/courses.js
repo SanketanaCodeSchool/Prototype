@@ -1,6 +1,4 @@
-// in src/course.js
 import * as React from "react";
-// tslint:disable-next-line:no-var-requires
 import {
   Datagrid,
   List,
@@ -17,9 +15,9 @@ import {
   DeleteButton,
 } from "react-admin";
 
-const CourseFilter = (props) => (
+export const CourseFilter = (props) => (
   <Filter {...props}>
-    <TextInput label="Search" source="title" alwaysOn />
+    <TextInput label="Search" source="course_name" alwaysOn />
   </Filter>
 );
 
@@ -32,8 +30,6 @@ export const CourseList = (props) => (
       <TextField source="category" />
       <TextField source="level" />
       <TextField source="duration" />
-      <TextField source="createdate" />
-      <TextField source="lastupdate" />
       <ShowButton label="" />
       <EditButton label="" />
       <DeleteButton label="" redirect={false}/>
@@ -58,7 +54,7 @@ export const CourseShow = (props) => (
 export const CourseCreate = (props) => (
   <Create {...props} >
     <SimpleForm>
-      <TextInput source="course_id" label = "CourseID" />
+      <TextInput source="course_id" label = "Course ID" />
       <TextInput source="course_name" />
       <TextInput source="description" />
       <TextInput source="category" />
@@ -71,9 +67,7 @@ export const CourseCreate = (props) => (
 export const CourseEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
-     <TextInput  disabled source="course_id" label = "CourseID" />
-      <TextInput disabled source="createdate" />
-      <TextInput disabled source="lastupdate" />
+     <TextInput  disabled source="course_id" label = "Course ID" />
       <TextInput source="course_name" />
       <TextInput source="description" />
       <TextInput source="category" />
