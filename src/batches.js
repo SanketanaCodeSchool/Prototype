@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
 
-
 import {
   Datagrid,
   List,
@@ -49,12 +48,11 @@ import {
   FirebaseReferenceInput,
 } from "./FirebaseReferenceFields";
 
-
 export const BatchFilter = (props) => (
-   <Filter {...props}>
-     <TextInput label="Search" source="batch_id" alwaysOn />
-   </Filter>
- );
+  <Filter {...props}>
+    <TextInput label="Search" source="batch_id" alwaysOn />
+  </Filter>
+);
 /*
  const ReferenceFilter = (props) => (
    <Filter {...props}>
@@ -88,7 +86,10 @@ export const BatchList = (props) => (
           <FunctionField
             render={(record) => (
               <ChipField
-                record={{ student_id : record.first_name + " " + record.last_name }}
+                record={{
+                  student_id: record.first_name + " " + record.last_name,
+                  
+                }}
                 source="student_id"
               />
             )}
@@ -109,7 +110,7 @@ export const BatchList = (props) => (
 export const BatchShow = (props) => (
   <Show {...props}>
     <SimpleShowLayout>
-    <TextField source="batch_id" label="BatchID" />
+      <TextField source="batch_id" label="BatchID" />
       <TextField source="course_name" label="Course" />
       <TextField source="level" label="Level" />
       <TextField source="category" label="Category" />
@@ -122,7 +123,9 @@ export const BatchShow = (props) => (
           <FunctionField
             render={(record) => (
               <ChipField
-                record={{ student_id : record.first_name + " " + record.last_name }}
+                record={{
+                  student_id: record.first_name + " " + record.last_name,
+                }}
                 source="student_id"
               />
             )}
@@ -134,7 +137,7 @@ export const BatchShow = (props) => (
           <FunctionField
             render={(record) => (
               <ChipField
-                record={{ time : record.day + "-" + record.time }}
+                record={{ time: record.day + "-" + record.time }}
                 source="time"
               />
             )}
@@ -144,8 +147,6 @@ export const BatchShow = (props) => (
     </SimpleShowLayout>
   </Show>
 );
-
-
 
 export const BatchCreate = (props) => {
   const dataProvider = useDataProvider();
@@ -241,11 +242,17 @@ export const BatchCreate = (props) => {
           ]}
         />
 
-
-
-        <DateInput label = "Start Date" source="start_date" defaultValue={null} />
-        <DateInput label = "Planned End Date" source="planned_end_date" defaultValue={null} />
-        <DateInput label = "Actual End Date" source="actual_end_date" defaultValue={null} />
+        <DateInput label="Start Date" source="start_date" defaultValue={null} />
+        <DateInput
+          label="Planned End Date"
+          source="planned_end_date"
+          defaultValue={null}
+        />
+        <DateInput
+          label="Actual End Date"
+          source="actual_end_date"
+          defaultValue={null}
+        />
         <AutocompleteArrayInput
           label="Students"
           source="batch_students"
@@ -341,9 +348,9 @@ export const BatchEdit = (props) => {
           label="Category"
           source="category"
           choices={[
-            { id: "junior", name: "Junior" },
-            { id: "intermediate", name: "Intermediate" },
-            { id: "senior", name: "Senior" },
+            { id: "Junior", name: "Junior" },
+            { id: "Intermediate", name: "Intermediate" },
+            { id: "Senior", name: "Senior" },
           ]}
         />
         <ReferenceInput
@@ -361,19 +368,25 @@ export const BatchEdit = (props) => {
           label="Status"
           source="status"
           choices={[
-            { id: "initiated", name: "Initiated" },
-            { id: "scheduled", name: "Scheduled" },
-            { id: "started", name: "Started" },
+            { id: "Initiated", name: "Initiated" },
+            { id: "Scheduled", name: "Scheduled" },
+            { id: "Started", name: "Started" },
             { id: "onPause", name: "onPause" },
-            { id: "ended", name: "Ended" },
+            { id: "Ended", name: "Ended" },
           ]}
         />
 
-
-
-        <DateInput label = "Start Date" source="start_date" defaultValue={null} />
-        <DateInput label = "Planned End Date" source="planned_end_date" defaultValue={null} />
-        <DateInput label = "Actual End Date" source="actual_end_date" defaultValue={null} />
+        <DateInput label="Start Date" source="start_date" defaultValue={null} />
+        <DateInput
+          label="Planned End Date"
+          source="planned_end_date"
+          defaultValue={null}
+        />
+        <DateInput
+          label="Actual End Date"
+          source="actual_end_date"
+          defaultValue={null}
+        />
         <AutocompleteArrayInput
           label="Students"
           source="batch_students"
@@ -387,13 +400,13 @@ export const BatchEdit = (props) => {
               label="Day"
               source="day"
               choices={[
-                { id: "12", name: "Monday" },
-                { id: "1", name: "Tuesday" },
-                { id: "2", name: "Wednesday" },
-                { id: "Thu", name: "Thursday" },
-                { id: "Fri", name: "Friday" },
-                { id: "Sat", name: "Saturday" },
-                { id: "Sun", name: "Sunday" },
+                { id: "Monday", name: "Monday" },
+                { id: "Tuesday", name: "Tuesday" },
+                { id: "Wednesday", name: "Wednesday" },
+                { id: "Thursday", name: "Thursday" },
+                { id: "Friday", name: "Friday" },
+                { id: "Saturday", name: "Saturday" },
+                { id: "Sunday", name: "Sunday" },
               ]}
             />
             <TextInput source="time" type={"time"} label="Time" />

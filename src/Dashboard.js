@@ -11,7 +11,8 @@ import googleCalendarPlugin from '@fullcalendar/google-calendar'
 export default () => (
     <Card>
         <Title title="Welcome to the administration" />
-        <CardContent><FullCalendar
+        <CardContent>
+            <FullCalendar
             // locale={nlLocale}
             plugins={[dayGridPlugin, listPlugin, googleCalendarPlugin]}
 
