@@ -42,14 +42,13 @@ import {
 import firebase from "firebase/compat/app";
 
 import UserIcon from "@material-ui/icons/People";
-import CommentIcon from "@material-ui/icons/Comment";
+
 
 import * as Batches from "./batches";
 import * as Students from "./students";
 import * as Courses from "./courses";
 import { myLayout } from "./Layout";
 import * as Teachers from "./teachers";
-import * as Comments from "./comments";
 import { defaultTheme } from "react-admin";
 import CustomLoginPage from "./CustomLoginPage";
 import EventMonitor from "./EventMonitor";
@@ -103,7 +102,6 @@ const App = () => {
         dataProvider={dataProvider}
         authProvider={authProvider}
       >
-        <Resource name="myLayout" {...myLayout} />
         <Resource
           name="batches"
           list={BatchList}
