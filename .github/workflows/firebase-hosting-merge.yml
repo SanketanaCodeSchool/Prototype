@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm ci && npm run build
+      - run: npm install && npm ci && npm run build
         env:
           REACT_APP_apiKey: "AIzaSyAy4GooTPM4AzD1ap0efAnaTfB_xTIOtRA"
           REACT_APP_authDomain: "prototype-prod-9807f.firebaseapp.com"
