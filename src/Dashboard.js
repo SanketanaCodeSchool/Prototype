@@ -15,60 +15,16 @@ export default () => (
       <FullCalendar
         // locale={nlLocale}
         plugins={[dayGridPlugin, listPlugin, googleCalendarPlugin]}
-        googleCalendarApiKey="AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE"
-        // events=
-        // {
-        //     {
-        //         googleCalendarId: 'en.usa#holiday@group.v.calendar.google.com',
+        googleCalendarApiKey="AIzaSyA9LehPKRjFBzQ-AKeQS9wqoDoTbliErG8"
+        events=
+        {
+            {
+                googleCalendarId: 'eshaan.gupta101@gmail.com',
 
-        //     }
-        // }
+            }
+        }
 
-        events={[
-          {
-            id: "1",
-            title: "Python Level 1",
-            start: '2022-06-05T13:30:00',
-            end: '2022-06-05T14:30:00',
-          },
-          {
-            id: "2",
-            title: "Python Level 1",
-            start: '2022-06-09T10:30:00',
-            end: '2022-06-09T11:30:00',
-          },
-          {
-            id: "3",
-            title: "Scratch Level 4",
-            start: '2022-06-01T17:30:00',
-            end: '2022-06-01T18:30:00',
-          },
-          {
-            id: "4",
-            title: "Python Level 3",
-            start: '2022-06-02T10:30:00',
-            end: '2022-06-02T11:30:00',
-          },
-          {
-            id: "5",
-            title: "Python Level 3",
-            start: '2022-06-14T10:30:00',
-            end: '2022-06-14T11:30:00',
-          },
-          {
-            id: "6",
-            title: "Python Level 3",
-            start: '2022-06-16T10:30:00',
-            end: '2022-06-16T11:30:00',
-          },
-          {
-            id: "7",
-            title: "Python Level 3",
-            start: '2022-06-17T10:30:00',
-            end: '2022-06-17T11:30:00',
-          },
-        ]}
-        headerToolbar={{
+          headerToolbar={{
           left: "prev,next",
           center: "title",
           right: "dayGridMonth,listWeek",

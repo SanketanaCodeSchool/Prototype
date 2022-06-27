@@ -102,6 +102,7 @@ const App = () => {
         dataProvider={dataProvider}
         authProvider={authProvider}
       >
+        <Resource name = "myLayout" />
         <Resource
           name="batches"
           list={BatchList}
