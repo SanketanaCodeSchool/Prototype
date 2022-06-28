@@ -5,3 +5,4 @@ FIREBASE_CONFIG.json
 .env.development
 .env.production
 .env
+firestore-debug.log

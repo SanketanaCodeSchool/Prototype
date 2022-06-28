@@ -84,7 +84,7 @@ export const BatchList = (props) => (
       <TextField source="teacher_name" label="Teacher" />
       <DateField source="start_date" />
       <ArrayField source="batch_students">
-        <SingleFieldList>
+        <SingleFieldList linkType={false}>
           <FunctionField
             render={(record) => (
               <ChipField

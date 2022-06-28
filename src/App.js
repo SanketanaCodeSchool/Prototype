@@ -47,7 +47,7 @@ import UserIcon from "@material-ui/icons/People";
 import * as Batches from "./batches";
 import * as Students from "./students";
 import * as Courses from "./courses";
-import { myLayout } from "./Layout";
+//import { myLayout } from "./Layout";
 import * as Teachers from "./teachers";
 import { defaultTheme } from "react-admin";
 import CustomLoginPage from "./CustomLoginPage";
@@ -102,7 +102,7 @@ const App = () => {
         dataProvider={dataProvider}
         authProvider={authProvider}
       >
-        <Resource name = "myLayout" />
+        {/* <Resource name = "myLayout" /> */}
         <Resource
           name="batches"
           list={BatchList}

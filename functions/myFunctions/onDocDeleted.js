@@ -1,10 +1,5 @@
-const functions = require("firebase-functions");
 const admin = require("firebase-admin");
-const FieldValue = admin.firestore.FieldValue;
 const db = admin.firestore();
-
-
-
 
 module.exports.onDocDeleted = async (snap, context) => {
   const values = snap.data();
@@ -17,5 +12,4 @@ module.exports.onDocDeleted = async (snap, context) => {
     ...values,
     deleted_at: admin.firestore.FieldValue.serverTimestamp(),
   });
-}
-
+};

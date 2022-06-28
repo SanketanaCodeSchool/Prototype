@@ -1,7 +1,6 @@
 const admin = require("firebase-admin");
 const db = admin.firestore();
 
-
 module.exports.onDocCreated = async (snap, context) => {
   const values = snap.data();
   console.log(values);
