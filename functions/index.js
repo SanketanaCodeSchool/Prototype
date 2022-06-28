@@ -50,16 +50,6 @@ exports.onTeacherDeleted = functions.firestore
   .document("/teachers/{id}")
   .onDelete(odd.onDocDeleted);
 
-
-
-/*
- * A Firebase Cloud Function that uses Google OAuth2 to
- * manage a Google user's calendar.
- *
- * @Author: Scott McCartney
- * @Twitter: @skittlesMc9
- * @Github: https://github.com/scott-mccartney/google-calendar-cloud-function
- */
 const { google } = require("googleapis");
 const calendar = google.calendar("v3");
 //const functions = require('firebase-functions');
@@ -101,13 +91,9 @@ const addEvent = (event, auth) => {
       }
     );
   });
-}
-
-
-
+};
 
 exports.addEventToCalendar = functions.https.onRequest((request, response) => {
-
   const eventData = {
     eventName: request.body.eventName,
     description: request.body.description,

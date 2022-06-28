@@ -18,6 +18,15 @@ import {
   ShowButton,
   EditButton,
   DeleteButton,
+  required,
+  minLength,
+  maxLength,
+  minValue,
+  maxValue,
+  number,
+  regex,
+  email,
+  choices
 } from "react-admin";
 
 export const TeacherFilter = (props) => (
@@ -38,6 +47,21 @@ export const TeacherList = (props) => (
       <ShowButton label="" />
       <EditButton label="" />
       <DeleteButton label="" redirect={false}/>
+    </Datagrid>
+  </List>
+);
+export const TeacherHistoryList = (props) => (
+  <List {...props} filters={<TeacherFilter />}>
+    <Datagrid>
+      <TextField source="teacher_id" label = "TeacherID" />
+      <TextField source="teacher_name" />
+      <TextField source="registered_phone" label = "Phone" />
+      <EmailField source="registered_email" label = "Email" />
+      <TextField source="status" />
+      <BooleanField source="active" />
+      <DateField source="created_at" label = "Created"/>
+      <DateField source="deleted_at" label = "Deleted"/>
+      <DateField source="updated_at" label = "Updated"/>  
     </Datagrid>
   </List>
 );
@@ -65,15 +89,17 @@ export const TeacherShow = (props) => (
   </Show>
 );
 
+const validateName = [required(), minLength(2), maxLength(30)];
+const validateEmail = email();
 export const TeacherCreate = (props) => (
   <Create {...props} >
     <SimpleForm>
       <TextInput source="teacher_id" label = "Teacher ID" />
-      <TextInput source="teacher_name" />
+      <TextInput source="teacher_name" validate={validateName} />
       <TextInput source="registered_phone" />
       <TextInput source="alternate_phone" />
-      <TextInput source="registered_email" />
-      <TextInput source="alternate_email" />
+      <TextInput source="registered_email" validate={validateEmail} />
+      <TextInput source="alternate_email" validate={validateEmail} />
       <TextInput source="status" />
       <TextInput source="city " />
       <TextInput source="country" />

@@ -32,20 +32,34 @@ export const StudentList = (props) => (
       <TextField source="student_id" label="StudentID" />
       <TextField source="first_name" label="FirstName" />
       <TextField source="last_name" label="LastName" />
-      <DateField source="dob" label="DOB" />
       <TextField source="registered_phone" label="Phone" />
       <EmailField source="registered_email" label="Email" />
       <TextField source="status" />
       <BooleanField source="active" />
       <TextField source="lifecycle_stage" />
-      <TextField source="grade" />
       <ShowButton label="" />
       <EditButton label="" />
       <DeleteButton label="" redirect={false} />
     </Datagrid>
   </List>
 );
-
+export const StudentHistoryList = (props) => (
+  <List {...props} filters={<StudentFilter />}>
+    <Datagrid>
+      <TextField source="student_id" label="StudentID" />
+      <TextField source="first_name" label="FirstName" />
+      <TextField source="last_name" label="LastName" />
+      <TextField source="registered_phone" label="Phone" />
+      <EmailField source="registered_email" label="Email" />
+      <TextField source="status" />
+      <BooleanField source="active" />
+      <TextField source="lifecycle_stage" />
+      <DateField source="created_at" label = "Created"/>
+      <DateField source="deleted_at" label = "Deleted"/>
+      <DateField source="updated_at" label = "Updated"/>
+    </Datagrid>
+  </List>
+);
 export const StudentShow = (props) => (
   <Show {...props}>
     <SimpleShowLayout>
@@ -79,9 +93,28 @@ export const StudentShow = (props) => (
   </Show>
 );
 
+const validateUserCreation = (values) => {
+  const errors = {};
+  if (!values.firstName) {
+      errors.firstName = 'The firstName is required';
+  }
+  if (!values.age) {
+      // You can return translation keys
+      errors.age = 'ra.validation.required';
+  } else if (values.age < 18) {
+      // Or an object if the translation messages need parameters
+      errors.age = {
+          message: 'ra.validation.minValue',
+          args: { min: 18 }
+      };
+  }
+  return errors
+};
+
+
 export const StudentCreate = (props) => (
   <Create {...props}>
-    <SimpleForm>
+    <SimpleForm validate={validateUserCreation}>
       <TextInput source="student_id" label="Student ID" />
       <TextInput source="first_name" />
       <TextInput source="last_name" />

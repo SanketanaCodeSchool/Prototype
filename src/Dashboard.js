@@ -19,7 +19,7 @@ export default () => (
         events=
         {
             {
-                googleCalendarId: 'eshaan.gupta101@gmail.com',
+                googleCalendarId: "eshaan.gupta101@gmail.com",
 
             }
         }

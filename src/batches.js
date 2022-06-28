@@ -69,6 +69,41 @@ export const BatchFilter = (props) => (
    </Filter>
  );
 */
+export const BatchHistoryList = (props) => (
+  <List
+    {...props}
+    // filters={<ReferenceFilter />}
+    // filter={{ updatedby: "test@example.com" }}
+  >
+    <Datagrid>
+      <TextField source="batch_id" label="BatchID" />
+      <TextField source="course_name" label="Course" />
+      <TextField source="level" label="Level" />
+      <TextField source="category" label="Category" />
+      <TextField source="teacher_name" label="Teacher" />
+      <DateField source="start_date" />
+      <ArrayField source="batch_students">
+        <SingleFieldList linkType={false}>
+          <FunctionField
+            render={(record) => (
+              <ChipField
+                record={{
+                  student_id: record.first_name + " " + record.last_name,
+                  
+                }}
+                source="student_id"
+              />
+            )}
+          />
+        </SingleFieldList>
+      </ArrayField>
+      <DateField source="created_at" label = "Created"/>
+      <DateField source="deleted_at" label = "Deleted"/>
+      <DateField source="updated_at" label = "Updated"/>
+      <BooleanField source="isScheduled" label = "Schedule?"/>
+    </Datagrid>
+  </List>
+);
 
 export const BatchList = (props) => (
   <List
@@ -187,6 +222,7 @@ export const BatchCreate = (props) => {
       student_id: student.student_id,
       first_name: student.first_name,
       last_name: student.last_name,
+      //email: student.last_name,
     },
   }));
 

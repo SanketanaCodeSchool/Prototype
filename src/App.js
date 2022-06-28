@@ -5,6 +5,7 @@ import {
   BatchCreate,
   BatchEdit,
   BatchFilter,
+  BatchHistoryList,
 } from "./batches";
 import {
   StudentList,
@@ -12,6 +13,7 @@ import {
   StudentCreate,
   StudentEdit,
   StudentFilter,
+  StudentHistoryList,
 } from "./students";
 import {
   CourseList,
@@ -26,6 +28,7 @@ import {
   TeacherCreate,
   TeacherEdit,
   TeacherFilter,
+  TeacherHistoryList,
 } from "./teachers";
 
 //import { PostList, PostShow, PostCreate, PostEdit } from './posts';
@@ -42,7 +45,6 @@ import {
 import firebase from "firebase/compat/app";
 
 import UserIcon from "@material-ui/icons/People";
-
 
 import * as Batches from "./batches";
 import * as Students from "./students";
@@ -137,6 +139,21 @@ const App = () => {
           create={CourseCreate}
           edit={CourseEdit}
           filter={CourseFilter}
+        />
+        <Resource
+          name="batches_history"
+          list={BatchHistoryList}
+          options={{ label: "Batch Logs" }}
+        />
+        <Resource
+          name="students_history"
+          list={StudentHistoryList}
+          options={{ label: "Student Logs" }}
+        />
+        <Resource
+          name="teachers_history"
+          list={TeacherHistoryList}
+          options={{ label: "Teachers Logs" }}
         />
       </Admin>
       <EventMonitor />

@@ -13,12 +13,6 @@ module.exports.onDocUpdated = async (snap, context) => {
   if (collectionName == "batches") {
     if (values.isScheduled == true) {
       console.log("Batch Scheduled");
-      // ({
-      //   "eventName": "Firebase Event",
-      //   "description": "This is a sample description",
-      //   "startTime": "2018-12-01T10:00:00",
-      //   "endTime": "2018-12-01T13:00:00"
-      // })
     } else {
       console.log("Batch Unscheduled");
     }
