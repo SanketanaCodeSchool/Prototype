@@ -35,6 +35,8 @@ import {
   ReferenceArrayInput,
   AutocompleteArrayInput,
   SelectArrayInput,
+  BooleanField,
+  BooleanInput,
   SingleFieldList,
   ChipField,
   AutocompleteInput,
@@ -96,6 +98,7 @@ export const BatchList = (props) => (
           />
         </SingleFieldList>
       </ArrayField>
+      <BooleanField source="isScheduled" label = "Schedule?"/>
       <ShowButton label="" />
       <EditButton label="" />
       <DeleteButton label="" redirect={false} />
@@ -144,6 +147,7 @@ export const BatchShow = (props) => (
           />
         </SingleFieldList>
       </ArrayField>
+      <BooleanField source="isScheduled" label = "Schedule?"/>
     </SimpleShowLayout>
   </Show>
 );
@@ -241,7 +245,7 @@ export const BatchCreate = (props) => {
             { id: "ended", name: "Ended" },
           ]}
         />
-
+        <BooleanInput source="isScheduled" label = "Schedule?"/>
         <DateInput label="Start Date" source="start_date" defaultValue={null} />
         <DateInput
           label="Planned End Date"
@@ -375,6 +379,7 @@ export const BatchEdit = (props) => {
             { id: "Ended", name: "Ended" },
           ]}
         />
+        <BooleanInput source="isScheduled" label = "Schedule?"/>
 
         <DateInput label="Start Date" source="start_date" defaultValue={null} />
         <DateInput
