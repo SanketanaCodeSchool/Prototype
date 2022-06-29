@@ -1,0 +1,1980 @@
+{
+  "__collections__": {
+    "Cloud Function": {
+      "1": {
+        "RunCloudFunction": false,
+        "__collections__": {}
+      }
+    },
+    "batches": {
+      "Rgohqiush7S2IreqkiH5": {
+        "status": "started",
+        "batch_id": "S3",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "schedule": [
+          {
+            "time": "12:00",
+            "day": "Tuesday"
+          },
+          {
+            "time": "14:00",
+            "day": "Friday"
+          }
+        ],
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473611,
+            "_nanoseconds": 787000000
+          }
+        },
+        "level": "3",
+        "actual_end_date": null,
+        "teacher_name": "Isha Sharma",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473611,
+            "_nanoseconds": 787000000
+          }
+        },
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "planned_end_date": "2022-08-17",
+        "category": "senior",
+        "isScheduled": false,
+        "batch_students": [
+          {
+            "student_id": "SSC1006",
+            "first_name": "Ruhi",
+            "last_name": "Shah"
+          },
+          {
+            "student_id": "SSC1008",
+            "first_name": "Rohit",
+            "last_name": "Khan"
+          }
+        ],
+        "course_name": "Web Development ",
+        "start_date": "2022-06-02",
+        "__collections__": {}
+      },
+      "ZYOXn1qVNuAWr1OgwgSi": {
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "category": "senior",
+        "teacher_name": "Abhinav Bhardwaj",
+        "isScheduled": true,
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "status": "started",
+        "planned_end_date": "2022-06-11",
+        "start_date": "2022-06-02",
+        "course_name": "Scratch for Kids",
+        "batch_students": [
+          {
+            "student_id": "SSC1008",
+            "last_name": "Khan",
+            "first_name": "Rohit"
+          },
+          {
+            "first_name": "Ronit",
+            "last_name": "Gupta",
+            "student_id": "SSC1002"
+          },
+          {
+            "last_name": "Joshi",
+            "student_id": "SSC1001",
+            "first_name": "Sathvik"
+          }
+        ],
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473865,
+            "_nanoseconds": 211000000
+          }
+        },
+        "batch_id": "S14",
+        "level": "2",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473865,
+            "_nanoseconds": 211000000
+          }
+        },
+        "actual_end_date": null,
+        "schedule": [
+          {
+            "day": "Tuesday",
+            "time": "14:00"
+          }
+        ],
+        "__collections__": {}
+      },
+      "uc7gShVTD199oRo6Abaf": {
+        "level": "3",
+        "batch_id": "S12",
+        "isScheduled": false,
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "status": "initiated",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473793,
+            "_nanoseconds": 281000000
+          }
+        },
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "category": "senior",
+        "planned_end_date": null,
+        "course_name": "Python for Beginners",
+        "actual_end_date": null,
+        "start_date": null,
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473818,
+            "_nanoseconds": 916000000
+          }
+        },
+        "__collections__": {}
+      },
+      "xwWAuxU3K9PRuWEYJMv7": {
+        "isScheduled": true,
+        "course_name": "Cryptology",
+        "actual_end_date": null,
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "start_date": "2022-06-23",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "schedule": [
+          {
+            "day": "Monday",
+            "time": "10:05"
+          },
+          {
+            "day": "Wednesday",
+            "time": "10:05"
+          },
+          {
+            "time": "10:05"
+          }
+        ],
+        "batch_students": [
+          {
+            "last_name": "Joshi",
+            "student_id": "SSC1001",
+            "first_name": "Sathvik"
+          }
+        ],
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473758,
+            "_nanoseconds": 623000000
+          }
+        },
+        "teacher_name": "Swetha Jain",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473758,
+            "_nanoseconds": 623000000
+          }
+        },
+        "batch_id": "S8",
+        "planned_end_date": "2022-09-28",
+        "category": "junior",
+        "level": "4",
+        "status": "scheduled",
+        "__collections__": {}
+      }
+    },
+    "batches_history": {
+      "8bwTG3eyWY89PVamTxbm": {
+        "status": "started",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473865,
+            "_nanoseconds": 211000000
+          }
+        },
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "planned_end_date": "2022-06-11",
+        "schedule": [
+          {
+            "day": "Tuesday",
+            "time": "14:00"
+          }
+        ],
+        "teacher_name": "Abhinav Bhardwaj",
+        "course_name": "Scratch for Kids",
+        "batch_students": [
+          {
+            "student_id": "SSC1008",
+            "last_name": "Khan",
+            "first_name": "Rohit"
+          },
+          {
+            "student_id": "SSC1002",
+            "first_name": "Ronit",
+            "last_name": "Gupta"
+          },
+          {
+            "first_name": "Sathvik",
+            "student_id": "SSC1001",
+            "last_name": "Joshi"
+          }
+        ],
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "batch_id": "S14",
+        "isScheduled": true,
+        "actual_end_date": null,
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473865,
+            "_nanoseconds": 211000000
+          }
+        },
+        "start_date": "2022-06-02",
+        "category": "senior",
+        "level": "2",
+        "created_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473866,
+            "_nanoseconds": 484000000
+          }
+        },
+        "__collections__": {}
+      },
+      "AR5is9PfIyk46bxFJNzA": {
+        "teacher_name": "Swetha Jain",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438593,
+            "_nanoseconds": 295000000
+          }
+        },
+        "course_id": "Cryptology",
+        "level": "3",
+        "deleted_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656441468,
+            "_nanoseconds": 700000000
+          }
+        },
+        "start_date": "2022-06-29",
+        "status": "initiated",
+        "planned_end_date": "2022-08-30",
+        "category": "intermediate",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438593,
+            "_nanoseconds": 295000000
+          }
+        },
+        "actual_end_date": null,
+        "batch_id": "S1",
+        "__collections__": {}
+      },
+      "IRdLbpnpuaFrVa3bk3I6": {
+        "course_id": "Scratch for Kids",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656427909,
+            "_nanoseconds": 892000000
+          }
+        },
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656427872,
+            "_nanoseconds": 181000000
+          }
+        },
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "actual_end_date": null,
+        "schedule": [
+          {
+            "day": "Wednesday",
+            "time": "14:21"
+          },
+          {
+            "day": "Friday",
+            "time": "13:21"
+          }
+        ],
+        "batch_id": "S88",
+        "isScheduled": true,
+        "category": "intermediate",
+        "status": "Scheduled",
+        "planned_end_date": "2022-07-01",
+        "start_date": "2022-06-08",
+        "updated_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656427915,
+            "_nanoseconds": 823000000
+          }
+        },
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "level": "3",
+        "batch_students": [
+          {
+            "first_name": "Akhil",
+            "last_name": "ac",
+            "student_id": "SSC1002"
+          },
+          {
+            "first_name": "Eshaan",
+            "last_name": "Gupta",
+            "student_id": "SSC1005"
+          }
+        ],
+        "__collections__": {}
+      },
+      "MSy4oDrGyhmrKdzq4hmb": {
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "actual_end_date": null,
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656427872,
+            "_nanoseconds": 181000000
+          }
+        },
+        "level": "3",
+        "status": "initiated",
+        "planned_end_date": "2022-07-01",
+        "batch_id": "S88",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656427872,
+            "_nanoseconds": 181000000
+          }
+        },
+        "category": "intermediate",
+        "schedule": [
+          {
+            "day": "Wednesday",
+            "time": "14:21"
+          },
+          {
+            "time": "13:21",
+            "day": "Friday"
+          }
+        ],
+        "batch_students": [
+          {
+            "last_name": "ac",
+            "student_id": "SSC1002",
+            "first_name": "Akhil"
+          },
+          {
+            "student_id": "SSC1005",
+            "last_name": "Gupta",
+            "first_name": "Eshaan"
+          }
+        ],
+        "course_id": "Scratch for Kids",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "start_date": "2022-06-08",
+        "created_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656427878,
+            "_nanoseconds": 587000000
+          }
+        },
+        "__collections__": {}
+      },
+      "MbhoIPnC4nqE59UC3aF1": {
+        "batch_id": "S3",
+        "course_name": "Web Development ",
+        "status": "started",
+        "start_date": "2022-06-02",
+        "updated_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473672,
+            "_nanoseconds": 391000000
+          }
+        },
+        "category": "senior",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473611,
+            "_nanoseconds": 787000000
+          }
+        },
+        "level": "3",
+        "isScheduled": false,
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473611,
+            "_nanoseconds": 787000000
+          }
+        },
+        "actual_end_date": null,
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "teacher_name": "Isha Sharma",
+        "batch_students": [
+          {
+            "student_id": "SSC1006",
+            "last_name": "Shah",
+            "first_name": "Ruhi"
+          },
+          {
+            "first_name": "Rohit",
+            "last_name": "Khan",
+            "student_id": "SSC1008"
+          }
+        ],
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "planned_end_date": "2022-08-17",
+        "schedule": [
+          {
+            "day": "Tuesday",
+            "time": "12:00"
+          },
+          {
+            "day": "Friday",
+            "time": "14:00"
+          }
+        ],
+        "__collections__": {}
+      },
+      "P0TfIEyXAGtB2RVkzATQ": {
+        "category": "intermediate",
+        "actual_end_date": null,
+        "schedule": [
+          {
+            "day": "Wednesday",
+            "time": "14:21"
+          },
+          {
+            "day": "Friday",
+            "time": "13:21"
+          }
+        ],
+        "deleted_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656436795,
+            "_nanoseconds": 921000000
+          }
+        },
+        "start_date": "2022-06-08",
+        "level": "3",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "course_id": "Scratch for Kids",
+        "status": "Scheduled",
+        "batch_id": "S88",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "batch_students": [
+          {
+            "first_name": "Akhil",
+            "last_name": "ac",
+            "student_id": "SSC1002"
+          },
+          {
+            "first_name": "Eshaan",
+            "student_id": "SSC1005",
+            "last_name": "Gupta"
+          }
+        ],
+        "isScheduled": true,
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656427909,
+            "_nanoseconds": 892000000
+          }
+        },
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656427872,
+            "_nanoseconds": 181000000
+          }
+        },
+        "planned_end_date": "2022-07-01",
+        "__collections__": {}
+      },
+      "RBd1wjwYW4vSa6he4nHd": {
+        "level": "2",
+        "planned_end_date": null,
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "schedule": [
+          {
+            "day": "Monday",
+            "time": "15:00"
+          },
+          {
+            "day": "Saturday",
+            "time": "14:11"
+          }
+        ],
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656394882,
+            "_nanoseconds": 718000000
+          }
+        },
+        "deleted_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656436802,
+            "_nanoseconds": 68000000
+          }
+        },
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "batch_id": "S1",
+        "start_date": null,
+        "category": "junior",
+        "isScheduled": true,
+        "actual_end_date": null,
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656394882,
+            "_nanoseconds": 718000000
+          }
+        },
+        "course_id": "Web Development ",
+        "__collections__": {}
+      },
+      "UgReSP3nhk6Oc4wIUKfL": {
+        "category": "senior",
+        "level": "3",
+        "batch_id": "S3",
+        "schedule": [
+          {
+            "day": "Tuesday",
+            "time": "12:00"
+          },
+          {
+            "day": "Friday",
+            "time": "14:00"
+          }
+        ],
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473611,
+            "_nanoseconds": 787000000
+          }
+        },
+        "isScheduled": false,
+        "batch_students": [
+          {
+            "last_name": "Shah",
+            "student_id": "SSC1006",
+            "first_name": "Ruhi"
+          },
+          {
+            "last_name": "Khan",
+            "first_name": "Rohit",
+            "student_id": "SSC1008"
+          }
+        ],
+        "planned_end_date": "2022-08-17",
+        "teacher_name": "Isha Sharma",
+        "actual_end_date": null,
+        "status": "started",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "updated_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473668,
+            "_nanoseconds": 612000000
+          }
+        },
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473611,
+            "_nanoseconds": 787000000
+          }
+        },
+        "start_date": "2022-06-02",
+        "__collections__": {}
+      },
+      "Wy9g2fQ9VEAOmQzHLRYH": {
+        "actual_end_date": null,
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656423802,
+            "_nanoseconds": 557000000
+          }
+        },
+        "status": "started",
+        "category": "intermediate",
+        "batch_students": [
+          {
+            "last_name": "ac",
+            "student_id": "SSC1002",
+            "first_name": "Akhil"
+          },
+          {
+            "first_name": "Eshaan",
+            "student_id": "SSC1005",
+            "last_name": "Gupta"
+          }
+        ],
+        "planned_end_date": "2022-07-09",
+        "updated_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656423807,
+            "_nanoseconds": 442000000
+          }
+        },
+        "start_date": "2022-06-28",
+        "batch_id": "S1",
+        "schedule": [
+          {
+            "day": "Sunday",
+            "time": "16:11"
+          }
+        ],
+        "level": "2",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656153443,
+            "_nanoseconds": 774000000
+          }
+        },
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "course_id": "Web Development ",
+        "__collections__": {}
+      },
+      "ZDMxRRXlEo2vcIEw3qHp": {
+        "start_date": null,
+        "batch_id": "S12",
+        "actual_end_date": null,
+        "category": "senior",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473818,
+            "_nanoseconds": 916000000
+          }
+        },
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473793,
+            "_nanoseconds": 281000000
+          }
+        },
+        "course_name": "Python for Beginners",
+        "status": "initiated",
+        "level": "3",
+        "isScheduled": false,
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "updated_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473820,
+            "_nanoseconds": 261000000
+          }
+        },
+        "planned_end_date": null,
+        "__collections__": {}
+      },
+      "ejo5EXaSQhOBWki9QtKG": {
+        "start_date": null,
+        "category": "senior",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "level": "3",
+        "status": "initiated",
+        "batch_id": "S12",
+        "planned_end_date": null,
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473793,
+            "_nanoseconds": 281000000
+          }
+        },
+        "actual_end_date": null,
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473793,
+            "_nanoseconds": 281000000
+          }
+        },
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "created_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473798,
+            "_nanoseconds": 782000000
+          }
+        },
+        "course_name": "Python for Beginners",
+        "__collections__": {}
+      },
+      "fnynQL2zTd6tn3sKztdE": {
+        "level": "3",
+        "status": "started",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473611,
+            "_nanoseconds": 787000000
+          }
+        },
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473611,
+            "_nanoseconds": 787000000
+          }
+        },
+        "batch_students": [
+          {
+            "first_name": "Ruhi",
+            "last_name": "Shah",
+            "student_id": "SSC1006"
+          },
+          {
+            "last_name": "Khan",
+            "first_name": "Rohit",
+            "student_id": "SSC1008"
+          }
+        ],
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "schedule": [
+          {
+            "day": "Tuesday",
+            "time": "12:00"
+          },
+          {
+            "time": "14:00",
+            "day": "Friday"
+          }
+        ],
+        "actual_end_date": null,
+        "planned_end_date": "2022-08-17",
+        "created_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473618,
+            "_nanoseconds": 233000000
+          }
+        },
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "start_date": "2022-06-02",
+        "isScheduled": false,
+        "batch_id": "S3",
+        "course_id": "Web Development ",
+        "teacher_name": "Isha Sharma",
+        "category": "senior",
+        "__collections__": {}
+      },
+      "nD3YBdw0vwNNcPgJPLEJ": {
+        "start_date": "2022-06-23",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473758,
+            "_nanoseconds": 623000000
+          }
+        },
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "batch_id": "S8",
+        "level": "4",
+        "teacher_name": "Swetha Jain",
+        "category": "junior",
+        "isScheduled": true,
+        "batch_students": [
+          {
+            "first_name": "Sathvik",
+            "last_name": "Joshi",
+            "student_id": "SSC1001"
+          }
+        ],
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "actual_end_date": null,
+        "course_name": "Cryptology",
+        "planned_end_date": "2022-09-28",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473758,
+            "_nanoseconds": 623000000
+          }
+        },
+        "schedule": [
+          {
+            "day": "Monday",
+            "time": "10:05"
+          },
+          {
+            "time": "10:05",
+            "day": "Wednesday"
+          },
+          {
+            "time": "10:05"
+          }
+        ],
+        "created_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473760,
+            "_nanoseconds": 581000000
+          }
+        },
+        "status": "scheduled",
+        "__collections__": {}
+      },
+      "qmmTIcUXIrDBHMveCdu0": {
+        "level": "3",
+        "planned_end_date": "2022-08-30",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438593,
+            "_nanoseconds": 295000000
+          }
+        },
+        "start_date": "2022-06-29",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "teacher_name": "Swetha Jain",
+        "status": "initiated",
+        "course_id": "Cryptology",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438593,
+            "_nanoseconds": 295000000
+          }
+        },
+        "actual_end_date": null,
+        "batch_id": "S1",
+        "created_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438599,
+            "_nanoseconds": 746000000
+          }
+        },
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "category": "intermediate",
+        "__collections__": {}
+      },
+      "r5JpT8etm2Q7i8WInj0G": {
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656423802,
+            "_nanoseconds": 557000000
+          }
+        },
+        "start_date": "2022-06-28",
+        "category": "intermediate",
+        "batch_students": [
+          {
+            "student_id": "SSC1002",
+            "last_name": "ac",
+            "first_name": "Akhil"
+          },
+          {
+            "last_name": "Gupta",
+            "first_name": "Eshaan",
+            "student_id": "SSC1005"
+          }
+        ],
+        "deleted_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656436793,
+            "_nanoseconds": 71000000
+          }
+        },
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656153443,
+            "_nanoseconds": 774000000
+          }
+        },
+        "batch_id": "S1",
+        "schedule": [
+          {
+            "time": "16:11",
+            "day": "Sunday"
+          }
+        ],
+        "level": "2",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "status": "started",
+        "course_id": "Web Development ",
+        "planned_end_date": "2022-07-09",
+        "actual_end_date": null,
+        "__collections__": {}
+      }
+    },
+    "courses": {
+      "0ffzdJUnNVSJPdOCYsR2": {
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656436908,
+            "_nanoseconds": 40000000
+          }
+        },
+        "description": "A cryptocurrency is a digital currency, which is an alternative form of payment created using encryption algorithms.",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656436908,
+            "_nanoseconds": 40000000
+          }
+        },
+        "category": "Advanced",
+        "course_name": "Cryptology",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "duration": "16",
+        "level": "4",
+        "course_id": "CRP5021",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "__collections__": {}
+      },
+      "1BLf4EeMq7sANQNvlVSo": {
+        "course_id": "WEB502",
+        "category": "Advanced",
+        "duration": "32",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656138949,
+            "_nanoseconds": 879000000
+          }
+        },
+        "course_name": "Web Development ",
+        "description": "Create a back-end app with JavaScript",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656138949,
+            "_nanoseconds": 879000000
+          }
+        },
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "level": "4",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "__collections__": {}
+      },
+      "jJqqazJowkpgxOuJswjr": {
+        "course_name": "Scratch for Kids",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656138775,
+            "_nanoseconds": 637000000
+          }
+        },
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "description": "Scratch is a free programming language and online community where you can create your own interactive stories, games, and animations.",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656138775,
+            "_nanoseconds": 637000000
+          }
+        },
+        "course_id": "KDL1SCR",
+        "level": "2",
+        "category": "Junior",
+        "duration": "16",
+        "__collections__": {}
+      },
+      "jP0FXPolpGtJgitq3AS4": {
+        "category": "Senior",
+        "course_id": "PY203",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "level": "1",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656138833,
+            "_nanoseconds": 530000000
+          }
+        },
+        "course_name": "Python for Beginners",
+        "description": "Python is a high-level, interpreted, general-purpose programming language.",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656138833,
+            "_nanoseconds": 530000000
+          }
+        },
+        "duration": "48",
+        "__collections__": {}
+      }
+    },
+    "students": {
+      "GtuAAQkvhMnLcVJ4Sqch": {
+        "acquisition_channel": "Facebook Ads",
+        "status": "Enrolled",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439879,
+            "_nanoseconds": 723000000
+          }
+        },
+        "lifecycle_stage": "Student",
+        "student_email": "sathvikrockers@gmail.com",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438751,
+            "_nanoseconds": 714000000
+          }
+        },
+        "registered_phone": "9937281277",
+        "joined_date": "2021-12-01",
+        "currency": "INR",
+        "country_code": "IN",
+        "active": true,
+        "student_id": "SSC1001",
+        "first_name": "Sathvik",
+        "country": "India",
+        "city": "Bengaluru",
+        "parent_name": "Sharan Joshi",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "student_phone": "8812812551",
+        "last_name": "Joshi",
+        "billing_plan": "Monthly",
+        "dob": "2005-05-12",
+        "parent_profession": "Writer",
+        "registered_email": "sharanzzzjosh@gmail.com",
+        "timezone": "IST",
+        "grade": "12",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "__collections__": {}
+      },
+      "NuQ9G5qokxtO39j3ydnT": {
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656440007,
+            "_nanoseconds": 549000000
+          }
+        },
+        "registered_phone": "8988770121",
+        "registered_email": "ruheee@gmail.com",
+        "last_name": "Shah",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "status": "TBD",
+        "acquisition_channel": "Whatsapp",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439991,
+            "_nanoseconds": 207000000
+          }
+        },
+        "student_id": "SSC1006",
+        "lifecycle_stage": "Lead",
+        "first_name": "Ruhi",
+        "__collections__": {}
+      },
+      "it3Uo436kPs0tn9a8FtW": {
+        "joined_date": "2022-06-01",
+        "registered_phone": "9088152181",
+        "currency": "INR",
+        "student_email": "shamakgupta.133@gmail.com",
+        "student_id": "SSC1002",
+        "country_code": "India",
+        "billing_plan": "Hourly",
+        "parent_profession": "IT",
+        "first_name": "Ronit",
+        "country": "India",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "alternate_phone": "9818188871",
+        "grade": "7",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "timezone": "IST",
+        "parent_name": "Shamak Gupta",
+        "lifecycle_stage": "Student",
+        "city": "Noida",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439892,
+            "_nanoseconds": 982000000
+          }
+        },
+        "student_phone": "9818188871",
+        "last_name": "Gupta",
+        "active": true,
+        "acquisition_channel": "Referral",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439852,
+            "_nanoseconds": 895000000
+          }
+        },
+        "registered_email": "shamakgupta.133@gmail.com",
+        "dob": "2009-11-04",
+        "status": "onPause",
+        "__collections__": {}
+      },
+      "kvEwczDlur50ZOU0ES1P": {
+        "timezone": "GMT",
+        "currency": "INR",
+        "grade": "4",
+        "country_code": "IN",
+        "status": "onWait",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "left_date": "2022-06-30",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473542,
+            "_nanoseconds": 300000000
+          }
+        },
+        "lifecycle_stage": "Prospect",
+        "student_phone": "92316223178",
+        "student_email": "khan.rohit66@gmail.com",
+        "registered_email": "khan.rohit66@gmail.com",
+        "city": "Yemen",
+        "first_name": "Rohit",
+        "billing_plan": "Monthly",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473542,
+            "_nanoseconds": 300000000
+          }
+        },
+        "registered_phone": "77678912231",
+        "address": " 15, Yemen Road, Yemen",
+        "joined_date": "52022-01-05",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "country": "Yemen",
+        "last_name": "Khan",
+        "alternate_phone": "92316223178",
+        "parent_name": "Shubham Khan",
+        "dob": "2010-07-18",
+        "acquisition_channel": "Facebook Ads",
+        "parent_profession": "Engineer",
+        "student_id": "SSC1008",
+        "__collections__": {}
+      }
+    },
+    "students_history": {
+      "32MCJE5vlk7D7nSjjAtf": {
+        "dob": "2005-05-12",
+        "city": "Bengaluru",
+        "joined_date": "2021-12-01",
+        "student_phone": "+91 8812812551",
+        "first_name": "Sathvik",
+        "billing_plan": "Monthly",
+        "grade": "12",
+        "registered_phone": "+91 9937281277",
+        "timezone": "IST",
+        "student_id": "SSC1001",
+        "acquisition_channel": "Facebook Ads",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "lifecycle_stage": "Student",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438751,
+            "_nanoseconds": 714000000
+          }
+        },
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438751,
+            "_nanoseconds": 714000000
+          }
+        },
+        "active": true,
+        "created_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438759,
+            "_nanoseconds": 228000000
+          }
+        },
+        "parent_name": "Sharan Joshi",
+        "registered_email": "sharanzzzjosh@gmail.com",
+        "student_email": "sathvikrockers@gmail.com",
+        "last_name": "Joshi",
+        "status": "Enrolled",
+        "currency": "INR",
+        "country": "India",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "country_code": "IN",
+        "parent_profession": "Writer",
+        "__collections__": {}
+      },
+      "6FQAxKMT563v0nTGooUj": {
+        "country": "India",
+        "student_id": "SSC1001",
+        "parent_profession": "Writer",
+        "first_name": "Sathvik",
+        "student_phone": "8812812551",
+        "billing_plan": "Monthly",
+        "registered_phone": "9937281277",
+        "parent_name": "Sharan Joshi",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438751,
+            "_nanoseconds": 714000000
+          }
+        },
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439879,
+            "_nanoseconds": 723000000
+          }
+        },
+        "currency": "INR",
+        "city": "Bengaluru",
+        "dob": "2005-05-12",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "timezone": "IST",
+        "updated_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439884,
+            "_nanoseconds": 808000000
+          }
+        },
+        "lifecycle_stage": "Student",
+        "acquisition_channel": "Facebook Ads",
+        "country_code": "IN",
+        "active": true,
+        "last_name": "Joshi",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "joined_date": "2021-12-01",
+        "status": "Enrolled",
+        "grade": "12",
+        "registered_email": "sharanzzzjosh@gmail.com",
+        "student_email": "sathvikrockers@gmail.com",
+        "__collections__": {}
+      },
+      "81mHGLpDAXpvkLbdRniF": {
+        "parent_name": "Shubham Khan",
+        "registered_phone": "77678912231",
+        "address": " 15, Yemen Road, Yemen",
+        "billing_plan": "Monthly",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "country": "Yemen",
+        "last_name": "Khan",
+        "registered_email": "khan.rohit66@gmail.com",
+        "joined_date": "52022-01-05",
+        "currency": "INR",
+        "country_code": "IN",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "created_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473547,
+            "_nanoseconds": 817000000
+          }
+        },
+        "left_date": "2022-06-30",
+        "lifecycle_stage": "Prospect",
+        "student_phone": "92316223178",
+        "acquisition_channel": "Facebook Ads",
+        "student_id": "SSC1008",
+        "student_email": "khan.rohit66@gmail.com",
+        "status": "onWait",
+        "first_name": "Rohit",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473542,
+            "_nanoseconds": 300000000
+          }
+        },
+        "alternate_phone": "92316223178",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473542,
+            "_nanoseconds": 300000000
+          }
+        },
+        "city": "Yemen",
+        "parent_profession": "Engineer",
+        "grade": "4",
+        "dob": "2010-07-18",
+        "timezone": "GMT",
+        "__collections__": {}
+      },
+      "9AgT07iVltBU8NOnAwaG": {
+        "last_name": "Shah",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656440007,
+            "_nanoseconds": 549000000
+          }
+        },
+        "updated_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656440008,
+            "_nanoseconds": 934000000
+          }
+        },
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439991,
+            "_nanoseconds": 207000000
+          }
+        },
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "student_id": "SSC1006",
+        "registered_email": "ruheee@gmail.com",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "first_name": "Ruhi",
+        "status": "TBD",
+        "lifecycle_stage": "Lead",
+        "acquisition_channel": "Whatsapp",
+        "registered_phone": "8988770121",
+        "__collections__": {}
+      },
+      "ZMZziMvFWP7lfjLsfscH": {
+        "student_email": "shamakgupta.133@gmail.com",
+        "acquisition_channel": "Referral",
+        "updated_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439894,
+            "_nanoseconds": 766000000
+          }
+        },
+        "alternate_phone": "9818188871",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439852,
+            "_nanoseconds": 895000000
+          }
+        },
+        "timezone": "IST",
+        "active": true,
+        "lifecycle_stage": "Student",
+        "registered_phone": "9088152181",
+        "student_phone": "9818188871",
+        "city": "Noida",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439892,
+            "_nanoseconds": 982000000
+          }
+        },
+        "last_name": "Gupta",
+        "country": "India",
+        "parent_profession": "IT",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "parent_name": "Shamak Gupta",
+        "billing_plan": "Hourly",
+        "registered_email": "shamakgupta.133@gmail.com",
+        "student_id": "SSC1002",
+        "status": "onPause",
+        "grade": "7",
+        "currency": "INR",
+        "dob": "2009-11-04",
+        "first_name": "Ronit",
+        "country_code": "India",
+        "joined_date": "2022-06-01",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "__collections__": {}
+      },
+      "aFyp14ONssnR7FAXRlvv": {
+        "student_id": "SSC1006",
+        "status": "TBD",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "last_name": "Shah",
+        "created_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439992,
+            "_nanoseconds": 495000000
+          }
+        },
+        "registered_email": "ruheee@gmail.com",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439991,
+            "_nanoseconds": 207000000
+          }
+        },
+        "registered_phone": "8988770121",
+        "first_name": "Ruhi",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439991,
+            "_nanoseconds": 207000000
+          }
+        },
+        "lifecycle_stage": "Lead",
+        "__collections__": {}
+      },
+      "zN1oiS05GT42NT7GDfsQ": {
+        "active": true,
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "currency": "INR",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439852,
+            "_nanoseconds": 895000000
+          }
+        },
+        "country_code": "India",
+        "city": "Noida",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439852,
+            "_nanoseconds": 895000000
+          }
+        },
+        "student_id": "SSC1002",
+        "created_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656439859,
+            "_nanoseconds": 25000000
+          }
+        },
+        "registered_email": "shamakgupta.133@gmail.com",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "country": "India",
+        "parent_profession": "IT",
+        "registered_phone": "+91 9088152181",
+        "lifecycle_stage": "Student",
+        "billing_plan": "Hourly",
+        "status": "onPause",
+        "student_email": "shamakgupta.133@gmail.com",
+        "joined_date": "2022-06-01",
+        "grade": "7",
+        "timezone": "IST",
+        "parent_name": "Shamak Gupta",
+        "first_name": "Ronit",
+        "dob": "2009-11-04",
+        "acquisition_channel": "Referral",
+        "last_name": "Gupta",
+        "student_phone": "+91 9818188871",
+        "alternate_phone": "+91 9818188871",
+        "__collections__": {}
+      }
+    },
+    "teachers": {
+      "7ouEvrlqtOJhZ5deBlLe": {
+        "country": "India",
+        "registered_email": "swetha.jain@sanketana.com",
+        "joined_date": "2022-01-01",
+        "active": true,
+        "country_code": "IN",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473128,
+            "_nanoseconds": 321000000
+          }
+        },
+        "status": "onWait",
+        "address": "Dwarka",
+        "teacher_id": "T1002",
+        "timezone": "IST",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438481,
+            "_nanoseconds": 146000000
+          }
+        },
+        "currency": "INR",
+        "city ": "New Delhi",
+        "alternate_email": "swethajain423@gmail.com",
+        "teacher_name": "Swetha Jain",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "alternate_phone": "9831736671",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "registered_phone": "9899736283",
+        "__collections__": {}
+      },
+      "aNyVT0qCjKQBaQzBQLAI": {
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473074,
+            "_nanoseconds": 21000000
+          }
+        },
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "teacher_name": "Isha Sharma",
+        "alternate_email": "isha.sharma42@gmail.com",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "country_code": "SG",
+        "teacher_id": "T1003",
+        "city ": "Singapore",
+        "currency": "SGD",
+        "timezone": "SGT",
+        "country": "Singapore",
+        "registered_email": "isha.sharma@sanketana.com",
+        "registered_phone": "9088153896",
+        "left_date": "2022-06-01",
+        "status": "onLeave",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473074,
+            "_nanoseconds": 21000000
+          }
+        },
+        "joined_date": "2022-01-01",
+        "__collections__": {}
+      },
+      "gA5aozoa8FxSBhqKTVzE": {
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656437016,
+            "_nanoseconds": 731000000
+          }
+        },
+        "address": "Bhartiya City",
+        "country": "India",
+        "active": true,
+        "alternate_email": "abhinav.bhardwaj007@gmail.com",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473119,
+            "_nanoseconds": 111000000
+          }
+        },
+        "joined_date": "2020-07-01",
+        "city ": "Bengaluru",
+        "teacher_id": "T1001",
+        "alternate_phone": "7866543896",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "teacher_name": "Abhinav Bhardwaj",
+        "registered_phone": "8099767352",
+        "country_code": "IN",
+        "registered_email": "sanketana.school@gmail.com",
+        "status": "onDuty",
+        "timezone": "IST",
+        "currency": "INR",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "__collections__": {}
+      }
+    },
+    "teachers_history": {
+      "0zlOPunrU2x80Xlb5jtb": {
+        "country_code": "IN",
+        "country": "India",
+        "status": "onLeave",
+        "city ": "New Delhi",
+        "timezone": "IST",
+        "joined_date": "2022-01-01",
+        "alternate_email": "swethajain423@gmail.com",
+        "registered_email": "swetha.jain@sanketana.com",
+        "registered_phone": "+91 9899736283",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "teacher_name": "Swetha Jain",
+        "teacher_id": "T1002",
+        "created_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438487,
+            "_nanoseconds": 737000000
+          }
+        },
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438481,
+            "_nanoseconds": 146000000
+          }
+        },
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438481,
+            "_nanoseconds": 146000000
+          }
+        },
+        "active": true,
+        "address": "Dwarka",
+        "currency": "INR",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "alternate_phone": "+91 9831736671",
+        "__collections__": {}
+      },
+      "4UBvvwGQQzs7tT8uUUjS": {
+        "joined_date": "2022-01-01",
+        "updated_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473111,
+            "_nanoseconds": 751000000
+          }
+        },
+        "city ": "New Delhi",
+        "country_code": "IN",
+        "teacher_id": "T1002",
+        "status": "onWait",
+        "active": true,
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "alternate_email": "swethajain423@gmail.com",
+        "teacher_name": "Swetha Jain",
+        "country": "India",
+        "registered_phone": "+91 9899736283",
+        "timezone": "IST",
+        "currency": "INR",
+        "registered_email": "swetha.jain@sanketana.com",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473110,
+            "_nanoseconds": 401000000
+          }
+        },
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438481,
+            "_nanoseconds": 146000000
+          }
+        },
+        "alternate_phone": "9831736671",
+        "address": "Dwarka",
+        "__collections__": {}
+      },
+      "DKbrNP9yZ2CzZVqAmOVx": {
+        "alternate_phone": "+91 7866543896",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "active": true,
+        "joined_date": "2020-07-01",
+        "timezone": "IST",
+        "registered_email": "sanketana.school@gmail.com",
+        "address": "Bhartiya City",
+        "teacher_name": "Abhinav Bhardwaj",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656437016,
+            "_nanoseconds": 731000000
+          }
+        },
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438497,
+            "_nanoseconds": 467000000
+          }
+        },
+        "city ": "Bengaluru",
+        "currency": "INR",
+        "country_code": "IN",
+        "alternate_email": "abhinav.bhardwaj007@gmail.com",
+        "updated_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438503,
+            "_nanoseconds": 69000000
+          }
+        },
+        "country": "India",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "teacher_id": "T1001",
+        "registered_phone": "+91 8099767352",
+        "status": "onDuty",
+        "__collections__": {}
+      },
+      "Dpw3FzHY8BomDicihFej": {
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "registered_phone": "+91 8099767352",
+        "status": "onDuty",
+        "teacher_id": "T1001",
+        "registered_email": "sanketana.school@gmail.com",
+        "teacher_name": "Abhinav Bhardwaj",
+        "country": "India",
+        "joined_date": "2020-07-01",
+        "country_code": "India",
+        "alternate_email": "abhinav.bhardwaj007@gmail.com",
+        "timezone": "IST",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656437016,
+            "_nanoseconds": 731000000
+          }
+        },
+        "currency": "INR",
+        "created_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656437022,
+            "_nanoseconds": 113000000
+          }
+        },
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656437016,
+            "_nanoseconds": 731000000
+          }
+        },
+        "city ": "Bengaluru",
+        "alternate_phone": "+91 7866543896",
+        "address": "Bhartiya City",
+        "active": true,
+        "__collections__": {}
+      },
+      "Ea3KxM4NIgxIBjmGBfSh": {
+        "address": "Dwarka",
+        "status": "onWait",
+        "teacher_name": "Swetha Jain",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "alternate_phone": "9831736671",
+        "teacher_id": "T1002",
+        "updated_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473129,
+            "_nanoseconds": 799000000
+          }
+        },
+        "timezone": "IST",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "registered_email": "swetha.jain@sanketana.com",
+        "country_code": "IN",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473128,
+            "_nanoseconds": 321000000
+          }
+        },
+        "registered_phone": "9899736283",
+        "currency": "INR",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438481,
+            "_nanoseconds": 146000000
+          }
+        },
+        "alternate_email": "swethajain423@gmail.com",
+        "city ": "New Delhi",
+        "joined_date": "2022-01-01",
+        "country": "India",
+        "active": true,
+        "__collections__": {}
+      },
+      "Gdq1ayLFxHtf7zggjJ7f": {
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438481,
+            "_nanoseconds": 146000000
+          }
+        },
+        "active": true,
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "country_code": "IN",
+        "alternate_email": "swethajain423@gmail.com",
+        "country": "India",
+        "city ": "New Delhi",
+        "registered_email": "swetha.jain@sanketana.com",
+        "currency": "INR",
+        "alternate_phone": "+91 9831736671",
+        "joined_date": "2022-01-01",
+        "updated_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473169,
+            "_nanoseconds": 675000000
+          }
+        },
+        "address": "Dwarka",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473100,
+            "_nanoseconds": 611000000
+          }
+        },
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "teacher_id": "T1002",
+        "status": "onWait",
+        "teacher_name": "Swetha Jain",
+        "registered_phone": "+91 9899736283",
+        "timezone": "IST",
+        "__collections__": {}
+      },
+      "Vj5n2pHuKE8VDVlr8wUm": {
+        "active": true,
+        "country": "India",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473100,
+            "_nanoseconds": 611000000
+          }
+        },
+        "alternate_email": "swethajain423@gmail.com",
+        "registered_email": "swetha.jain@sanketana.com",
+        "joined_date": "2022-01-01",
+        "updated_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473105,
+            "_nanoseconds": 727000000
+          }
+        },
+        "address": "Dwarka",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656438481,
+            "_nanoseconds": 146000000
+          }
+        },
+        "alternate_phone": "+91 9831736671",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "registered_phone": "+91 9899736283",
+        "teacher_name": "Swetha Jain",
+        "city ": "New Delhi",
+        "currency": "INR",
+        "country_code": "IN",
+        "timezone": "IST",
+        "status": "onWait",
+        "teacher_id": "T1002",
+        "__collections__": {}
+      },
+      "j3k6yZlN4HjObFQrbGmE": {
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "left_date": "2022-06-01",
+        "timezone": "SGT",
+        "teacher_id": "T1003",
+        "created_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473079,
+            "_nanoseconds": 326000000
+          }
+        },
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473074,
+            "_nanoseconds": 21000000
+          }
+        },
+        "status": "onLeave",
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473074,
+            "_nanoseconds": 21000000
+          }
+        },
+        "alternate_email": "isha.sharma42@gmail.com",
+        "country_code": "SG",
+        "currency": "SGD",
+        "city ": "Singapore",
+        "registered_email": "isha.sharma@sanketana.com",
+        "joined_date": "2022-01-01",
+        "teacher_name": "Isha Sharma",
+        "registered_phone": "9088153896",
+        "country": "Singapore",
+        "__collections__": {}
+      },
+      "jwu7J5JI8bkSdPdwTq1I": {
+        "alternate_email": "abhinav.bhardwaj007@gmail.com",
+        "city ": "Bengaluru",
+        "registered_email": "sanketana.school@gmail.com",
+        "active": true,
+        "teacher_id": "T1001",
+        "currency": "INR",
+        "timezone": "IST",
+        "registered_phone": "8099767352",
+        "joined_date": "2020-07-01",
+        "country_code": "IN",
+        "country": "India",
+        "updated_at": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473120,
+            "_nanoseconds": 698000000
+          }
+        },
+        "createdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656437016,
+            "_nanoseconds": 731000000
+          }
+        },
+        "address": "Bhartiya City",
+        "lastupdate": {
+          "__datatype__": "timestamp",
+          "value": {
+            "_seconds": 1656473119,
+            "_nanoseconds": 111000000
+          }
+        },
+        "teacher_name": "Abhinav Bhardwaj",
+        "alternate_phone": "7866543896",
+        "updatedby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "status": "onDuty",
+        "createdby": "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+        "__collections__": {}
+      }
+    }
+  }
+}

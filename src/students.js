@@ -18,6 +18,7 @@ import {
   ShowButton,
   EditButton,
   DeleteButton,
+  email,
 } from "react-admin";
 
 export const StudentFilter = (props) => (
@@ -92,29 +93,10 @@ export const StudentShow = (props) => (
     </SimpleShowLayout>
   </Show>
 );
-
-const validateUserCreation = (values) => {
-  const errors = {};
-  if (!values.firstName) {
-      errors.firstName = 'The firstName is required';
-  }
-  if (!values.age) {
-      // You can return translation keys
-      errors.age = 'ra.validation.required';
-  } else if (values.age < 18) {
-      // Or an object if the translation messages need parameters
-      errors.age = {
-          message: 'ra.validation.minValue',
-          args: { min: 18 }
-      };
-  }
-  return errors
-};
-
-
+const validateEmail = email();
 export const StudentCreate = (props) => (
   <Create {...props}>
-    <SimpleForm validate={validateUserCreation}>
+    <SimpleForm >
       <TextInput source="student_id" label="Student ID" />
       <TextInput source="first_name" />
       <TextInput source="last_name" />
@@ -124,9 +106,9 @@ export const StudentCreate = (props) => (
       <TextInput source="registered_phone" />
       <TextInput source="student_phone" />
       <TextInput source="alternate_phone" />
-      <TextInput source="registered_email" />
-      <TextInput source="student_email" />
-      <TextInput source="alternate_email" />
+      <TextInput source="registered_email" validate={validateEmail} />
+      <TextInput source="student_email" validate={validateEmail} />
+      <TextInput source="alternate_email" validate={validateEmail} />
       <TextInput source="status" />
       <TextInput source="address" />
       <TextInput source="city" />

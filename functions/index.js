@@ -60,7 +60,7 @@ const ERROR_RESPONSE = {
   status: "500",
   message: "There was an error adding an event to your Google calendar",
 };
-const TIME_ZONE = "EST";
+const TIME_ZONE = "IST";
 
 const addEvent = (event, auth) => {
   return new Promise(function (resolve, reject) {

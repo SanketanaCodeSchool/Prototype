@@ -233,7 +233,7 @@ export const BatchCreate = (props) => {
     <Create {...props}>
       <SimpleForm>
         <TextInput source="batch_id" label="Batch ID" />
-        <ReferenceInput label="Course" source="course_id" reference="courses">
+        <ReferenceInput label="Course" source="course_name" reference="courses">
           <AutocompleteInput
             optionText="course_name"
             optionValue="course_name"
@@ -367,7 +367,7 @@ export const BatchEdit = (props) => {
     <Edit {...props}>
       <SimpleForm>
         <TextInput source="batch_id" label="Batch ID" />
-        <ReferenceInput label="Course" source="course_id" reference="courses">
+        <ReferenceInput label="Course" source="course_name" reference="courses">
           <AutocompleteInput
             optionText="course_name"
             optionValue="course_name"

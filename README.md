@@ -3,8 +3,8 @@
 Try the [hosted app:](https://prototype-d7d0d.web.app/#/batches)
 
 ```
-username: test@example.com
-password: password
+username: admin@sanketana.com
+password: $scratchyourcode224
 ```
 
 # Get started

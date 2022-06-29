@@ -42,8 +42,8 @@ const CustomLoginForm = props => (
     <div style={{fontFamily: "monospace", marginLeft: '15px'}}>
       <p>{process.env.REACT_APP_AUTH_DOMAIN}</p>
       <h1 style={{fontFamily: "monospace", marginLeft: '15px' ,align : "Center"}}>Sanketana App</h1>
-      <p>Username: test@example.com</p>
-      <p>Password: password</p>
+      <p>Username: admin@sanketana.com</p>
+      <p>Password: $scratchyourcode224</p>
     </div>
     <LoginForm {...props} />
     <SignInScreen />
