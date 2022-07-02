@@ -18,7 +18,7 @@
     "date-fns": "^2.28.0",
     "firebase": "^9.6.4",
     "firebase-admin": "^10.2.0",
-    "firebase-functions": "^3.21.2",
+    "firebase-functions": "^3.22.0",
     "googleapi": "^1.0.2",
     "googleapis": "^104.0.0",
     "ra-input-rich-text": "^3.3.1",

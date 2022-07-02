@@ -93,7 +93,7 @@ const addEvent = (event, auth) => {
   });
 };
 
-exports.addEventToCalendar = functions.https.onRequest((request, response) => {
+exports.addEventToCalendar = functions.https.onCall((request, response) => {
   const eventData = {
     eventName: request.body.eventName,
     description: request.body.description,

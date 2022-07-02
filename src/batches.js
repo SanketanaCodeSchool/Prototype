@@ -222,7 +222,8 @@ export const BatchCreate = (props) => {
       student_id: student.student_id,
       first_name: student.first_name,
       last_name: student.last_name,
-      //email: student.last_name,
+      registered_email: student.registered_email,
+      
     },
   }));
 
@@ -357,6 +358,7 @@ export const BatchEdit = (props) => {
       student_id: student.student_id,
       first_name: student.first_name,
       last_name: student.last_name,
+      registered_email: student.registered_email,
     },
   }));
 
