@@ -1,4 +1,6 @@
-import * as React from "react";
+//import * as React from "react";
+
+
 import {
   BatchList,
   BatchShow,
@@ -44,6 +46,8 @@ import {
 
 import firebase from "firebase/compat/app";
 
+// Import Firestore database
+
 import UserIcon from "@material-ui/icons/People";
 
 import * as Batches from "./batches";
@@ -56,17 +60,10 @@ import CustomLoginPage from "./CustomLoginPage";
 import EventMonitor from "./EventMonitor";
 
 import Dashboard from "./Dashboard";
+import firebaseConfig  from "./firebaseConfig";
 
-const firebaseConfig = {
-  apiKey: process.env.REACT_APP_apiKey,
-  authDomain: process.env.REACT_APP_authDomain,
-  projectId: process.env.REACT_APP_projectId,
-  storageBucket: process.env.REACT_APP_storageBucket,
-  messagingSenderId: process.env.REACT_APP_messagingSenderId,
-  appId: process.env.REACT_APP_appId,
-  measurementId: process.env.REACT_APP_measurementId,
-};
 const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
 const authProvider = FirebaseAuthProvider(firebaseConfig);
 const dataProvider = FirebaseDataProvider(firebaseConfig, {
@@ -95,6 +92,23 @@ const theme = {
 };
 
 const App = () => {
+  //const [batches, setBatches] = useState([]);
+  
+  
+
+  // React.useEffect(() => {
+  //   const q = admin.firestore().collection(db, "batches");
+  //   onSnapshot(q, (querySnapshot) => {
+  //     setTasks(
+  //       querySnapshot.docs.map((doc) => ({
+  //         id: doc.batch_id,
+  //         data: doc.data(),
+  //       }))
+  //     );
+  //   });
+  //   console.log(q.data);
+  // }, []);
+
   return (
     <>
       <Admin
