@@ -7,10 +7,13 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 
 import listPlugin from "@fullcalendar/list";
 // import nlLocale from '@fullcalendar/core/locales/nl'
-import firebaseConfig  from "./firebaseConfig";
+import firebaseConfig from "./firebaseConfig";
 import { useEffect } from "react";
+import firebase from "firebase/compat/app";
 
 const fetchBatches = async () => {
+  const firebaseApp = firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
   const response = db.collection("batches");
   const data = await response.get();
   const test = data.docs.map((doc) => ({
@@ -18,26 +21,34 @@ const fetchBatches = async () => {
     data: doc.data(),
     //setBatches([...batches, item.data()]);
   }));
-  console.log(test[0].data.start_date);
+  console.log(test[0].data.start_date, test[0].id);
+  return test[0].data.start_date;
 };
 
 export default () => {
   useEffect(() => {
-    fetchBatches();
+    const start_time = fetchBatches();
   }, []);
+
   return (
     <Card>
       <Title title="Welcome to the administration" />
       <CardContent>
         <FullCalendar
           plugins={[dayGridPlugin]}
-          events={[
-            {
+          // events={[
+          //   {
+          //     title: "event2",
+          //     start: start_time,
+          //     end: "2022-07-04",
+          //   },
+          events={function () {
+            return {
               title: "event2",
               start: "2022-07-04",
               end: "2022-07-04",
-            },
-          ]}
+            };
+          }}
         />
 
         {/* <FullCalendar

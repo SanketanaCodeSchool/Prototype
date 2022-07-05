@@ -3,11 +3,21 @@ const db = admin.firestore();
 
 //const addEventToCalendar = require("./addEventToCalendar");
 const scheduleBatch = async (values) => {
-  const writeResult = await admin.firestore().collection("events").add({
-    test: "test",
-  });
+  const writeResult = await admin
+    .firestore()
+    .collection("events")
+    .add({
+      event_id: values.batch_id + "_4",
+      duration: values.duration,
+      object: {
+        title: values.student_name + "'s batch",
+        start: values.start_time,
+        end: values.end_time,
+      },
+    });
   console.log("Hi From Test Function!");
-  console.log("values:" , values);
+  console.log("values:", values);
+  //console.log("writ", values);
 };
 
 module.exports.onDocUpdated = async (snap, context) => {
