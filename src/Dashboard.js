@@ -49,7 +49,7 @@ export default () => {
           events={async function (info, successCallback, failureCallback) {
             const firebaseApp = firebase.initializeApp(firebaseConfig);
             const db = firebase.firestore();
-            const response = db.collection("batches");
+            const response = db.collection("events");
             const data = await response.get();
             const data_array = data.docs.map((doc) => ({
               id: doc.id,
@@ -63,10 +63,7 @@ export default () => {
                 data_array
                   .map(function (eventEl) {
                     console.log(eventEl);
-                    return {
-                      title: eventEl.data.teacher_name,
-                      start: eventEl.data.start_date,
-                    };
+                    return eventEl.data.object;
                   })
               );
             }

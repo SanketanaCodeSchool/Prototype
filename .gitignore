@@ -7,3 +7,4 @@ FIREBASE_CONFIG.json
 .env
 firestore-debug.log
 prototype-dev-apikey.json
+firebase-debug.log

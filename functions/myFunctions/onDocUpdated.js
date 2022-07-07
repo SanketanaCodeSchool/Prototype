@@ -30,7 +30,7 @@ module.exports.onDocUpdated = async (snap, context) => {
   if (collectionName == "batches") {
     if (values.isScheduled == true) {
       console.log("Batch Scheduled");
-      //scheduleBatch(values);
+      scheduleBatch(values);
     } else {
       console.log("Batch Unscheduled");
     }

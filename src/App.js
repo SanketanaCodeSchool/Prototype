@@ -58,7 +58,7 @@ import * as Teachers from "./teachers";
 import { defaultTheme } from "react-admin";
 import CustomLoginPage from "./CustomLoginPage";
 import EventMonitor from "./EventMonitor";
-
+import 'firebase/auth';
 import Dashboard from "./Dashboard";
 import firebaseConfig  from "./firebaseConfig";
 
@@ -82,7 +82,11 @@ const dataProvider = FirebaseDataProvider(firebaseConfig, {
     enabled: true,
   },
 });
-
+const auth = firebase.auth;
+if (location.hostname === 'localhost') {
+  db.useEmulator('localhost', 8080);
+  auth().useEmulator('http://localhost:9099/', { disableWarnings: true });
+}
 const theme = {
   ...defaultTheme,
   sidebar: {
