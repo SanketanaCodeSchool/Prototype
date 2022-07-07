@@ -2,7 +2,10 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { Title } from "react-admin";
-import FullCalendar, { formatDate } from "@fullcalendar/react";
+import FullCalendar, {
+  computeSegEndResizable,
+  formatDate,
+} from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 
 import listPlugin from "@fullcalendar/list";
@@ -10,24 +13,25 @@ import listPlugin from "@fullcalendar/list";
 import firebaseConfig from "./firebaseConfig";
 import { useEffect } from "react";
 import firebase from "firebase/compat/app";
+import { it } from "date-fns/locale";
 
 const fetchBatches = async () => {
   const firebaseApp = firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
   const response = db.collection("batches");
   const data = await response.get();
-  const test = data.docs.map((doc) => ({
+  const data_array = data.docs.map((doc) => ({
     id: doc.id,
     data: doc.data(),
-    //setBatches([...batches, item.data()]);
   }));
-  console.log(test[0].data.start_date, test[0].id);
-  return test[0].data.start_date;
+  console.log(data_array);
+  return data_array;
 };
 
 export default () => {
   useEffect(() => {
-    const start_time = fetchBatches();
+    //const start_time = fetchBatches();
+    //console.log(start_time);
   }, []);
 
   return (
@@ -42,12 +46,30 @@ export default () => {
           //     start: start_time,
           //     end: "2022-07-04",
           //   },
-          events={function () {
-            return {
-              title: "event2",
-              start: "2022-07-04",
-              end: "2022-07-04",
-            };
+          events={async function (info, successCallback, failureCallback) {
+            const firebaseApp = firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            const response = db.collection("batches");
+            const data = await response.get();
+            const data_array = data.docs.map((doc) => ({
+              id: doc.id,
+              data: doc.data(),
+            }));
+            console.log(data_array);
+            if (data_array == undefined) {
+              failureCallback("Undefined");
+            } else {
+              successCallback(
+                data_array
+                  .map(function (eventEl) {
+                    console.log(eventEl);
+                    return {
+                      title: eventEl.data.teacher_name,
+                      start: eventEl.data.start_date,
+                    };
+                  })
+              );
+            }
           }}
         />
 
