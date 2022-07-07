@@ -8,11 +8,11 @@ const scheduleBatch = async (values) => {
     .collection("events")
     .add({
       event_id: values.batch_id + "_4",
-      duration: values.duration,
+      //duration: values.duration,
       object: {
-        title: values.student_name + "'s batch",
-        start: values.start_time,
-        end: values.end_time,
+        title: values.teacher_name + "'s batch",
+        start: values.start_date,
+        end: values.planned_end_date,
       },
     });
   console.log("Hi From Test Function!");
