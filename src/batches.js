@@ -89,7 +89,6 @@ export const BatchHistoryList = (props) => (
               <ChipField
                 record={{
                   student_id: record.first_name + " " + record.last_name,
-                  
                 }}
                 source="student_id"
               />
@@ -97,10 +96,10 @@ export const BatchHistoryList = (props) => (
           />
         </SingleFieldList>
       </ArrayField>
-      <DateField source="created_at" label = "Created"/>
-      <DateField source="deleted_at" label = "Deleted"/>
-      <DateField source="updated_at" label = "Updated"/>
-      <BooleanField source="isScheduled" label = "Schedule?"/>
+      <DateField source="created_at" label="Created" />
+      <DateField source="deleted_at" label="Deleted" />
+      <DateField source="updated_at" label="Updated" />
+      <BooleanField source="isScheduled" label="Schedule?" />
     </Datagrid>
   </List>
 );
@@ -125,7 +124,6 @@ export const BatchList = (props) => (
               <ChipField
                 record={{
                   student_id: record.first_name + " " + record.last_name,
-                  
                 }}
                 source="student_id"
               />
@@ -133,7 +131,7 @@ export const BatchList = (props) => (
           />
         </SingleFieldList>
       </ArrayField>
-      <BooleanField source="isScheduled" label = "Schedule?"/>
+      <BooleanField source="isScheduled" label="Schedule?" />
       <ShowButton label="" />
       <EditButton label="" />
       <DeleteButton label="" redirect={false} />
@@ -182,7 +180,7 @@ export const BatchShow = (props) => (
           />
         </SingleFieldList>
       </ArrayField>
-      <BooleanField source="isScheduled" label = "Schedule?"/>
+      <BooleanField source="isScheduled" label="Schedule?" />
     </SimpleShowLayout>
   </Show>
 );
@@ -223,7 +221,6 @@ export const BatchCreate = (props) => {
       first_name: student.first_name,
       last_name: student.last_name,
       registered_email: student.registered_email,
-      
     },
   }));
 
@@ -233,11 +230,12 @@ export const BatchCreate = (props) => {
   return (
     <Create {...props}>
       <SimpleForm>
-        <TextInput source="batch_id" label="Batch ID" />
+        <TextInput source="batch_id" label="Batch ID" defaultValue={null} />
         <ReferenceInput label="Course" source="course_name" reference="courses">
           <AutocompleteInput
             optionText="course_name"
             optionValue="course_name"
+            defaultValue={null}
           />
         </ReferenceInput>
         <AutocompleteInput
@@ -250,6 +248,7 @@ export const BatchCreate = (props) => {
             { id: "4", name: "4" },
             { id: "5", name: "5" },
           ]}
+          defaultValue={null}
         />
         <AutocompleteInput
           label="Category"
@@ -259,6 +258,7 @@ export const BatchCreate = (props) => {
             { id: "intermediate", name: "Intermediate" },
             { id: "senior", name: "Senior" },
           ]}
+          defaultValue={null}
         />
         <ReferenceInput
           label="Teacher"
@@ -268,6 +268,7 @@ export const BatchCreate = (props) => {
           <AutocompleteInput
             optionText="teacher_name"
             optionValue="teacher_name"
+            defaultValue={null}
           />
         </ReferenceInput>
 
@@ -281,8 +282,13 @@ export const BatchCreate = (props) => {
             { id: "onPause", name: "onPause" },
             { id: "ended", name: "Ended" },
           ]}
+          defaultValue={null}
         />
-        <BooleanInput source="isScheduled" label = "Schedule?"/>
+        <BooleanInput
+          source="isScheduled"
+          label="Schedule?"
+          defaultValue={null}
+        />
         <DateInput label="Start Date" source="start_date" defaultValue={null} />
         <DateInput
           label="Planned End Date"
@@ -300,8 +306,10 @@ export const BatchCreate = (props) => {
           choices={studentChoices}
           optionText={studentOptionRenderer}
           optionValue="write_data"
+          defaultValue={null}
         />
-        <ArrayInput source="schedule">
+        <TextInput source="sessionCount" label="Session Count" defaultValue= {16} />
+        <ArrayInput source="schedule" defaultValue={null}>
           <SimpleFormIterator>
             <AutocompleteInput
               label="Day"
@@ -315,8 +323,15 @@ export const BatchCreate = (props) => {
                 { id: "Saturday", name: "Saturday" },
                 { id: "Sunday", name: "Sunday" },
               ]}
+              defaultValue={null}
             />
-            <TextInput source="time" type={"time"} label="Time" />
+            <TextInput
+              source="time"
+              type={"time"}
+              label="Time"
+              defaultValue={null}
+            />
+            <TextInput source="duration" label="Duration" defaultValue= {60} />
           </SimpleFormIterator>
         </ArrayInput>
       </SimpleForm>
@@ -417,7 +432,7 @@ export const BatchEdit = (props) => {
             { id: "Ended", name: "Ended" },
           ]}
         />
-        <BooleanInput source="isScheduled" label = "Schedule?"/>
+        <BooleanInput source="isScheduled" label="Schedule?" />
 
         <DateInput label="Start Date" source="start_date" defaultValue={null} />
         <DateInput
@@ -437,6 +452,7 @@ export const BatchEdit = (props) => {
           optionText={studentOptionRenderer}
           optionValue="write_data"
         />
+        <TextInput source="sessionCount" label="Session Count"/>
         <ArrayInput source="schedule">
           <SimpleFormIterator>
             <AutocompleteInput
@@ -453,10 +469,10 @@ export const BatchEdit = (props) => {
               ]}
             />
             <TextInput source="time" type={"time"} label="Time" />
+            <TextInput source="duration" label="Duration"/>
           </SimpleFormIterator>
         </ArrayInput>
       </SimpleForm>
     </Edit>
   );
 };
-
