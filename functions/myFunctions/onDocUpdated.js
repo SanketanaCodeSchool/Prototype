@@ -1,4 +1,5 @@
 const { computeSegEndResizable } = require("@fullcalendar/react");
+const { default: startOfDay } = require("date-fns/startOfDay");
 const admin = require("firebase-admin");
 const db = admin.firestore();
 
@@ -61,40 +62,13 @@ const insertEvent = (event) => {
   );
 };
 
-const makeEvent = (batch) => {
-  const event = {
-    eventName: batch.batch_id,
-    description: batch.teacher_name + "'s batch.",
-    startTime: getStartTime(batch),
-    endTime: getEndTime(batch),
-  };
-  return event;
-};
-
-const getStartTime = (batch) => {
-  console.log("BATCH 75" , batch);
-  console.log("BATCH START DATE" , batch.start_date);
-  const [year, month, day] = batch.start_date.split("-");
-  const [hours, minutes] = batch.schedule[0].time.split(":");
+const getDateTime = (date, time) => {
+  const [year, month, day] = date.split("-"); 
+  const [hours, minutes] = time.split(":");
   const seconds = "00";
-  let date = new Date(+year, +month - 1, +day, +hours, +minutes, +seconds);
-  const startTime = date.toISOString();
-  return startTime;
-};
-const getEndTime = (batch) => {
-  const [year, month, day] = batch.start_date.split("-");
-  const [hours, minutes] = batch.schedule[0].time.split(":");
-  const seconds = "00";
-  let date = new Date(
-    +year,
-    +month - 1,
-    +day,
-    +hours,
-    +minutes + batch.schedule[0].duration,
-    +seconds
-  );
-  const endTime = date.toISOString();
-  return endTime;
+  let new_date = new Date(+year, +month - 1, +day, +hours, +minutes, +seconds);
+  const dateTime = new_date.toISOString();
+  return dateTime;
 };
 
 const scheduleBatch = (batch) => {
@@ -121,8 +95,17 @@ const scheduleBatch = (batch) => {
   let event;
   let ctr = batch.sessionCount;
   while (ctr != 0) {
-    event = makeEvent(batch);
+    start_date = batch.start_date;
+
+    const event = {
+      eventName: batch.batch_id,
+      description: batch.teacher_name + "'s batch.",
+      startTime: getStartTime(),
+      endTime: getEndTime(),
+    };
     insertEvent(event);
+    //return event;
+
     ctr--;
   }
 
@@ -150,3 +133,54 @@ module.exports.onDocUpdated = async (snap, context) => {
     updated_at: admin.firestore.FieldValue.serverTimestamp(),
   });
 };
+
+
+
+dayArray = ["Sunday", "Monday" , "Tuesday" , "Wednesday" , "Thursday" ,"Friday", "Saturday"]
+obj = [{"day" : "Monday" , "time" : "22:00"} ,
+  {"day" : "Thursday" , "time" : "12:00"},
+  {"day" : "Thursday" , "time" : "13:00"},
+{"day" : "Saturday" , "time" : "17:00"}];
+start_date = new Date("2022-07-11");
+
+sessionsCount = 16;
+
+while(sessionsCount !== 0){
+
+
+
+flag = true;
+index = 0;
+while(flag)
+{
+  dayIndex = start_date.getDay();
+console.log(start_date.getDay());
+day = dayArray[dayIndex];
+console.log(day);
+
+    if(obj[0]["day"] == day)
+    {
+          sessionsCount--;
+          console.log(date)
+    }
+      
+}
+
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
