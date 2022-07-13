@@ -9,7 +9,13 @@ const db = admin.firestore();
 
 // insert 1 event
 
-const insertEvent = (event) => {
+const insertEvent = (event2) => {
+  const event = {
+    eventName: "TEST",
+    description: "TEST", //batch.teacher_name + "'s batch.",
+    startTime: "2022-07-02T05:00:00",
+    endTime: "2022-07-02T17:00:00",
+  };
   const { google } = require("googleapis");
   const calendar = google.calendar("v3");
   const googleCredentials = require("./credentials.json");
@@ -63,7 +69,7 @@ const insertEvent = (event) => {
 };
 
 const getDateTime = (date, time) => {
-  const [year, month, day] = date.split("-"); 
+  const [year, month, day] = date.split("-");
   const [hours, minutes] = time.split(":");
   const seconds = "00";
   let new_date = new Date(+year, +month - 1, +day, +hours, +minutes, +seconds);
@@ -97,13 +103,13 @@ const scheduleBatch = (batch) => {
   while (ctr != 0) {
     start_date = batch.start_date;
 
-    const event = {
-      eventName: batch.batch_id,
-      description: batch.teacher_name + "'s batch.",
-      startTime: getStartTime(),
-      endTime: getEndTime(),
-    };
-    insertEvent(event);
+    // const event = {
+    //   eventName: batch.batch_id,
+    //   description: batch.teacher_name + "'s batch.",
+    //   startTime: getStartTime(),
+    //   endTime: getEndTime(),
+    // };
+    insertEvent("");
     //return event;
 
     ctr--;
@@ -133,54 +139,3 @@ module.exports.onDocUpdated = async (snap, context) => {
     updated_at: admin.firestore.FieldValue.serverTimestamp(),
   });
 };
-
-
-
-dayArray = ["Sunday", "Monday" , "Tuesday" , "Wednesday" , "Thursday" ,"Friday", "Saturday"]
-obj = [{"day" : "Monday" , "time" : "22:00"} ,
-  {"day" : "Thursday" , "time" : "12:00"},
-  {"day" : "Thursday" , "time" : "13:00"},
-{"day" : "Saturday" , "time" : "17:00"}];
-start_date = new Date("2022-07-11");
-
-sessionsCount = 16;
-
-while(sessionsCount !== 0){
-
-
-
-flag = true;
-index = 0;
-while(flag)
-{
-  dayIndex = start_date.getDay();
-console.log(start_date.getDay());
-day = dayArray[dayIndex];
-console.log(day);
-
-    if(obj[0]["day"] == day)
-    {
-          sessionsCount--;
-          console.log(date)
-    }
-      
-}
-
-  
-  
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
