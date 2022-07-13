@@ -83,7 +83,7 @@ const dataProvider = FirebaseDataProvider(firebaseConfig, {
   },
 });
 const auth = firebase.auth;
-if (location.hostname === 'localhost' && 0) {
+if (location.hostname === 'localhost' && 1) {
   db.useEmulator('localhost', 8080);
   //auth().useEmulator('http://localhost:9099/', { disableWarnings: true });
 }

@@ -63,14 +63,10 @@ const scheduleBatch = (batch) => {
         let event = {
           eventName: batch.batch_id + " " + batch.teacher_name,
           description: batch.teacher_name + "'s " + batch.course_name + " batch.",
-          start: {
-            dateTime: isoStartDate,
-            timeZone: timeZone
-          },
-          end: {
-            dateTime: isoEndDate,
-            timeZone: timeZone
-          },
+          startTime: "2022-07-12T11:49:00",//isoStartDate,
+          endTime: "2022-07-12T11:49:00",// isoEndDate,
+ 
+          }
         };
         console.log(event);
         sessionCount--;
@@ -89,31 +85,28 @@ const scheduleBatch = (batch) => {
   }
 };
 
+
 const batch = {
-  teacher_name: "Abhinav Bhardwaj",
-  planned_end_date: "2022-03-22",
+  teacher_name: null,
+  planned_end_date: null,
   updatedby: "nWuleMgKPERrsPf10aJOq2CXgSQ2",
-  course_name: "Python",
+  course_name: null,
   level: "1",
   isScheduled: true,
   actual_end_date: null,
   schedule: [
     { duration: 60, time: "01:43", day: "Thursday" },
-    { duration: 45, time: "11:49", day: "Tuesday" },
-    { duration: 120, time: "23:00", day: "Tuesday" },
+    { duration: 60, time: "11:49", day: "Tuesday" },
   ],
   batch_students: null,
-  sessionCount: "16",
+  sessionCount: "4",
   createdby: "nWuleMgKPERrsPf10aJOq2CXgSQ2",
-  category: "Junior",
-  status: "started",
+  category: null,
+  status: null,
   start_date: "2022-07-12",
-  batch_id: "S38",
+  batch_id: "S100",
 };
 scheduleBatch(batch);
-
-
-
 
 
 
