@@ -1,3 +1,18 @@
+/*
+curr_date = start_date #"2022-07-14"
+i = indexOf(Schedule[curr_date.day])
+sessionsCount = 16 + i
+while(i < sessionsCount):
+    index = i % Schedule.length
+    curr_day = Schedule[index]["day"]
+    if(curr_date.day == day):
+        event = createEvent()
+        insert_event()
+        i += 1
+    else:
+        curr_date ++
+*/
+
 const getDateTime = (date, time, duration) => {
   const [year, month, day] = date.split("-");
   const [hours, minutes] = time.split(":");
@@ -32,16 +47,17 @@ const scheduleBatch = (batch) => {
     "Friday",
     "Saturday",
   ];
-  let date = new Date(batch.start_date);
+  let curr_date = new Date(batch.start_date);
+  let start_day = dayArray[date.getDay()];
   let schedule = batch.schedule;
-  //calculate schedulePointer for schedule
-  //"day" of the start_date
-  start_day = dayArray[date.getDay()];
-  //set the schedulePointer to the index of the first occurrence of
-  //the object whose "day" matches the "start_day"
+  i = schedule.map((object) => object.day).indexOf(start_day);
   schedulePointer = schedule.map((object) => object.day).indexOf(start_day);
-  //number of events to be created
   let sessionCount = batch.sessionCount;
+
+
+}
+
+
   let event;
   while (sessionCount !== 0) {
     //flag is set to false after every event creation
@@ -56,18 +72,22 @@ const scheduleBatch = (batch) => {
         let startTime = schedule[schedulePointer]["time"];
         let duration = schedule[schedulePointer]["duration"];
         let ISODate = date.toISOString();
-        let [isoStartDate, isoEndDate] = getDateTime(ISODate, startTime, duration);
+        let [isoStartDate, isoEndDate] = getDateTime(
+          ISODate,
+          startTime,
+          duration
+        );
         let timeZone = "IST";
         //set flag to false if next event's date is found
         flag = false;
         let event = {
           eventName: batch.batch_id + " " + batch.teacher_name,
-          description: batch.teacher_name + "'s " + batch.course_name + " batch.",
-          startTime: "2022-07-12T11:49:00",//isoStartDate,
-          endTime: "2022-07-12T11:49:00",// isoEndDate,
- 
-          }
+          description:
+            batch.teacher_name + "'s " + batch.course_name + " batch.",
+          startTime: "2022-07-12T11:49:00", //isoStartDate,
+          endTime: "2022-07-12T11:49:00", // isoEndDate,
         };
+
         console.log(event);
         sessionCount--;
         //if schedule pointer reaches the end of array, wrap arounf
@@ -81,39 +101,28 @@ const scheduleBatch = (batch) => {
         date.setDate(date.getDate() + 1);
       }
     }
-    
   }
-};
 
 
 const batch = {
-  teacher_name: null,
+  teacher_name: "Abhinav Bhardwaj",
   planned_end_date: null,
   updatedby: "nWuleMgKPERrsPf10aJOq2CXgSQ2",
-  course_name: null,
+  course_name: "Python",
   level: "1",
   isScheduled: true,
   actual_end_date: null,
   schedule: [
-    { duration: 60, time: "01:43", day: "Thursday" },
-    { duration: 60, time: "11:49", day: "Tuesday" },
+    { day: "Monday", time: "18:00", duration: "60" },
+    { day: "Thursday", time: "15:00", duration: "60" },
+    { day: "Thursday", time: "18:00", duration: "120" },
   ],
   batch_students: null,
-  sessionCount: "4",
+  sessionCount: "16",
   createdby: "nWuleMgKPERrsPf10aJOq2CXgSQ2",
   category: null,
   status: null,
-  start_date: "2022-07-12",
-  batch_id: "S100",
+  start_date: "2022-07-14",
+  batch_id: "S101",
 };
 scheduleBatch(batch);
-
-
-
-
-
-
-
-
-
-

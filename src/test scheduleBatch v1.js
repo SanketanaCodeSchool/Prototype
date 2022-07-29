@@ -1,12 +1,8 @@
-const { computeSegEndResizable } = require("@fullcalendar/react");
-const { default: startOfDay } = require("date-fns/startOfDay");
-const admin = require("firebase-admin");
-const db = admin.firestore();
-
 const getDateTime = (date, time, duration) => {
   const [year, month, day] = date.split("-");
   const [hours, minutes] = time.split(":");
   const seconds = "00";
+
   //timeString = "2020-06-10T10:00:00.000";
   let timeString = date.slice(0, 11) + time + ":00";
   var startDate = new Date(timeString);
@@ -65,7 +61,6 @@ const scheduleBatch = (batch) => {
           startTime,
           duration
         );
-        //console.log("DATES " + isoStartDate, isoEndDate);
         let timeZone = "IST";
         //set flag to false if next event's date is found
         flag = false;
@@ -73,12 +68,11 @@ const scheduleBatch = (batch) => {
           eventName: batch.batch_id + " " + batch.teacher_name,
           description:
             batch.teacher_name + "'s " + batch.course_name + " batch.",
-          startTime: isoStartDate,
-          endTime: isoEndDate,
+          startTime: "2022-07-12T11:49:00", //isoStartDate,
+          endTime: "2022-07-12T11:49:00", // isoEndDate,
         };
-        console.log("Event : ", event);
-        insertEvent(event);
 
+        console.log(event);
         sessionCount--;
         //if schedule pointer reaches the end of array, wrap arounf
         if (schedulePointer == schedule.length - 1) {
@@ -94,77 +88,24 @@ const scheduleBatch = (batch) => {
   }
 };
 
-const insertEvent = (event) => {
-  const { google } = require("googleapis");
-  const calendar = google.calendar("v3");
-  const googleCredentials = require("./credentials.json");
-  const OAuth2 = google.auth.OAuth2;
-  const ERROR_RESPONSE = {
-    status: "500",
-    message: "There was an error adding an event to your Google calendar",
-  };
-  const TIME_ZONE = "IST";
-
-  const oAuth2Client = new OAuth2(
-    googleCredentials.web.client_id,
-    googleCredentials.web.client_secret,
-    googleCredentials.web.redirect_uris[0]
-  );
-
-  oAuth2Client.setCredentials({
-    refresh_token: googleCredentials.refresh_token,
-  });
-
-  calendar.events.insert(
-    {
-      auth: oAuth2Client,
-      calendarId: "primary",
-      resource: {
-        summary: event.eventName,
-        // attendees: [
-        //   { email: "test@example.com" },
-        //   { email: "test@example.com" },
-        // ],
-        description: event.description,
-        start: {
-          dateTime: event.startTime,
-          timeZone: TIME_ZONE,
-        },
-        end: {
-          dateTime: event.endTime,
-          timeZone: TIME_ZONE,
-        },
-      },
-    },
-    (err, res) => {
-      if (err) {
-        console.log("Rejecting because of error");
-        console.log(err);
-      } else {
-        console.log("Request successful");
-      }
-    }
-  );
+const batch = {
+  teacher_name: null,
+  planned_end_date: null,
+  updatedby: "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+  course_name: null,
+  level: "1",
+  isScheduled: true,
+  actual_end_date: null,
+  schedule: [
+    { duration: 60, time: "01:43", day: "Thursday" },
+    { duration: 60, time: "11:49", day: "Tuesday" },
+  ],
+  batch_students: null,
+  sessionCount: "4",
+  createdby: "nWuleMgKPERrsPf10aJOq2CXgSQ2",
+  category: null,
+  status: null,
+  start_date: "2022-07-12",
+  batch_id: "S100",
 };
-
-module.exports.onDocUpdated = async (snap, context) => {
-  const values = snap.after.data();
-  console.log(values);
-
-  const collectionName = snap.after.ref.parent.id;
-  console.log("Added ", values, "to Collection Name:", collectionName);
-
-  if (collectionName == "batches") {
-    if (values.isScheduled == true) {
-      console.log("Batch Scheduled");
-      scheduleBatch(values);
-    } else {
-      console.log("Batch Unscheduled");
-    }
-  }
-
-  return db.collection(`${collectionName}_history`).add({
-    ...values,
-    updated_at: admin.firestore.FieldValue.serverTimestamp(),
-  });
-};
+scheduleBatch(batch);
