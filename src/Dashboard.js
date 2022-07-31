@@ -47,7 +47,8 @@ export default () => {
   const handleClick = () => setOpen(true);
   const handleDialogClose = () => setOpen(false);
   const handleConfirm = () => {
-      redirect("https://us02web.zoom.us/j/89403449628#success:~:text=and%20Privacy%20Statement-,Launch,-Meeting");
+      const url = "https://us02web.zoom.us/j/89403449628#success:~:text=and%20Privacy%20Statement-,Launch,-Meeting";
+      window.open(url, '_blank').focus();
       setOpen(false);
   };
 
@@ -57,11 +58,13 @@ export default () => {
       <Card>
         <CardContent>
           <SimpleShowLayout>
-            <TextField source="student_id" label="Student ID" />
-            <TextField source="first_name" />
+            <TextField label="Upcoming Class: " />
+            <TextField label="S8" />
+            <TextField label="Friday, 29th July, 6:30pm" />
+            <TextField label="In Progress" />
             <Button
               variant="contained"
-              label="START"
+              label="START CLASS"
               color="secondary"
               size="large"
               onClick={handleClick}
@@ -69,9 +72,8 @@ export default () => {
             />
             <Confirm
               isOpen={open}
-              
-              title="Update View Count"
-              content="Are you sure you want to update these posts?"
+              title="Start your class"
+              content="Are you sure you want to start this meeting?"
               onConfirm={handleConfirm}
               onClose={handleDialogClose}
             />
@@ -91,7 +93,7 @@ export default () => {
             headerToolbar={{
               left: "prev,next",
               center: "title",
-              right: "dayGridMonth,listWeek",
+              right: "dayGrid,dayGridMonth,listWeek",
             }}
             initialView="dayGridMonth"
             editable={false}
@@ -107,6 +109,22 @@ export default () => {
             eventColor="#971849"
             eventTextColor="#ddd"
             firstDay={1}
+            eventClick={ (info) =>{
+              console.log('Event: ' + info.event.title);
+              //redirect("#/batches");
+              // change the border color just for fun
+              info.el.style.borderColor = 'red';
+              //if (event.url) {
+                //window.open(event.url);
+                //events.jsEvent.cancelBubble = true;
+                //events.jsEvent.preventDefault();
+            }}
+            eventDataTransform = { (events) => {
+              events.url = "#batches";
+              return events;
+            }
+          }
+          
           />
         </CardContent>
       </Card>
