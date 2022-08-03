@@ -75,11 +75,14 @@ const scheduleBatch = (batch) => {
             batch.teacher_name + "'s " + batch.course_name + " batch.",
           startTime: isoStartDate,
           endTime: isoEndDate,
+          location : batch.zoom_link
         };
+        
         console.log("Event : ", event);
         insertEvent(event);
 
         sessionCount--;
+
         //if schedule pointer reaches the end of array, wrap arounf
         if (schedulePointer == schedule.length - 1) {
           schedulePointer = 0;
@@ -134,6 +137,7 @@ const insertEvent = (event) => {
           dateTime: event.endTime,
           timeZone: TIME_ZONE,
         },
+        location : event.location
       },
     },
     (err, res) => {
@@ -149,7 +153,7 @@ const insertEvent = (event) => {
 
 module.exports.onDocUpdated = async (snap, context) => {
   const values = snap.after.data();
-  console.log(values);
+  console.log("Updated Doc: ", values);
 
   const collectionName = snap.after.ref.parent.id;
   console.log("Added ", values, "to Collection Name:", collectionName);

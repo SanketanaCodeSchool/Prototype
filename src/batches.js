@@ -271,7 +271,7 @@ export const BatchCreate = (props) => {
             defaultValue={null}
           />
         </ReferenceInput>
-
+        <TextInput label="Zoom Link" source="zoom_link"  type="url" />
         <AutocompleteInput
           label="Status"
           source="status"
@@ -420,7 +420,7 @@ export const BatchEdit = (props) => {
             optionValue="teacher_name"
           />
         </ReferenceInput>
-
+        <TextInput label="Zoom Link" source="zoom_link"  type="url" />
         <AutocompleteInput
           label="Status"
           source="status"

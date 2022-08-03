@@ -1,8 +1,12 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import { Title } from "react-admin";
-import FullCalendar, { formatDate } from "@fullcalendar/react";
+import { Title, Resource } from "react-admin";
+import FullCalendar, {
+  computeSegEndResizable,
+  formatDate,
+} from "@fullcalendar/react";
+import timeGridPlugin from "@fullcalendar/timegrid";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import listPlugin from "@fullcalendar/list";
 // import nlLocale from '@fullcalendar/core/locales/nl'
@@ -31,9 +35,9 @@ import {
   Confirm,
   useListContext,
   useUpdateMany,
-  useRedirect 
+  useRedirect,
 } from "react-admin";
-import { useState } from 'react';
+import { useState } from "react";
 export default () => {
   // const handleClick = () => {
   //   console.log("Button Clicked");
@@ -47,18 +51,28 @@ export default () => {
   const handleClick = () => setOpen(true);
   const handleDialogClose = () => setOpen(false);
   const handleConfirm = () => {
-      const url = "https://us02web.zoom.us/j/89403449628#success:~:text=and%20Privacy%20Statement-,Launch,-Meeting";
-      window.open(url, '_blank').focus();
-      setOpen(false);
+    const url =
+      "https://us02web.zoom.us/j/89403449628#success:~:text=and%20Privacy%20Statement-,Launch,-Meeting";
+    window.open(url, "_blank").focus();
+    setOpen(false);
   };
+  //const [cardCounter, setCardCounter] = useState(0);
 
+  // const Test=  ()=>{
+  //   let arr = [1,2,3,4];
+  //   {arr.map(i => {
+  //     return <Component />
+  //   })}
+  // }
 
-  return (
-    <>
+  const Component = () => {
+
+    return (
       <Card>
         <CardContent>
           <SimpleShowLayout>
             <TextField label="Upcoming Class: " />
+
             <TextField label="S8" />
             <TextField label="Friday, 29th July, 6:30pm" />
             <TextField label="In Progress" />
@@ -77,15 +91,42 @@ export default () => {
               onConfirm={handleConfirm}
               onClose={handleDialogClose}
             />
+            {/* {console.log("Event Count :" , eventCounter)} */}
           </SimpleShowLayout>
         </CardContent>
       </Card>
+    );
+  }
+
+  
+  
+  let eventCounter = 0;
+
+ 
+  return (
+    <>
+     
+      <Component />
+      <Component />
+      <Component />
+
+      {/* <Test/>
+      <Test/>
+      <Test/>
+      <Test/> */}
+
+      
       <Card>
         <Title title="Sanketana Dashboard" />
         <CardContent>
           <FullCalendar
             // locale={nlLocale}
-            plugins={[dayGridPlugin, listPlugin, googleCalendarPlugin]}
+            plugins={[
+              timeGridPlugin,
+              dayGridPlugin,
+              listPlugin,
+              googleCalendarPlugin,
+            ]}
             googleCalendarApiKey="AIzaSyA9LehPKRjFBzQ-AKeQS9wqoDoTbliErG8"
             events={{
               googleCalendarId: "eshaan.gupta101@gmail.com",
@@ -93,9 +134,9 @@ export default () => {
             headerToolbar={{
               left: "prev,next",
               center: "title",
-              right: "dayGrid,dayGridMonth,listWeek",
+              right: "timeGridDay,dayGridMonth,listWeek",
             }}
-            initialView="dayGridMonth"
+            initialView="timeGridDay"
             editable={false}
             selectable={false}
             displayEventTime={true}
@@ -109,22 +150,31 @@ export default () => {
             eventColor="#971849"
             eventTextColor="#ddd"
             firstDay={1}
-            eventClick={ (info) =>{
-              console.log('Event: ' + info.event.title);
+            eventClick={(info) => {
+              console.log("Event: " + info.event.title);
+              //console.log("Location: " + info.event.location);
               //redirect("#/batches");
               // change the border color just for fun
-              info.el.style.borderColor = 'red';
+              info.el.style.borderColor = "red";
+
               //if (event.url) {
-                //window.open(event.url);
-                //events.jsEvent.cancelBubble = true;
-                //events.jsEvent.preventDefault();
+              //window.open(event.url);
+              //events.jsEvent.cancelBubble = true;
+              //events.jsEvent.preventDefault();
             }}
-            eventDataTransform = { (events) => {
-              events.url = "#batches";
+            eventDataTransform={(events) => {
+              //console.log(events.location);
+              events.url = events.location; //"#batches";
+
               return events;
-            }
-          }
-          
+            }}
+            eventDidMount={(event) => {
+              eventCounter = eventCounter + 1;
+              console.log(eventCounter);
+
+              console.log(event);
+              //console.log("LOCATiON", events.extendedProps.location);
+            }}
           />
         </CardContent>
       </Card>
