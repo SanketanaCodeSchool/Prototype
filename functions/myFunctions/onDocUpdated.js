@@ -46,7 +46,6 @@ const scheduleBatch = (batch) => {
   schedulePointer = schedule.map((object) => object.day).indexOf(start_day);
   //number of events to be created
   let sessionCount = batch.sessionCount;
-  let event;
   while (sessionCount !== 0) {
     //flag is set to false after every event creation
     let flag = true;
@@ -69,17 +68,18 @@ const scheduleBatch = (batch) => {
         let timeZone = "IST";
         //set flag to false if next event's date is found
         flag = false;
-        let event = {
-          eventName: batch.batch_id + " " + batch.teacher_name,
-          description:
-            batch.teacher_name + "'s " + batch.course_name + " batch.",
+        console.log(batch);
+        let session = {
+          sessionCount : sessionCount,
+          batch_id : batch.batch_id,
+          teacher_name : batch.teacher_name,
           startTime: isoStartDate,
           endTime: isoEndDate,
-          location : batch.zoom_link
+          location: batch.zoom_link,
         };
-        
-        console.log("Event : ", event);
-        insertEvent(event);
+
+        //insertEventGoogleCalendar(event);
+        insertEventFirestore(session);
 
         sessionCount--;
 
@@ -97,7 +97,17 @@ const scheduleBatch = (batch) => {
   }
 };
 
-const insertEvent = (event) => {
+const insertEventFirestore = (session) => {
+  
+
+  console.log("Session:" , session)
+  return admin
+    .firestore()
+    .doc("classes/" + session.batch_id + " - " + session.sessionCount)
+    .set(session);
+};
+
+const insertEventGoogleCalendar = (event) => {
   const { google } = require("googleapis");
   const calendar = google.calendar("v3");
   const googleCredentials = require("./credentials.json");
@@ -137,7 +147,7 @@ const insertEvent = (event) => {
           dateTime: event.endTime,
           timeZone: TIME_ZONE,
         },
-        location : event.location
+        location: event.location,
       },
     },
     (err, res) => {
@@ -172,3 +182,29 @@ module.exports.onDocUpdated = async (snap, context) => {
     updated_at: admin.firestore.FieldValue.serverTimestamp(),
   });
 };
+
+
+
+  samplebatch = {
+    teacher_name: null,
+    planned_end_date: '2022-09-23',
+    updatedby: 'nWuleMgKPERrsPf10aJOq2CXgSQ2',
+    batch_id: 'S1',
+    course_name: null,
+    level: '2',
+    zoom_link: 'https://us05web.zoom.us/j/9397816519?pwd=NzdMZXNldHNJMDNWMXg5TUR6WDZ0dz09',
+    actual_end_date: null,
+    schedule: [
+      { duration: 60, time: '20:36', day: 'Tuesday' },
+      { duration: 60, time: '20:36', day: 'Thursday' }
+    ],
+    batch_students: null,
+    sessionCount: '5',
+    createdby: 'nWuleMgKPERrsPf10aJOq2CXgSQ2',
+    category: 'intermediate',
+    status: 'started',
+    start_date: '2022-08-25',
+  //   createdate: Timestamp { _seconds: 1661396798, _nanoseconds: 463000000 },
+  //   isScheduled: true,
+  //   lastupdate: Timestamp { _seconds: 1661396809, _nanoseconds: 416000000 }
+}
