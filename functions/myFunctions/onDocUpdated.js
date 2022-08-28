@@ -103,8 +103,10 @@ const insertEventFirestore = (session) => {
   console.log("Session:" , session)
   return admin
     .firestore()
-    .doc("classes/" + session.batch_id + " - " + session.sessionCount)
+    .doc("sessions/" + session.batch_id + " - " + session.sessionCount)
     .set(session);
+
+
 };
 
 const insertEventGoogleCalendar = (event) => {
@@ -208,3 +210,9 @@ module.exports.onDocUpdated = async (snap, context) => {
   //   isScheduled: true,
   //   lastupdate: Timestamp { _seconds: 1661396809, _nanoseconds: 416000000 }
 }
+
+
+
+
+
+

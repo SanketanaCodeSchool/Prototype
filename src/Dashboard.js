@@ -1,7 +1,7 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import { Title, Resource } from "react-admin";
+import { Title, Resource, usePermissions } from "react-admin";
 import FullCalendar, {
   computeSegEndResizable,
   formatDate,
@@ -66,7 +66,8 @@ export default () => {
   // }
 
   const Component = () => {
-
+    const { permissions } = usePermissions();
+    console.log("permissionsv = ", permissions);
     return (
       <Card>
         <CardContent>
@@ -96,18 +97,37 @@ export default () => {
         </CardContent>
       </Card>
     );
-  }
+  };
 
-  
-  
   let eventCounter = 0;
 
- 
+  // useEffect(() => {
+  //   const currentUserUID = fire.auth().currentUser.uid;
+  //   console.log(currentUserUID);
+
+  //   return fire
+  //     .firestore()
+  //     .collection("sessions")
+  //     .doc(currentUserUID)
+  //     .onSnapshot(({ docs }) => {
+  //       setData(
+  //         docs.map((doc) => {
+  //           const data = doc.data();
+  //           return {
+  //             id: doc.id,
+  //             title: data.event.title,
+  //             start: data.event.start.toDate(),
+  //             allDay: data.event.allDay,
+  //             ...data,
+  //           };
+  //         })
+  //       );
+  //     });
+  // }, []);
   return (
     <>
-     
-      <Component />
-      <Component />
+      {/* <Component />
+      <Component /> */}
       <Component />
 
       {/* <Test/>
@@ -115,7 +135,6 @@ export default () => {
       <Test/>
       <Test/> */}
 
-      
       <Card>
         <Title title="Sanketana Dashboard" />
         <CardContent>

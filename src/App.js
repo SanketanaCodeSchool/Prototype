@@ -1,6 +1,5 @@
 //import * as React from "react";
 
-
 import {
   BatchList,
   BatchShow,
@@ -35,7 +34,7 @@ import {
 
 //import { PostList, PostShow, PostCreate, PostEdit } from './posts';
 //import { UserList, UserShow, UserCreate, UserEdit } from './users';
-import { Admin, Resource } from "react-admin";
+import { Admin, Resource, usePermissions } from "react-admin";
 import {
   FirebaseDataProvider,
   FirebaseAuthProvider,
@@ -58,9 +57,9 @@ import * as Teachers from "./teachers";
 import { defaultTheme } from "react-admin";
 import CustomLoginPage from "./CustomLoginPage";
 import EventMonitor from "./EventMonitor";
-import 'firebase/auth';
+import "firebase/auth";
 import Dashboard from "./Dashboard";
-import firebaseConfig  from "./firebaseConfig";
+import firebaseConfig from "./firebaseConfig";
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
@@ -83,8 +82,8 @@ const dataProvider = FirebaseDataProvider(firebaseConfig, {
   },
 });
 const auth = firebase.auth;
-if (location.hostname === 'localhost' && 1  ) {
-  db.useEmulator('localhost', 8080);
+if (location.hostname === "localhost" && 0) {
+  db.useEmulator("localhost", 8080);
   //auth().useEmulator('http://localhost:9099/', { disableWarnings: true });
 }
 const theme = {
@@ -95,24 +94,11 @@ const theme = {
   },
 };
 
+
+
 const App = () => {
-  //const [batches, setBatches] = useState([]);
-  
-  
-
-  // React.useEffect(() => {
-  //   const q = admin.firestore().collection(db, "batches");
-  //   onSnapshot(q, (querySnapshot) => {
-  //     setTasks(
-  //       querySnapshot.docs.map((doc) => ({
-  //         id: doc.batch_id,
-  //         data: doc.data(),
-  //       }))
-  //     );
-  //   });
-  //   console.log(q.data);
-  // }, []);
-
+  const { permissions } = usePermissions();
+    console.log("permissionsv = ", permissions);
   return (
     <>
       <Admin
@@ -123,12 +109,13 @@ const App = () => {
         authProvider={authProvider}
       >
         {/* <Resource name = "myLayout" /> */}
+        
         <Resource
           name="batches"
-          list={BatchList}
+          list={permissions === 'admin' ? BatchList : null }
           show={BatchShow}
-          create={BatchCreate}
-          edit={BatchEdit}
+          create={BatchCreate }
+          edit={BatchEdit }
           filter={BatchFilter}
         />
         <Resource
