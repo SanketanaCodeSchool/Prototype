@@ -42,6 +42,7 @@ import {
   AutocompleteInput,
   ReferenceManyField,
   ResettableTextField,
+  usePermissions,
 } from "react-admin";
 import { useDataProvider } from "react-admin";
 import RichTextInput from "ra-input-rich-text";
@@ -49,6 +50,7 @@ import {
   FirebaseReferenceField,
   FirebaseReferenceInput,
 } from "./FirebaseReferenceFields";
+import { computeSegEndResizable } from "@fullcalendar/react";
 
 export const BatchFilter = (props) => (
   <Filter {...props}>
@@ -104,40 +106,45 @@ export const BatchHistoryList = (props) => (
   </List>
 );
 
-export const BatchList = (props) => (
-  <List
-    {...props}
-    // filters={<ReferenceFilter />}
-    // filter={{ updatedby: "test@example.com" }}
-  >
-    <Datagrid>
-      <TextField source="batch_id" label="BatchID" />
-      <TextField source="course_name" label="Course" />
-      <TextField source="level" label="Level" />
-      <TextField source="category" label="Category" />
-      <TextField source="teacher_name" label="Teacher" />
-      <DateField source="start_date" />
-      <ArrayField source="batch_students">
-        <SingleFieldList linkType={false}>
-          <FunctionField
-            render={(record) => (
-              <ChipField
-                record={{
-                  student_id: record.first_name + " " + record.last_name,
-                }}
-                source="student_id"
-              />
-            )}
-          />
-        </SingleFieldList>
-      </ArrayField>
-      <BooleanField source="isScheduled" label="Schedule?" />
-      <ShowButton label="" />
-      <EditButton label="" />
-      <DeleteButton label="" redirect={false} />
-    </Datagrid>
-  </List>
-);
+export const BatchList = (props) => {
+  const { permissions } = usePermissions();
+  console.log(permissions);
+  return (
+    <List
+      {...props}
+      // filters={<ReferenceFilter />}
+      // filter={{ updatedby: "test@example.com" }}
+       filter={{ teacher_name : "Abhinav Bhardwaj"}}
+    >
+      <Datagrid>
+        <TextField source="batch_id" label="BatchID" />
+        <TextField source="course_name" label="Course" />
+        <TextField source="level" label="Level" />
+        <TextField source="category" label="Category" />
+        <TextField source="teacher_name" label="Teacher" />
+        <DateField source="start_date" />
+        <ArrayField source="batch_students">
+          <SingleFieldList linkType={false}>
+            <FunctionField
+              render={(record) => (
+                <ChipField
+                  record={{
+                    student_id: record.first_name + " " + record.last_name,
+                  }}
+                  source="student_id"
+                />
+              )}
+            />
+          </SingleFieldList>
+        </ArrayField>
+        <BooleanField source="isScheduled" label="Schedule?" />
+        <ShowButton label="" />
+        <EditButton label="" />
+        <DeleteButton label="" redirect={false} />
+      </Datagrid>
+    </List>
+  );
+};
 
 // const ConditionalEmailField = ({}) =>
 //   record && record.hasEmail ? (
@@ -271,7 +278,7 @@ export const BatchCreate = (props) => {
             defaultValue={null}
           />
         </ReferenceInput>
-        <TextInput label="Zoom Link" source="zoom_link"  type="url" />
+        <TextInput label="Zoom Link" source="zoom_link" type="url" />
         <AutocompleteInput
           label="Status"
           source="status"
@@ -308,7 +315,11 @@ export const BatchCreate = (props) => {
           optionValue="write_data"
           defaultValue={null}
         />
-        <TextInput source="sessionCount" label="Session Count" defaultValue= {16} />
+        <TextInput
+          source="sessionCount"
+          label="Session Count"
+          defaultValue={16}
+        />
         <ArrayInput source="schedule" defaultValue={null}>
           <SimpleFormIterator>
             <AutocompleteInput
@@ -331,7 +342,7 @@ export const BatchCreate = (props) => {
               label="Time"
               defaultValue={null}
             />
-            <TextInput source="duration" label="Duration" defaultValue= {60} />
+            <TextInput source="duration" label="Duration" defaultValue={60} />
           </SimpleFormIterator>
         </ArrayInput>
       </SimpleForm>
@@ -420,7 +431,7 @@ export const BatchEdit = (props) => {
             optionValue="teacher_name"
           />
         </ReferenceInput>
-        <TextInput label="Zoom Link" source="zoom_link"  type="url" />
+        <TextInput label="Zoom Link" source="zoom_link" type="url" />
         <AutocompleteInput
           label="Status"
           source="status"
@@ -452,7 +463,7 @@ export const BatchEdit = (props) => {
           optionText={studentOptionRenderer}
           optionValue="write_data"
         />
-        <TextInput source="sessionCount" label="Session Count"/>
+        <TextInput source="sessionCount" label="Session Count" />
         <ArrayInput source="schedule">
           <SimpleFormIterator>
             <AutocompleteInput
@@ -469,7 +480,7 @@ export const BatchEdit = (props) => {
               ]}
             />
             <TextInput source="time" type={"time"} label="Time" />
-            <TextInput source="duration" label="Duration"/>
+            <TextInput source="duration" label="Duration" />
           </SimpleFormIterator>
         </ArrayInput>
       </SimpleForm>

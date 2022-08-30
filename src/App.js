@@ -94,11 +94,9 @@ const theme = {
   },
 };
 
-
-
 const App = () => {
   const { permissions } = usePermissions();
-    console.log("permissionsv = ", permissions);
+  console.log("permissionsv = ", permissions);
   return (
     <>
       <Admin
@@ -109,55 +107,55 @@ const App = () => {
         authProvider={authProvider}
       >
         {/* <Resource name = "myLayout" /> */}
-        
+
         <Resource
           name="batches"
-          list={permissions === 'admin' ? BatchList : null }
+          list={BatchList}
           show={BatchShow}
-          create={BatchCreate }
-          edit={BatchEdit }
+          create={BatchCreate}
+          edit={BatchEdit}
           filter={BatchFilter}
         />
         <Resource
           name="students"
-          icon={UserIcon}
-          list={StudentList}
-          show={StudentShow}
-          create={StudentCreate}
-          edit={StudentEdit}
-          filter={StudentFilter}
+          icon={permissions === "admin" ? UserIcon : null}
+          list={permissions === "admin" ? StudentList : null}
+          show={permissions === "admin" ? StudentShow : null}
+          create={permissions === "admin" ? StudentCreate : null}
+          edit={permissions === "admin" ? StudentEdit : null}
+          filter={permissions === "admin" ? StudentFilter : null}
         />
         <Resource
           name="teachers"
-          icon={UserIcon}
-          list={TeacherList}
-          show={TeacherShow}
-          create={TeacherCreate}
-          edit={TeacherEdit}
-          filter={TeacherFilter}
+          icon={permissions === "admin" ? UserIcon : null}
+          list={permissions === "admin" ? TeacherList : null}
+          show={permissions === "admin" ? TeacherShow : null}
+          create={permissions === "admin" ? TeacherCreate : null}
+          edit={permissions === "admin" ? TeacherEdit : null}
+          filter={permissions === "admin" ? TeacherFilter : null}
         />
         <Resource
           name="courses"
-          icon={UserIcon}
-          list={CourseList}
-          show={CourseShow}
-          create={CourseCreate}
-          edit={CourseEdit}
-          filter={CourseFilter}
+          icon={permissions === "admin" ? UserIcon : null}
+          list={permissions === "admin" ? CourseList : null}
+          show={permissions === "admin" ? CourseShow : null}
+          create={permissions === "admin" ? CourseCreate : null}
+          edit={permissions === "admin" ? CourseEdit : null}
+          filter={permissions === "admin" ? CourseFilter : null}
         />
         <Resource
           name="batches_history"
-          list={BatchHistoryList}
+          list={permissions === "admin" ? BatchHistoryList : null}
           options={{ label: "Batch Logs" }}
         />
         <Resource
           name="students_history"
-          list={StudentHistoryList}
+          list={permissions === "admin" ? StudentHistoryList : null}
           options={{ label: "Student Logs" }}
         />
         <Resource
           name="teachers_history"
-          list={TeacherHistoryList}
+          list={permissions === "admin" ? TeacherHistoryList : null}
           options={{ label: "Teachers Logs" }}
         />
       </Admin>
